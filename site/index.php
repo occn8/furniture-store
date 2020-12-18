@@ -8,9 +8,10 @@
 </head>
 
 <body>
-    <div class="dummytest">
+ <?php echo '<div class="dummytest">
         <h1>Fur-Store Home</h1>
-    </div>
+    </div>'; ?> 
+    
 </body>
 
 </html>

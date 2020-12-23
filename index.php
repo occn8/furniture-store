@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/boxicons.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.2/css/boxicons.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/navbar.css">
     <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
 
     <link rel="icon" href="../assets/favicon.ico">
@@ -195,6 +196,8 @@
         <h1>Fur-Store Home</h1>
     </div>'; ?>
 
+<script src="assets/scripts/jquery.min.js"></script>
+<script src="assets/scripts/sidebar.js"></script>
 </body>
 
 </html>

@@ -10,7 +10,7 @@
   
   > [kirabo.tisha](https://github.com/Tishakirabo)
   
-  > [ayebare.precious](https://github.com/)
+  > [ayebare.precious](https://github.com/fortunate200-lang)
 
 ### Screenshots
 

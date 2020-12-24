@@ -11,7 +11,7 @@
     <!-- <link rel="stylesheet" type="text/css" href="../assets/css/style.css"> -->
 
     <link rel="icon" href="../assets/favicon.ico">
-    <title>Fur-Store Home</title>
+    <title>Fur-Store Cart</title>
 </head>
 
 <body>

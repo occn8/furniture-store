@@ -81,16 +81,16 @@
                             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Collection</a>
+                            <a class="nav-link" href="site/collection.php">Collection</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">New Arrivals</a>
+                            <a class="nav-link" href="site/latest.php">New Arrivals</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Catalogue</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="site/about.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 About
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -100,7 +100,7 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="site/contact.php">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -145,19 +145,19 @@
                     <a href="#"><i class="bx bx-home mr-3"></i> Home</a>
                 </li>
                 <li>
-                    <a href="#"><i class="bx bx-carousel mr-3"></i> Collection</a>
+                    <a href="site/collection.php"><i class="bx bx-carousel mr-3"></i> Collection</a>
                 </li>
                 <li>
-                    <a href="#"><i class="bx bx-book-open mr-3"></i> New Arrivals</a>
+                    <a href="site/latest.php"><i class="bx bx-book-open mr-3"></i> New Arrivals</a>
                 </li>
                 <li>
                     <a href="#"><i class="bx bx-crown mr-3"></i> Catalogue</a>
                 </li>
                 <li>
-                    <a href="#"><i class="bx bx-phone mr-3"></i> About Us</a>
+                    <a href="site/about.php"><i class="bx bx-phone mr-3"></i> About Us</a>
                 </li>
                 <li>
-                    <a href="#"><i class="bx bx-phone mr-3"></i> Contact Us</a>
+                    <a href="site/contact.php"><i class="bx bx-phone mr-3"></i> Contact Us</a>
                 </li>
             </ul>
 

@@ -203,7 +203,12 @@
     </header>
 
     <main>
-        <section></section>
+        <section>
+            <div>
+                <h2 class="head">OUR STORY</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex numquam quas non dolor perspiciatis, vitae quam commodi quos officia sapiente iure similique minus cum molestiae odio earum atque corrupti cupiditate.</p>
+            </div>
+        </section>
         <section></section>
         <section></section>
         <section></section>

@@ -203,9 +203,6 @@
     </header>
 
     <main>
-        <?php echo '<div class="dummytest">
-        <h1>Fur-Store Home</h1>
-    </div>'; ?>
         <section></section>
         <section></section>
         <section></section>

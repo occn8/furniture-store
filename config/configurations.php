@@ -1,17 +1,23 @@
 <?php
 session_start();
 
-$server = "sql113.epizy.com";
-$usrname = "epiz_27536347";
-$passwd = "ovnkMOBKduC";
-$dbname = "epiz_27536347_furstore";
+// $server = "sql113.epizy.com";
+// $usrname = "epiz_27536347";
+// $passwd = "ovnkMOBKduC";
+// $dbname = "epiz_27536347_furstore";
+// $connect = mysqli_connect($server, $usrname, $passwd, $dbname);
 // $_SESSION['success'] = "";
 $username = "";
 $email    = "";
 $errors = array();
 
-$connect = mysqli_connect($server, $usrname, $passwd, $dbname);
+$connect = mysqli_connect('localhost', 'root', '');
 
+$createDB = "CREATE DATABASE IF NOT EXISTS furstore";
+mysqli_query($connect, $createDB);
+
+$useDB = "USE furstore";
+mysqli_query($connect, $useDB);
 
 
 $users = "CREATE TABLE IF NOT EXISTS users (
@@ -32,16 +38,16 @@ $pdts = "CREATE TABLE IF NOT EXISTS products (
 mysqli_query($connect, $pdts);
 
 $products = "INSERT INTO `products` (id, product_name, product_brand, product_price, product_image)
-	VALUES (1,'ARFLEX-Armchair', 'armchairs',1799,'../assets/products/armchairs/b_ARFLEX-Armchair-arflex.jpg'),
-	(2,'nuvol-reflex','chaiselongues',147,'../assets/products/chaiselongues/2b_nuvol-reflex.jpg'),
-	(3,'aqua-ezpeleta','cushions',759,'../assets/products/cushions/b_aqua-ezpeleta-division-comercial.jpg'),
-	(4,'Maxalto','daybeds',459,'../assets/products/daybeds/b_1-Maxalto-a-brand-of-B-B-Italia-Spa.jpg'),
-	(5,'citizen-lowback','easychairs',459,'../assets/products/easychairs/b_citizen-lowback-vitra.jpg'),
-	(6,'armchair-calligaris','footstools',459,'../assets/products/footstools/b_armchair-calligaris.jpg'),
-	(7,'JUNIOR-LOFT','kidssofas',459,'../assets/products/kidssofas/b_366-JUNIOR-LOFT.jpg'),
-	(8,'beat-rs0212-andreu','poufs',459,'../assets/products/poufs/b_beat-rs0212-andreu-world.jpg'),
-	(9,'CLIPPER-Small-sofa','smallsofas',459,'../assets/products/smallsofas/b_CLIPPER-Small-sofa-Marelli.jpg'),
-	(10,'beam-cassina','sofa',278,'../assets/products/sofa/b_beam-cassina.jpg')";
+	VALUES (1,'ARFLEX-Armchair', 'armchairs',1799000,'/furniture-store/assets/products/armchairs/b_ARFLEX-Armchair-arflex.jpg'),
+	(2,'nuvol-reflex','chaiselongues',147000,'/furniture-store/assets/products/chaiselongues/2b_nuvol-reflex.jpg'),
+	(3,'aqua-ezpeleta','cushions',759000,'/furniture-store/assets/products/cushions/b_aqua-ezpeleta-division-comercial.jpg'),
+	(4,'Maxalto','daybeds',459000,'/furniture-store/assets/products/daybeds/b_1-Maxalto-a-brand-of-B-B-Italia-Spa.jpg'),
+	(5,'citizen-lowback','easychairs',459000,'/furniture-store/assets/products/easychairs/b_citizen-lowback-vitra.jpg'),
+	(6,'armchair-calligaris','footstools',459000,'/furniture-store/assets/products/footstools/b_armchair-calligaris.jpg'),
+	(7,'JUNIOR-LOFT','kidssofas',459000,'/furniture-store/assets/products/kidssofas/b_366-JUNIOR-LOFT.jpg'),
+	(8,'beat-rs0212-andreu','poufs',459000,'/furniture-store/assets/products/poufs/b_beat-rs0212-andreu-world.jpg'),
+	(9,'CLIPPER-Small-sofa','smallsofas',459000,'/furniture-store/assets/products/smallsofas/b_CLIPPER-Small-sofa-Marelli.jpg'),
+	(10,'beam-cassina','sofa',278000,'/furniture-store/assets/products/sofa/b_beam-cassina.jpg')";
 mysqli_query($connect, $products);
 
 
@@ -116,7 +122,7 @@ if (isset($_POST['add_product'])) {
 		$query = "INSERT INTO products (pdtname, pdtdescription, batchNo, store, insertdate ) 
 					  VALUES('$pdtname','$pdtdescription', '$batchNo', '$store', NOW())";
 		mysqli_query($connect, $query);
-		header('location: ../index.php'); 
+		header('location: ../index.php');
 	}
 }
 
@@ -143,7 +149,7 @@ if (isset($_POST['update_product'])) {
 	if (count($errors) == 0) {
 		$query = "UPDATE products SET store='$newstore' WHERE id='$id'";
 		mysqli_query($connect, $query);
-		header('location: ../index.php'); 
+		header('location: ../index.php');
 	}
 }
 
@@ -155,6 +161,6 @@ if (isset($_POST['delete_product'])) {
 	if (count($errors) == 0) {
 		$query = "DELETE FROM products WHERE id='$id'";
 		mysqli_query($connect, $query);
-		header('location: ../index.php'); 
+		header('location: ../index.php');
 	}
 }

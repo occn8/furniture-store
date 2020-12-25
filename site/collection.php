@@ -1,3 +1,13 @@
+<?php
+
+// session_start();
+
+require_once('../config/configurations.php');
+require_once('../config/component.php');
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +18,9 @@
     <link rel="stylesheet" type="text/css" href="../assets/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.2/css/boxicons.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/animate.css">
     <!-- <link rel="stylesheet" type="text/css" href="../assets/css/style.css"> -->
 
     <link rel="icon" href="../assets/favicon.ico">
@@ -203,9 +216,29 @@
     </header>
 
     <main>
-        <section></section>
-        <section></section>
-        <section></section>
+        <section id="special-price">
+            <div class="container">
+                <h4 class="text-center py-4 color-primary">Our Furniture Collection</h4>
+                <div id="filters" class="button-group text-right font-baloo font-size-16">
+                    <button class="btn is-checked" data-filter="*">All Brand</button>
+                    <button class="btn" data-filter=".armchairs">armchairs</button>
+                    <button class="btn" data-filter=".chaiselongues">chaiselongues</button>
+                    <button class="btn" data-filter=".cushions">cushions</button>
+                    <button class="btn" data-filter=".daybeds">daybeds</button>
+
+                </div>
+
+                <div class="grid">
+                    <?php
+                    $result = $connect->query($querryinventory);
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        component2($row['product_name'], $row['product_brand'], $row['product_price'], $row['product_image'], $row['id']);
+                    }
+                    ?>
+
+                </div>
+            </div>
+        </section>
         <section></section>
         <section></section>
     </main>
@@ -255,9 +288,12 @@
         </div>
     </footer>
 
-    <script src="assets/scripts/jquery.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/scripts/sidebar.js"></script>
+    <script src="../assets/scripts/jquery.min.js"></script>
+    <script src="../assets/scripts/popper.min.js"></script>
+    <script src="../assets/scripts/sidebar.js"></script>
+    <script src="../assets/scripts/owl.carousel.min.js"></script>
+    <script src="../assets/scripts/isotope.pkgd.min.js"></script>
+    <script src="../assets/scripts/index.js"></script>
 </body>
 
 </html>

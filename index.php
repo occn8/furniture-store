@@ -1,3 +1,13 @@
+<?php
+
+// session_start();
+
+require_once('config/configurations.php');
+require_once('config/component.php');
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,10 +15,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/boxicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.2/css/boxicons.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/boxicons/css/boxicons.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/boxicons.min.css"> -->
     <link rel="stylesheet" type="text/css" href="assets/css/navbar.css">
-    <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
     <link rel="icon" href="../assets/favicon.ico">
     <title>Fur-Store Home</title>
@@ -64,7 +78,7 @@
                             </div>
                         </li>
                         <li class="nav-item ml-md-3">
-                            <a class="btn btn-primary login-up" href="#"><i class="bx bxs-user-circle mr-1"></i> Log In /
+                            <a class="btn btn-primary login-up" href="#"><i class="bx bxs-user-circle mr-1 bx-sm"></i> Log In /
                                 Register</a>
                         </li>
                     </ul>
@@ -203,7 +217,36 @@
     </header>
 
     <main>
-        <section></section>
+
+
+        <section id="top-sale">
+            <div class="container py-5">
+                <h4 class="text-center color-primary ">Top Sales</h4>
+                <div class="owl-carousel owl-theme">
+                    <?php
+                    $result = $connect->query($querryinventory);
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        component($row['product_name'], $row['product_price'], $row['product_image'], $row['id']);
+                    }
+                    ?>
+                </div>
+            </div>
+        </section>
+
+        <section id="top-sale">
+            <div class="container py-5">
+                <h4 class="text-center color-primary ">Best Deals</h4>
+                <div class="owl-carousel owl-theme">
+                    <?php
+                    $result = $connect->query($querryinventory);
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        component($row['product_name'], $row['product_price'], $row['product_image'], $row['id']);
+                    }
+                    ?>
+                </div>
+            </div>
+        </section>
+
         <section></section>
         <section></section>
         <section></section>
@@ -256,8 +299,12 @@
     </footer>
 
     <script src="assets/scripts/jquery.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/scripts/popper.min.js"></script>
     <script src="assets/scripts/sidebar.js"></script>
+    <script src="assets/scripts/owl.carousel.min.js"></script>
+    <script src="assets/scripts/isotope.pkgd.min.js"></script>
+    <script src="assets/scripts/index.js"></script>
+
 </body>
 
 </html>

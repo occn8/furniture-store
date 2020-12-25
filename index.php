@@ -8,7 +8,8 @@ require_once('config/component.php');
 ?>
 
 <?php
-include('template/header.php');
+$currentpage = 'index';
+include('widgets/header.php');
 ?>
 
 <main>
@@ -49,5 +50,5 @@ include('template/header.php');
 </main>
 
 <?php
-include('template/footer.php');
+include('widgets/footer.php');
 ?>

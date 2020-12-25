@@ -4,14 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/boxicons.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.2/css/boxicons.min.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/navbar.css">
-    <!-- <link rel="stylesheet" type="text/css" href="../assets/css/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/boxicons/css/boxicons.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/boxicons.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="assets/css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
     <link rel="icon" href="../assets/favicon.ico">
-    <title>Fur-Store New Arrivals</title>
+    <title>Fur-Store Home</title>
 </head>
 
 <body>
@@ -64,7 +68,7 @@
                             </div>
                         </li>
                         <li class="nav-item ml-md-3">
-                            <a class="btn btn-primary login-up" href="#"><i class="bx bxs-user-circle mr-1"></i> Log In /
+                            <a class="btn btn-primary login-up" href="#"><i class="bx bxs-user-circle mr-1 bx-sm"></i> Log In /
                                 Register</a>
                         </li>
                     </ul>
@@ -77,19 +81,19 @@
             <div class="container">
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item ">
-                            <a class="nav-link" href="../index.php">Home </a>
+                        <li class="nav-item <?php echo $currentpage == 'index' ? 'active' : '' ?>">
+                            <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item <?php echo $currentpage == 'collection' ? 'active' : '' ?>">
                             <a class="nav-link" href="collection.php">Collection</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">New Arrivals <span class="sr-only">(current)</span></a>
+                        <li class="nav-item <?php echo $currentpage == 'latest' ? 'active' : '' ?>">
+                            <a class="nav-link" href="latest.php">New Arrivals</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item <?php echo $currentpage == 'catalogue' ? 'active' : '' ?>">
                             <a class="nav-link" href="#">Catalogue</a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item <?php echo $currentpage == 'about' ? 'active' : '' ?> dropdown">
                             <a class="nav-link dropdown-toggle" href="about.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 About
                             </a>
@@ -99,7 +103,7 @@
                                 <a class="dropdown-item" href="#">Terms & Conditions</a>
                             </div>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item <?php echo $currentpage == 'contact' ? 'active' : '' ?>">
                             <a class="nav-link" href="contact.php">Contact</a>
                         </li>
                     </ul>
@@ -142,22 +146,22 @@
 
             <ul class="list-unstyled components links">
                 <li class="active">
-                    <a href="../index.php"><i class="bx bx-home mr-3"></i> Home</a>
+                    <a href="#"><i class="bx bx-home mr-3"></i> Home</a>
                 </li>
                 <li>
-                    <a href="collection.php"><i class="bx bx-carousel mr-3"></i> Collection</a>
+                    <a href="site/collection.php"><i class="bx bx-carousel mr-3"></i> Collection</a>
                 </li>
                 <li>
-                    <a href="#"><i class="bx bx-book-open mr-3"></i> New Arrivals</a>
+                    <a href="site/latest.php"><i class="bx bx-book-open mr-3"></i> New Arrivals</a>
                 </li>
                 <li>
                     <a href="#"><i class="bx bx-crown mr-3"></i> Catalogue</a>
                 </li>
                 <li>
-                    <a href="about.php"><i class="bx bx-phone mr-3"></i> About Us</a>
+                    <a href="site/about.php"><i class="bx bx-phone mr-3"></i> About Us</a>
                 </li>
                 <li>
-                    <a href="contact.php"><i class="bx bx-phone mr-3"></i> Contact Us</a>
+                    <a href="site/contact.php"><i class="bx bx-phone mr-3"></i> Contact Us</a>
                 </li>
             </ul>
 
@@ -201,63 +205,3 @@
 
         </nav>
     </header>
-
-    <main>
-        <section></section>
-        <section></section>
-        <section></section>
-        <section></section>
-        <section></section>
-    </main>
-
-    <footer class="pt-4 text-center my-md-5 pt-md-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-6 col-md-4">
-                    <h5>QUICK LINKS</h5>
-                    <ul class="list-unstyled text-small">
-
-                        <li><a class="text-muted" href="#">Sell online</a></li>
-                        <li><a class="text-muted" href="#">Features</a></li>
-                        <li><a class="text-muted" href="#">Shopping cart</a></li>
-                        <li><a class="text-muted" href="#">Mobile commerce</a></li>
-                        <li><a class="text-muted" href="#">Dropshipping</a></li>
-                        <li><a class="text-muted" href="#">Development</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-4">
-                    <h5>CONTACT INFO</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Ntinda valley, 21st st, Kampala, UGANDA</a></li>
-                        <li><a class="text-muted" href="#">+256 7887 06532</a></li>
-                        <li><a class="text-muted" href="#">elitefurniture@furstore.com</a></li>
-                        <li><a class="text-muted" href="#">SUBSCRIBE</a></li>
-                    </ul>
-                </div>
-                <div class="col-6 col-md-4">
-                    <h5>About</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-muted" href="#">Team</a></li>
-                        <li><a class="text-muted" href="#">Locations</a></li>
-                        <li><a class="text-muted" href="#">Privacy</a></li>
-                        <li><a class="text-muted" href="#">Terms</a></li>
-                    </ul>
-                </div>
-            </div>
-
-
-            <p class="text-center">
-                Copyright ©<script>
-                    document.write(new Date().getFullYear());
-                </script> All rights reserved | <a href="#" target="_app">Fur-Store</a>
-            </p>
-
-        </div>
-    </footer>
-
-    <script src="assets/scripts/jquery.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/scripts/sidebar.js"></script>
-</body>
-
-</html>

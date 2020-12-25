@@ -216,15 +216,15 @@ require_once('../config/component.php');
     </header>
 
     <main>
-        <section id="special-price">
-            <div class="container">
+        <section id="collection">
+            <div class="container ctn">
                 <h4 class="text-center py-4 color-primary">Our Furniture Collection</h4>
                 <div id="filters" class="button-group text-right font-baloo font-size-16">
-                    <button class="btn coll-btn is-checked" data-filter="*"><b>All Brand</b></button>
-                    <button class="btn coll-btn" data-filter=".armchairs">armchairs</button>
-                    <button class="btn coll-btn" data-filter=".chaiselongues">chaiselongues</button>
-                    <button class="btn coll-btn" data-filter=".cushions">cushions</button>
-                    <button class="btn coll-btn" data-filter=".daybeds">daybeds</button>
+                    <button class="btn color-primary coll-btn is-checked" data-filter="*"><b>All Brand</b></button>
+                    <button class="btn coll-btn" data-filter=".armchairs">Armchairs</button>
+                    <button class="btn coll-btn" data-filter=".chaiselongues">Chaiselongues</button>
+                    <button class="btn coll-btn" data-filter=".cushions">Cushions</button>
+                    <button class="btn coll-btn" data-filter=".daybeds">Daybeds</button>
                     <button class="btn coll-btn" data-filter=".Easychairs">Easychairs</button>
                     <button class="btn coll-btn" data-filter=".Footstools">Footstools</button>
                     <button class="btn coll-btn" data-filter=".Poufs">Poufs</button>

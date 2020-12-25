@@ -220,12 +220,16 @@ require_once('../config/component.php');
             <div class="container">
                 <h4 class="text-center py-4 color-primary">Our Furniture Collection</h4>
                 <div id="filters" class="button-group text-right font-baloo font-size-16">
-                    <button class="btn is-checked" data-filter="*">All Brand</button>
-                    <button class="btn" data-filter=".armchairs">armchairs</button>
-                    <button class="btn" data-filter=".chaiselongues">chaiselongues</button>
-                    <button class="btn" data-filter=".cushions">cushions</button>
-                    <button class="btn" data-filter=".daybeds">daybeds</button>
-
+                    <button class="btn coll-btn is-checked" data-filter="*"><b>All Brand</b></button>
+                    <button class="btn coll-btn" data-filter=".armchairs">armchairs</button>
+                    <button class="btn coll-btn" data-filter=".chaiselongues">chaiselongues</button>
+                    <button class="btn coll-btn" data-filter=".cushions">cushions</button>
+                    <button class="btn coll-btn" data-filter=".daybeds">daybeds</button>
+                    <button class="btn coll-btn" data-filter=".Easychairs">Easychairs</button>
+                    <button class="btn coll-btn" data-filter=".Footstools">Footstools</button>
+                    <button class="btn coll-btn" data-filter=".Poufs">Poufs</button>
+                    <button class="btn coll-btn" data-filter=".Smallsofas">Smallsofas</button>
+                    <button class="btn coll-btn" data-filter=".Sofa">Sofa</button>
                 </div>
 
                 <div class="grid">

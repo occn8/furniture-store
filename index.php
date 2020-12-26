@@ -17,7 +17,7 @@ include('widgets/header.php');
 
     <section id="top-sale">
         <div class="container py-5">
-            <h4 class="text-center color-primary ">Top Sales</h4>
+            <h4 class="text-center"><b>Top Sales</b></h4>
             <div class="owl-carousel owl-theme">
                 <?php
                 $result = $connect->query($querryinventory);
@@ -31,7 +31,7 @@ include('widgets/header.php');
 
     <section id="top-sale">
         <div class="container py-5">
-            <h4 class="text-center color-primary ">Best Deals</h4>
+            <h4 class="text-center"><b>Best Deals</b></h4>
             <div class="owl-carousel owl-theme">
                 <?php
                 $result = $connect->query($querryinventory);

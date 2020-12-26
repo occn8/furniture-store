@@ -18,7 +18,7 @@ include('widgets/header.php');
         <div class="container ctn">
             <h4 class="text-center py-4"><b>Our Furniture Collection</b></h4>
             <div id="filters" class="button-group text-right font-baloo font-size-16">
-                <button class="btn color-primary coll-btn is-checked" data-filter="*"><b>All Brand</b></button>
+                <button class="btn color-primary coll-btn is-checked" data-filter="*"><b>All Furniture</b></button>
                 <button class="btn coll-btn" data-filter=".armchairs">Armchairs</button>
                 <button class="btn coll-btn" data-filter=".chaiselongues">Chaiselongues</button>
                 <button class="btn coll-btn" data-filter=".cushions">Cushions</button>
@@ -34,7 +34,7 @@ include('widgets/header.php');
                 <?php
                 $result = $connect->query($querryinventory);
                 while ($row = mysqli_fetch_assoc($result)) {
-                    component2($row['product_name'], $row['product_brand'], $row['product_price'], $row['product_image'], $row['id']);
+                    component2($row['product_name'], $row['product_type'], $row['product_price'], $row['product_image'], $row['id']);
                 }
                 ?>
 

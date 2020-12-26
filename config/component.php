@@ -33,13 +33,13 @@ function component($productname, $productprice, $productimg, $productid)
     ";
     echo $element;
 }
-function component2($productname,$productbrand, $productprice, $productimg, $productid)
+function component2($productname, $producttype, $productprice, $productimg, $productid)
 {
     $element = "
     
     <div class=\" py-2\">
                 <form action=\"index.php\" method=\"post\">
-                <div class=\"grid-item $productbrand\">
+                <div class=\"grid-item $producttype\">
                 <div class=\"item py-2\" style=\"width: 200px;\">
                 <div class=\"product \">
                     <a href=\"#\"><img src=\"$productimg\" alt=\"product1\" class=\"img-fluid\"></a>

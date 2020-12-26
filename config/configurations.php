@@ -31,23 +31,24 @@ mysqli_query($connect, $users);
 $pdts = "CREATE TABLE IF NOT EXISTS products (
 		id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
         product_name VARCHAR (25) NOT NULL,
+		product_type VARCHAR (25) NOT NULL,
 		product_brand VARCHAR (25) NOT NULL,
         product_price FLOAT,
         product_image VARCHAR (100)
 		)";
 mysqli_query($connect, $pdts);
 
-$products = "INSERT INTO `products` (id, product_name, product_brand, product_price, product_image)
-	VALUES (1,'ARFLEX-Armchair', 'armchairs',1799000,'/furniture-store/assets/products/armchairs/b_ARFLEX-Armchair-arflex.jpg'),
-	(2,'nuvol-reflex','chaiselongues',147000,'/furniture-store/assets/products/chaiselongues/2b_nuvol-reflex.jpg'),
-	(3,'aqua-ezpeleta','cushions',759000,'/furniture-store/assets/products/cushions/b_aqua-ezpeleta-division-comercial.jpg'),
-	(4,'Maxalto','daybeds',459000,'/furniture-store/assets/products/daybeds/b_1-Maxalto-a-brand-of-B-B-Italia-Spa.jpg'),
-	(5,'citizen-lowback','easychairs',459000,'/furniture-store/assets/products/easychairs/b_citizen-lowback-vitra.jpg'),
-	(6,'armchair-calligaris','footstools',459000,'/furniture-store/assets/products/footstools/b_armchair-calligaris.jpg'),
-	(7,'JUNIOR-LOFT','kidssofas',459000,'/furniture-store/assets/products/kidssofas/b_366-JUNIOR-LOFT.jpg'),
-	(8,'beat-rs0212-andreu','poufs',459000,'/furniture-store/assets/products/poufs/b_beat-rs0212-andreu-world.jpg'),
-	(9,'CLIPPER-Small-sofa','smallsofas',459000,'/furniture-store/assets/products/smallsofas/b_CLIPPER-Small-sofa-Marelli.jpg'),
-	(10,'beam-cassina','sofa',278000,'/furniture-store/assets/products/sofa/b_beam-cassina.jpg')";
+$products = "INSERT INTO `products` (id, product_name,product_type, product_brand, product_price, product_image)
+	VALUES (1,'ARFLEX-Armchair', 'armchairs','ARFLEX',1799000,'/furniture-store/assets/products/armchairs/b_ARFLEX-Armchair-arflex.jpg'),
+	(2,'nuvol-reflex','chaiselongues','nuvol',147000,'/furniture-store/assets/products/chaiselongues/2b_nuvol-reflex.jpg'),
+	(3,'aqua-ezpeleta','cushions','ezpeleta',759000,'/furniture-store/assets/products/cushions/b_aqua-ezpeleta-division-comercial.jpg'),
+	(4,'Maxalto','daybeds','Maxalto',459000,'/furniture-store/assets/products/daybeds/b_1-Maxalto-a-brand-of-B-B-Italia-Spa.jpg'),
+	(5,'citizen-lowback','easychairs','citizen',459000,'/furniture-store/assets/products/easychairs/b_citizen-lowback-vitra.jpg'),
+	(6,'armchair-calligaris','footstools','calligaris',459000,'/furniture-store/assets/products/footstools/b_armchair-calligaris.jpg'),
+	(7,'JUNIOR-LOFT','kidssofas','LOFT',459000,'/furniture-store/assets/products/kidssofas/b_366-JUNIOR-LOFT.jpg'),
+	(8,'beat-rs0212-andreu','poufs','andreu',459000,'/furniture-store/assets/products/poufs/b_beat-rs0212-andreu-world.jpg'),
+	(9,'CLIPPER-Small-sofa','smallsofas','CLIPPER',459000,'/furniture-store/assets/products/smallsofas/b_CLIPPER-Small-sofa-Marelli.jpg'),
+	(10,'beam-cassina','sofa','cassina',278000,'/furniture-store/assets/products/sofa/b_beam-cassina.jpg')";
 mysqli_query($connect, $products);
 
 
@@ -127,10 +128,13 @@ if (isset($_POST['add_product'])) {
 }
 
 $querryinventory = "SELECT * FROM products";
-$result = $connect->query($querryinventory);
-if ($result->num_rows > 0) {
-} else {
-}
+$querrydaybeds = "SELECT * FROM products WHERE product_brand='$email'";
+$querrysofas = "SELECT * FROM products WHERE product_brand='$email'";
+
+// $result = $connect->query($querryinventory);
+// if ($result->num_rows > 0) {
+// } else {
+// }
 
 
 if (isset($_POST['update_product'])) {

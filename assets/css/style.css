@@ -9,8 +9,17 @@ body {
     background-color: #fff;
 }
 
+.btn-primary {
+    background: #ff8000dc;
+    border: none
+}
+
 .color-primary {
     color: #ff8000dc;
+}
+
+.btn-primary:hover {
+    background: #ff8000;
 }
 
 #top-sale .owl-carousel .item .product a {

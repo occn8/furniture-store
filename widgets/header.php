@@ -55,7 +55,7 @@
 
                     <ul class="navbar-nav">
                         <li class="nav-item ">
-                            <div class="cart">
+                            <button class="btn cart">
                                 <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                                     <div class="cart_icon"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918704/cart.png" alt="">
                                         <div class="cart_count "><span>3</span></div>
@@ -65,7 +65,7 @@
                                         <div class="cart_price">$185</div>
                                     </div>
                                 </div>
-                            </div>
+                            </button>
                         </li>
                         <li class="nav-item ml-md-3">
                             <a class="btn btn-primary login-up" href="#"><i class="bx bxs-user-circle mr-1 bx-sm"></i> Log In /

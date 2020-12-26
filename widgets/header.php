@@ -39,7 +39,7 @@
                                     <div class="cart_count "><span>3</span></div>
                                 </div>
                                 <div class="cart_content">
-                                    <div class="cart_text"><a href="#">Cart</a></div>
+                                    <div class="cart_text"><a href="cart.php">Cart</a></div>
                                     <div class="cart_price">$185</div>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                                         <div class="cart_count "><span>3</span></div>
                                     </div>
                                     <div class="cart_content">
-                                        <div class="cart_text"><a href="#">Cart</a></div>
+                                        <div class="cart_text"><a href="cart.php">Cart</a></div>
                                         <div class="cart_price">$185</div>
                                     </div>
                                 </div>

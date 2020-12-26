@@ -72,7 +72,7 @@ function cartElement($productimg, $productname, $productprice, $productid)
     $element = "
     
     <form action=\"cart.php?action=remove&id=$productid\" method=\"post\" class=\"cart-items\">
-                    <div class=\"border rounded\">
+                    <div class=\"border-top rounded p-2 my-4\">
                         <div class=\"row bg-white\">
                             <div class=\"col-md-3 pl-0\">
                                 <img src=$productimg alt=\"Image1\" class=\"img-fluid\">

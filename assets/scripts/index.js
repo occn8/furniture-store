@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-    // banner owl carousel
     $("#banner-area .owl-carousel").owlCarousel({
         dots: true,
         loop: true,
@@ -13,8 +12,7 @@ $(document).ready(function() {
         items: 1,
     });
 
-    // top sale owl carousel
-    $("#top-sale .owl-carousel").owlCarousel({
+    $("#custom-sale .owl-carousel").owlCarousel({
         loop: true,
         nav: true,
         dots: false,

@@ -36,7 +36,18 @@
                         <div class="cart">
                             <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                                 <div class="cart_icon"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918704/cart.png" alt="">
-                                    <div class="cart_count "><span>3</span></div>
+                                    <div class="cart_count ">
+                                        <?php
+
+                                        if (isset($_SESSION['cart'])) {
+                                            $count = count($_SESSION['cart']);
+                                            echo "<span id=\"cart_count\" class=\"text-warning bg-light\">$count</span>";
+                                        } else {
+                                            echo "<span id=\"cart_count\" class=\"text-warning bg-light\">0</span>";
+                                        }
+
+                                        ?>
+                                    </div>
                                 </div>
                                 <div class="cart_content">
                                     <div class="cart_text"><a href="cart.php">Cart</a></div>
@@ -58,7 +69,18 @@
                             <button class="btn cart" href="cart.php">
                                 <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                                     <div class="cart_icon"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918704/cart.png" alt="">
-                                        <div class="cart_count "><span>3</span></div>
+                                        <div class="cart_count ">
+                                            <?php
+
+                                            if (isset($_SESSION['cart'])) {
+                                                $count = count($_SESSION['cart']);
+                                                echo "<span id=\"cart_count\" class=\"text-success \">$count</span>";
+                                            } else {
+                                                echo "<span id=\"cart_count\" class=\"text-success\">0</span>";
+                                            }
+
+                                            ?>
+                                        </div>
                                     </div>
                                     <div class="cart_content">
                                         <div class="cart_text"><a href="cart.php">Cart</a></div>

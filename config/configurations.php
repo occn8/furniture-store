@@ -128,8 +128,16 @@ if (isset($_POST['add_product'])) {
 }
 
 $querryinventory = "SELECT * FROM products";
-$querrydaybeds = "SELECT * FROM products WHERE product_brand='$email'";
-$querrysofas = "SELECT * FROM products WHERE product_brand='$email'";
+$querryarmchairs = "SELECT * FROM products WHERE product_type='armchairs'";
+$querrychaiselongues = "SELECT * FROM products WHERE product_type='chaiselongues'";
+$querrycushions = "SELECT * FROM products WHERE product_type='cushions'";
+$querrydaybeds = "SELECT * FROM products WHERE product_type='daybeds'";
+$querryEasychairs = "SELECT * FROM products WHERE product_type='Easychairs'";
+$querryFootstools = "SELECT * FROM products WHERE product_type='Footstools'";
+$querryPoufs = "SELECT * FROM products WHERE product_type='Poufs'";
+$querrySmallsofas = "SELECT * FROM products WHERE product_type='Smallsofas'";
+$querrySofa = "SELECT * FROM products WHERE product_type='Sofa'";
+
 
 // $result = $connect->query($querryinventory);
 // if ($result->num_rows > 0) {

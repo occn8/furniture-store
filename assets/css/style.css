@@ -82,3 +82,7 @@ ul li a:hover {
     text-decoration: none;
     color: #ff8000;
 }
+
+.grid {
+    margin-left: 4.0rem;
+}

@@ -1,7 +1,4 @@
 <?php
-
-// session_start();
-
 require_once('config/configurations.php');
 require_once('config/component.php');
 

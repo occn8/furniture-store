@@ -1,11 +1,6 @@
 <?php
-
-// session_start();
-
 require_once('config/configurations.php');
 require_once('config/component.php');
-
-
 ?>
 
 <?php
@@ -17,7 +12,7 @@ include('widgets/header.php');
     <section id="collection">
         <div class="container ctn">
             <h4 class="text-center py-4"><b>Our Furniture Collection</b></h4>
-            <div id="filters" class="button-group text-right font-baloo font-size-16">
+            <div id="filters" class="button-group border-bottom text-right font-baloo font-size-16">
                 <button class="btn color-primary coll-btn is-checked" data-filter="*"><b>All Furniture</b></button>
                 <button class="btn coll-btn" data-filter=".armchairs">Armchairs</button>
                 <button class="btn coll-btn" data-filter=".chaiselongues">Chaiselongues</button>
@@ -30,7 +25,7 @@ include('widgets/header.php');
                 <button class="btn coll-btn" data-filter=".Sofa">Sofa</button>
             </div>
 
-            <div class="grid">
+            <div class="grid py-2">
                 <?php
                 $result = $connect->query($querryinventory);
                 while ($row = mysqli_fetch_assoc($result)) {

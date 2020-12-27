@@ -1,4 +1,8 @@
 <?php
+require_once('config/configurations.php');
+?>
+
+<?php
 $currentpage = 'about';
 include('widgets/header.php');
 ?>

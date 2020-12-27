@@ -60,7 +60,7 @@
 
                 <div class="collapse navbar-collapse">
                     <form class="form-inline my-2 my-lg-0 mx-auto">
-                        <input class="form-control" type="search" placeholder="Search for furniture..." aria-label="Search">
+                        <input class="form-control" type="search" id="search" placeholder="Search for furniture..." aria-label="Search">
                         <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="bx bx-search"></i></button>
                     </form>
 
@@ -138,7 +138,7 @@
                 <div class="row">
                     <div class="col-12">
                         <form class="form-inline mb-3 mx-auto">
-                            <input class="form-control" type="search" placeholder="Search for furniture..." aria-label="Search">
+                            <input class="form-control" type="search" id="search" placeholder="Search for furniture..." aria-label="Search">
                             <button class="btn btn-primary" type="submit"><i class="bx bx-search"></i></button>
                         </form>
                     </div>
@@ -227,3 +227,4 @@
 
         </nav>
     </header>
+    <!-- <div id="output" style="height: 100px; background-color:blue;"></div> -->

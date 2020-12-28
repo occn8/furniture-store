@@ -70,9 +70,6 @@ include('widgets/header.php');
     </section>
 
     <section></section>
-    <section></section>
-    <section></section>
-    <section class="btt"></section>
 </main>
 
 <?php

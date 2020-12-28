@@ -14,13 +14,57 @@
     <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    <link rel="icon" href="../assets/favicon.ico">
+    <link rel="icon" href="assets/favicon.ico">
     <title>Fur-Store Home</title>
 </head>
 
 <body>
     <header class="header">
-        <nav class="navbar navbar-expand-md navbar-light bg-light main-menu" style="box-shadow:none">
+        <script>
+            function lightbg_clr() {
+                $('#qu').val("");
+                $('#textbox-clr').text("");
+                $('#search-layer').css({
+                    "width": "auto",
+                    "height": "auto"
+                });
+                $('#livesearch').css({
+                    "display": "none"
+                });
+                $("#qu").focus();
+            };
+
+            function fx(str) {
+                var s1 = document.getElementById("qu").value;
+                var xmlhttp;
+                if (str.length == 0) {
+                    document.getElementById("livesearch").innerHTML = "";
+                    document.getElementById("livesearch").style.border = "0px";
+                    document.getElementById("search-layer").style.width = "auto";
+                    document.getElementById("search-layer").style.height = "auto";
+                    document.getElementById("livesearch").style.display = "block";
+                    $('#textbox-clr').text("");
+                    return;
+                }
+                if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xmlhttp = new XMLHttpRequest();
+                } else { // code for IE6, IE5
+                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlhttp.onreadystatechange = function() {
+                    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                        document.getElementById("livesearch").innerHTML = xmlhttp.responseText;
+                        document.getElementById("search-layer").style.width = "100%";
+                        document.getElementById("search-layer").style.height = "100%";
+                        document.getElementById("livesearch").style.display = "block";
+                        $('#textbox-clr').text("X");
+                    }
+                }
+                xmlhttp.open("GET", "config/call_ajax.php?n=" + s1, true);
+                xmlhttp.send();
+            }
+        </script>
+        <nav class="navbar navbar-expand-md navbar-light bg-light main-menu" style="box-shadow:none;">
             <div class="container px-2">
 
                 <button type="button" id="sidebarCollapse" class="btn btn-link d-block d-md-none">
@@ -59,10 +103,21 @@
                 </ul>
 
                 <div class="collapse navbar-collapse">
-                    <form class="form-inline my-2 my-lg-0 mx-auto">
-                        <input class="form-control" type="search" id="search" placeholder="Search for furniture..." aria-label="Search">
-                        <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="bx bx-search"></i></button>
-                    </form>
+                    <div class="cont">
+                        <form class="form-inline my-2 my-lg-0 mx-auto" action="search.php" method="get">
+                            <input class="form-control" type="text" onKeyUp="fx(this.value)" autocomplete="off" name="qu" id="qu" tabindex="1" placeholder="Search for furniture..." aria-label="Search">
+                            <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="bx bx-search"></i></button>
+                            <!-- <div id="livesearch"></div> -->
+                        </form>
+                    </div>
+                    <!-- <form action="search.php" method="get">
+                        <div class="bk">
+                            <input type="text" onKeyUp="fx(this.value)" autocomplete="off" name="qu" id="qu" class="textbox" placeholder="What are you looking for ?" tabindex="1">
+                            <button type="button" class="textbox-clr" id="textbox-clr" onClick="lightbg_clr()"></button>
+                            <button type="submit" class="query-submit" tabindex="2"><i class="fa fa-search" style="color:#727272; font-size:20px"></i></button>
+                            <div id="livesearch"></div>
+                        </div>
+                    </form> -->
 
                     <ul class="navbar-nav">
                         <li class="nav-item ">

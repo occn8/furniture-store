@@ -7,7 +7,7 @@ if (isset($_POST['remove'])) {
         foreach ($_SESSION['cart'] as $key => $value) {
             if ($value["product_id"] == $_GET['id']) {
                 unset($_SESSION['cart'][$key]);
-                echo "<script>alert('Product has been Removed...!')</script>";
+                // echo "<script>alert('Product has been Removed...!')</script>";
                 echo "<script>window.location = 'cart.php'</script>";
             }
         }
@@ -70,13 +70,15 @@ include('widgets/header.php');
                             <h6>Amount Payable</h6>
                         </div>
                         <div class="col-md-6">
-                            <h6>$<?php echo $total; ?></h6>
-                            <h6 class="text-success">FREE</h6>
+                            <h6>UGX <b><?php echo $total; ?></b>/=</h6>
+                            <h6 class="text-success"><i class="bx bx-check-double"></i> FREE</h6>
                             <hr>
-                            <h6>$<?php
-                                    echo $total;
-                                    ?></h6>
+                            <h6>UGX <b><?php echo $total; ?></b>/=</h6>
                         </div>
+                        <div class="col-md-12 text-center py-2">
+                            <button type="submit" class="btn btn-warning mt-3">Proceed to Buy</button>
+                        </div>
+                        <br>
                     </div>
                 </div>
 

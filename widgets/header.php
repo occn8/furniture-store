@@ -104,7 +104,7 @@
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item <?php echo $currentpage == 'index' ? 'active' : '' ?>">
-                            <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="<?php echo $currentpage == 'index' ? '#' : 'index.php' ?>">Home</a>
                         </li>
                         <li class="nav-item <?php echo $currentpage == 'collection' ? 'active' : '' ?>">
                             <a class="nav-link" href="collection.php">Collection</a>

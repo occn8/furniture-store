@@ -176,3 +176,6 @@ if (isset($_POST['delete_product'])) {
 		header('location: ../index.php');
 	}
 }
+
+// $searchq = "SELECT * FROM products WHERE product_name LIKE '%" . $_POST['name'] . "%'";
+// $searchq = "SELECT * FROM users WHERE name LIKE '{$_POST['query']}%' LIMIT 100";

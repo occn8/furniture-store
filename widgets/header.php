@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/owl.theme.default.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/hover-min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
     <link rel="icon" href="assets/favicon.ico">
@@ -79,7 +80,7 @@
                     <li class="nav-item">
                         <div class="cart">
                             <div class="cart_container d-flex flex-row align-items-center justify-content-end">
-                                <div class="cart_icon"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918704/cart.png" alt="">
+                                <div class="cart_icon"> <img src="assets/cart.png" alt="">
                                     <div class="cart_count ">
                                         <?php
 
@@ -123,7 +124,7 @@
                         <li class="nav-item ">
                             <button class="btn cart" href="cart.php">
                                 <div class="cart_container d-flex flex-row align-items-center justify-content-end">
-                                    <div class="cart_icon"> <img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1560918704/cart.png" alt="">
+                                    <div class="cart_icon"> <img src="assets/cart.png" alt="">
                                         <div class="cart_count ">
                                             <?php
 

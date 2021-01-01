@@ -18,6 +18,15 @@ body {
     color: #ff8000dc;
 }
 
+.color-link {
+    color: #000;
+}
+
+.color-link:hover {
+    color: #ff8000;
+    text-decoration: none;
+}
+
 .btn-primary:hover {
     background: #ff8000;
 }

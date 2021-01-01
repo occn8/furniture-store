@@ -21,7 +21,7 @@ require_once('config/configurations.php');
 <body>
     <form method="post" action="signup.php" class="form-signin">
         <center>
-            <h1 class="h3 mb-3 font-weight-normal">Please Register</h1>
+            <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
         </center>
         <?php include('config/errors.php'); ?>
         <div class="">
@@ -50,15 +50,31 @@ require_once('config/configurations.php');
             <center>
                 <button class="btn btn-lg btn-warning btn-block" name="reg" type="submit">Register</button><br>
 
-                <small>Already have a/c?</small> <a href="sign_in.php" style="color:red;">Log In Now</a>
+                <small>Already have a/c?</small> <a href="signin.php" class="color-link">Log In Now</a>
             </center>
 
         </div>
     </form>
+    <script>
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
 
     <script src="assets/scripts/jquery.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/scripts/sign.js"></script>
+    <script src="assets/scripts/popper.min.js"></script>
 </body>
 
 </html>

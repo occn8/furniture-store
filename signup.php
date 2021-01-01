@@ -1,3 +1,7 @@
+<?php
+require_once('config/configurations.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +23,7 @@
         <center>
             <h1 class="h3 mb-3 font-weight-normal">Please Register</h1>
         </center>
-       
+
         <div class="">
 
             <div class="form-group">

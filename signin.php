@@ -20,6 +20,7 @@ require_once('config/configurations.php');
 
 <body>
     <form class="form-signin" method="post" action="signin.php">
+        <?php include('../config/errors.php'); ?>
         <center>
             <img class="mb-4" src="favicon.ico" alt="" height="100">
             <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>

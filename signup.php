@@ -23,7 +23,7 @@ require_once('config/configurations.php');
         <center>
             <h1 class="h3 mb-3 font-weight-normal">Please Register</h1>
         </center>
-
+        <?php include('config/errors.php'); ?>
         <div class="">
 
             <div class="form-group">

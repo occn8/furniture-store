@@ -55,7 +55,7 @@ function component2($productname, $producttype, $productprice, $productimg, $pro
                         <div class=\"price py-2\">
                             <span>UGX <b>$productprice</b> /=</span>
                         </div>
-                        <button type=\"submit\" class=\"btn btn-warning font-size-12\">View Item</button>
+                        <button type=\"submit\" class=\"btn btn-warning\" name=\"detail-link\"><a href=\"details.php\" class=\"color-black\">View Item</a></button>
                         <input type='hidden' name='product_id' value='$productid'>
                     </div> 
                 </div>

@@ -37,7 +37,7 @@ require_once('config/configurations.php');
                 <input type="checkbox" value="remember-me"> Remember me
             </label>
         </div>
-        <button class="btn btn-lg btn-warning btn-block" name="login_user" type="submit">Sign in</button><br>
+        <button class="btn btn-lg btn-warning btn-block" name="signin_user" type="submit">Sign in</button><br>
 
         <center>
             <small>Don't have an a/c </small> <a href="signup.php" class="color-link">Sign up Now</a>

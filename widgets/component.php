@@ -23,7 +23,7 @@ function component($productname, $productprice, $productimg, $productid)
                             <span>
                             UGX <b>$productprice</b> /=</span>
                         </div>
-                        <button type=\"submit\" class=\"btn btn-warning \" name=\"add\">View Item<i class=\"fas fa-shopping-cart\"></i></button>
+                        <button type=\"submit\" class=\"btn btn-warning\" name=\"detail-link\"><a href=\"details.php\" class=\"color-black\">View Item</a></button>
                         <input type='hidden' name='product_id' value='$productid'>
                     </div> 
                 </div>

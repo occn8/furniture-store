@@ -18,6 +18,16 @@ body {
     color: #ff8000dc;
 }
 
+.color-black {
+    color: #000000;
+    text-decoration: none;
+}
+
+.color-black:hover {
+    color: #000000;
+    text-decoration: none;
+}
+
 .color-link {
     color: #000;
 }

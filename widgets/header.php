@@ -169,7 +169,7 @@
                             <a class="nav-link" href="latest.php">New Arrivals</a>
                         </li>
                         <li class="nav-item <?php echo $currentpage == 'brands' ? 'active' : '' ?>">
-                            <a class="nav-link" href="#">Brands</a>
+                            <a class="nav-link" href="brands.php">Brands</a>
                         </li>
                         <li class="nav-item <?php echo $currentpage == 'about' ? 'active' : '' ?>">
                             <a class="nav-link" href="about.php"> About</a>

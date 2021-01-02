@@ -168,18 +168,12 @@
                         <li class="nav-item <?php echo $currentpage == 'latest' ? 'active' : '' ?>">
                             <a class="nav-link" href="latest.php">New Arrivals</a>
                         </li>
-                        <li class="nav-item <?php echo $currentpage == 'catalogue' ? 'active' : '' ?>">
-                            <a class="nav-link" href="#">Catalogue</a>
+                        <li class="nav-item <?php echo $currentpage == 'brands' ? 'active' : '' ?>">
+                            <a class="nav-link" href="#">Brands</a>
                         </li>
-                        <li class="nav-item <?php echo $currentpage == 'about' ? 'active' : '' ?> dropdown">
-                            <a class="nav-link dropdown-toggle" href="about.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                About
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Delivery Information</a>
-                                <a class="dropdown-item" href="#">Privacy Policy</a>
-                                <a class="dropdown-item" href="#">Terms & Conditions</a>
-                            </div>
+                        <li class="nav-item <?php echo $currentpage == 'about' ? 'active' : '' ?>">
+                            <a class="nav-link" href="about.php"> About</a>
+
                         </li>
                         <li class="nav-item <?php echo $currentpage == 'contact' ? 'active' : '' ?>">
                             <a class="nav-link" href="contact.php">Contact</a>
@@ -233,7 +227,7 @@
                     <a href="site/latest.php"><i class="bx bx-book-open mr-3"></i> New Arrivals</a>
                 </li>
                 <li>
-                    <a href="#"><i class="bx bx-crown mr-3"></i> Catalogue</a>
+                    <a href="#"><i class="bx bx-crown mr-3"></i> Brands</a>
                 </li>
                 <li>
                     <a href="site/about.php"><i class="bx bx-phone mr-3"></i> About Us</a>

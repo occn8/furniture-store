@@ -18,7 +18,7 @@ include('widgets/header.php');
                         </div>
                         <div class="col">
                             <?php
-                            if (array_column($_SESSION['cart'], 'product_id')) {
+                            if (array_column($_SESSION['cart'], '$product_id')) {
                                 echo '<button type="submit" disabled class="btn btn-success font-size-16 form-control">In the Cart</button>';
                             } else {
                                 echo '<button type="submit" name="add" class="btn btn-warning font-size-16 form-control">Add to Cart</button>';

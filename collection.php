@@ -18,11 +18,12 @@ include('widgets/header.php');
                 <button class="btn coll-btn" data-filter=".chaiselongues">Chaiselongues</button>
                 <button class="btn coll-btn" data-filter=".cushions">Cushions</button>
                 <button class="btn coll-btn" data-filter=".daybeds">Daybeds</button>
-                <button class="btn coll-btn" data-filter=".Easychairs">Easychairs</button>
-                <button class="btn coll-btn" data-filter=".Footstools">Footstools</button>
-                <button class="btn coll-btn" data-filter=".Poufs">Poufs</button>
-                <button class="btn coll-btn" data-filter=".Smallsofas">Smallsofas</button>
-                <button class="btn coll-btn" data-filter=".Sofa">Sofa</button>
+                <button class="btn coll-btn" data-filter=".easychairs">Easychairs</button>
+                <button class="btn coll-btn" data-filter=".footstools">Footstools</button>
+                <button class="btn coll-btn" data-filter=".kidssofas">Kidssofas</button>
+                <button class="btn coll-btn" data-filter=".poufs">Poufs</button>
+                <button class="btn coll-btn" data-filter=".smallsofas">Smallsofas</button>
+                <button class="btn coll-btn" data-filter=".sofa">Sofa</button>
             </div>
 
             <div class="grid py-2">
@@ -36,8 +37,6 @@ include('widgets/header.php');
             </div>
         </div>
     </section>
-    <section></section>
-    <section></section>
 </main>
 
 <?php

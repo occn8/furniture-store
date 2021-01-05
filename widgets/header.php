@@ -69,7 +69,7 @@
             <div class="container px-2">
 
                 <button type="button" id="sidebarCollapse" class="btn btn-link d-block d-md-none">
-                    <i class="bx bx-menu icon-single color-primary"></i>
+                    <i class="bx bx-library icon-single color-primary"></i>
                 </button>
 
                 <a class="navbar-brand" href="#">
@@ -163,20 +163,20 @@
                             <a class="nav-link" href="<?php echo $currentpage == 'index' ? '#' : 'index.php' ?>">Home</a>
                         </li>
                         <li class="nav-item <?php echo $currentpage == 'collection' ? 'active' : '' ?>">
-                            <a class="nav-link" href="collection.php">Collection</a>
+                            <a class="nav-link" href="<?php echo $currentpage == 'collection' ? '#' : 'collection.php' ?>">Collection</a>
                         </li>
                         <li class="nav-item <?php echo $currentpage == 'latest' ? 'active' : '' ?>">
-                            <a class="nav-link" href="latest.php">New Arrivals</a>
+                            <a class="nav-link" href="<?php echo $currentpage == 'latest' ? '#' : 'latest.php' ?>">New Arrivals</a>
                         </li>
                         <li class="nav-item <?php echo $currentpage == 'brands' ? 'active' : '' ?>">
-                            <a class="nav-link" href="brands.php">Brands</a>
+                            <a class="nav-link" href="<?php echo $currentpage == 'brands' ? '#' : 'brands.php' ?>">Brands</a>
                         </li>
                         <li class="nav-item <?php echo $currentpage == 'about' ? 'active' : '' ?>">
-                            <a class="nav-link" href="about.php"> About</a>
+                            <a class="nav-link" href="<?php echo $currentpage == 'about' ? '#' : 'about.php' ?>"> About</a>
 
                         </li>
                         <li class="nav-item <?php echo $currentpage == 'contact' ? 'active' : '' ?>">
-                            <a class="nav-link" href="contact.php">Contact</a>
+                            <a class="nav-link" href="<?php echo $currentpage == 'contact' ? '#' : 'contact.php' ?>">Contact</a>
                         </li>
                     </ul>
                 </div>

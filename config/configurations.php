@@ -157,7 +157,7 @@ if (isset($_POST['add_product'])) {
 	}
 }
 
-$querryinventory = "SELECT * FROM products";
+$querrypdts = "SELECT * FROM products";
 $querryarmchairs = "SELECT * FROM products WHERE product_type='armchairs'";
 $querrychaiselongues = "SELECT * FROM products WHERE product_type='chaiselongues'";
 $querrycushions = "SELECT * FROM products WHERE product_type='cushions'";

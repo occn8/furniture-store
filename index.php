@@ -16,7 +16,7 @@ include('widgets/header.php');
             <h4 class="text-center"><b>Top Sales</b></h4>
             <div class="owl-carousel owl-theme">
                 <?php
-                $result = $connect->query($querryinventory);
+                $result = $connect->query($querrypdts);
                 while ($row = mysqli_fetch_assoc($result)) {
                     component($row['product_name'], $row['product_price'], $row['product_image'], $row['id']);
                 }
@@ -30,7 +30,7 @@ include('widgets/header.php');
             <h4 class="text-center"><b>Best Deals</b></h4>
             <div class="owl-carousel owl-theme">
                 <?php
-                $result = $connect->query($querryinventory);
+                $result = $connect->query($querrypdts);
                 while ($row = mysqli_fetch_assoc($result)) {
                     component($row['product_name'], $row['product_price'], $row['product_image'], $row['id']);
                 }

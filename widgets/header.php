@@ -217,23 +217,23 @@
             </div>
 
             <ul class="list-unstyled components links">
-                <li class="active">
-                    <a href="#"><i class="bx bx-home mr-3"></i> Home</a>
+                <li class=" <?php echo $currentpage == 'index' ? 'active' : '' ?>">
+                    <a href="<?php echo $currentpage == 'index' ? '#' : 'index.php' ?>"><i class="bx bx-home mr-3"></i> Home</a>
                 </li>
-                <li>
-                    <a href="site/collection.php"><i class="bx bx-carousel mr-3"></i> Collection</a>
+                <li class=" <?php echo $currentpage == 'collection' ? 'active' : '' ?>">
+                    <a href="<?php echo $currentpage == 'collection' ? '#' : 'collection.php' ?>"><i class="bx bx-carousel mr-3"></i> Collection</a>
                 </li>
-                <li>
-                    <a href="site/latest.php"><i class="bx bx-book-open mr-3"></i> New Arrivals</a>
+                <li class=" <?php echo $currentpage == 'latest' ? 'active' : '' ?>">
+                    <a href="<?php echo $currentpage == 'latest' ? '#' : 'latest.php' ?>"><i class="bx bx-book-open mr-3"></i> New Arrivals</a>
                 </li>
-                <li>
-                    <a href="#"><i class="bx bx-crown mr-3"></i> Brands</a>
+                <li class=" <?php echo $currentpage == 'brands' ? 'active' : '' ?>">
+                    <a href="<?php echo $currentpage == 'brands' ? '#' : 'brands.php' ?>"><i class="bx bx-crown mr-3"></i> Brands</a>
                 </li>
-                <li>
-                    <a href="site/about.php"><i class="bx bx-phone mr-3"></i> About Us</a>
+                <li class=" <?php echo $currentpage == 'about' ? 'active' : '' ?>">
+                    <a href="<?php echo $currentpage == 'about' ? '#' : 'about.php' ?>"><i class="bx bx-help-circle mr-3"></i> About Us</a>
                 </li>
-                <li>
-                    <a href="site/contact.php"><i class="bx bx-phone mr-3"></i> Contact Us</a>
+                <li class=" <?php echo $currentpage == 'contact' ? 'active' : '' ?>">
+                    <a href="<?php echo $currentpage == 'contact' ? '#' : 'contact.php' ?>"><i class="bx bx-phone mr-3"></i> Contact Us</a>
                 </li>
             </ul>
 

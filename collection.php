@@ -27,7 +27,7 @@ include('widgets/header.php');
 
             <div class="grid py-2">
                 <?php
-                $result = $connect->query($querryinventory);
+                $result = $connect->query($querrypdts);
                 while ($row = mysqli_fetch_assoc($result)) {
                     component2($row['product_name'], $row['product_type'], $row['product_price'], $row['product_image'], $row['id']);
                 }

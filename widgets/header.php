@@ -204,7 +204,7 @@
                     <div class="row align-items-center">
 
                         <div class="col-10 pl-0">
-                            <a class="btn btn-primary" href="#"><i class="bx bxs-user-circle mr-1"></i> Log In</a>
+                            <a class="btn btn-primary" href="signin.php"><i class="bx bxs-user-circle mr-1"></i> Log In</a>
                         </div>
 
                         <div class="col-2 text-left">
@@ -237,7 +237,7 @@
                 </li>
             </ul>
 
-            <h6 class="text-uppercase mb-1">Categories</h6>
+            <h6 class="text-uppercase mb-1"><b>Categories</b></h6>
             <ul class="list-unstyled components mb-3">
                 <li>
                     <a href="#">Armchairs</a>

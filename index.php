@@ -38,8 +38,7 @@ include('widgets/header.php');
             </div>
         </div>
     </section>
-
-    <section></section>
+    
 </main>
 
 <?php

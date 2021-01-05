@@ -9,7 +9,7 @@ include('widgets/header.php');
 
 <main>
     <section>
-        <div class="container">
+        <div class="container py-5">
             <h2>CONTACT INFO</h2>
             <h6>Address</h6>
             <p></p>

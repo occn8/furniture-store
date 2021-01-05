@@ -10,8 +10,8 @@ include('widgets/header.php');
 
 <main>
     <section id="collection">
-        <div class="container ctn">
-            <h4 class="text-center py-4"><b>Our Furniture Collection</b></h4>
+        <div class="container py-5 ctn">
+            <h4 class="text-center py-1"><b>Our Furniture Collection</b></h4>
             <div id="filters" class="button-group border-bottom text-right font-baloo font-size-16">
                 <button class="btn color-primary coll-btn is-checked" data-filter="*"><b>All Furniture</b></button>
                 <button class="btn coll-btn" data-filter=".armchairs">Armchairs</button>

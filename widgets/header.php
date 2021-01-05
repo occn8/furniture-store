@@ -277,4 +277,3 @@
 
         </nav>
     </header>
-    <!-- <div id="output" style="height: 100px; background-color:blue;"></div> -->

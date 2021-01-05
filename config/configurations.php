@@ -274,6 +274,7 @@ $querrycushions = "SELECT * FROM products WHERE product_type='cushions'";
 $querrydaybeds = "SELECT * FROM products WHERE product_type='daybeds'";
 $querryEasychairs = "SELECT * FROM products WHERE product_type='Easychairs'";
 $querryFootstools = "SELECT * FROM products WHERE product_type='Footstools'";
+$querryKidssofas = "SELECT * FROM products WHERE product_type='kidssofas'";
 $querryPoufs = "SELECT * FROM products WHERE product_type='Poufs'";
 $querrySmallsofas = "SELECT * FROM products WHERE product_type='Smallsofas'";
 $querrySofa = "SELECT * FROM products WHERE product_type='Sofa'";

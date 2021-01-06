@@ -76,7 +76,15 @@ include('widgets/header.php');
                             <h6>UGX <b><?php echo $total; ?></b>/=</h6>
                         </div>
                         <div class="col-md-12 text-center py-2">
-                            <button type="submit" class="btn btn-warning mt-3">Proceed to Buy</button>
+                            <?php
+                             if (isset($_SESSION['cart'])) {
+                                echo "<button type=\"submit\" class=\"btn btn-warning mt-3\"><a href=\"checkout.php\" class=\"color-black\">Proceed to Checkout</a></button>";
+
+                            } else {//if empty
+                                // echo "<button type=\"submit\" class=\"btn btn-warning mt-3\" disabled><a href=\"checkout.php\" class=\"color-black\">Proceed to Checkout</a></button>";
+                                echo "<button type=\"submit\" class=\"btn btn-warning mt-3\"><a href=\"checkout.php\" class=\"color-black\">Proceed to Checkout</a></button>";
+                            }
+                            ?>
                         </div>
                         <br>
                     </div>

@@ -25,6 +25,17 @@ include('widgets/header.php');
             <div class="row">
                 <div class="col-6">
                     <div class="container py-5">
+                        <h2>Our Services</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quae necessitatibus commodi natus fugit. Nisi neque voluptatum aut vero sed, labore impedit repellat consequuntur qui, quibusdam perspiciatis error ipsa nobis!</p>
+                    </div>
+                </div>
+                <div class="col-6 text-center">
+                    <img src="assets/products/poufs/8.jpg" height="300px" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="container py-5">
                         <h2>Our Mission</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quae necessitatibus commodi natus fugit. Nisi neque voluptatum aut vero sed, labore impedit repellat consequuntur qui, quibusdam perspiciatis error ipsa nobis!</p>
                     </div>

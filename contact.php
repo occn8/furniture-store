@@ -17,20 +17,32 @@ include('widgets/header.php');
                         <h6><i class="bx bx-phone"></i> Address</h6>
                         <p>Ntinda valley, 21st st, Kampala, UGANDA</p>
                         <h6><i class="bx bx-phone"></i> Phone</h6>
-                        <p>+256 7887 06532</p>
+                        <p>+256 7887 06532 <b>|</b> +256 7887 00002</p>
                         <h6><i class="bx bx-email"></i> Support</h6>
                         <p>elitefurniture@furstore.com</p>
-                        <h2>SEND MESSAGE</h2>
-                        <form action="#" >
-                            <input class="form-control col-6 my-2 con" type="text" placeholder="Name">
-                            <input class="form-control col-6 my-2 con" type="text" placeholder="Email">
-                            <input class="form-control col-6 my-2 con" type="text" placeholder="Website">
-                            <textarea class="form-control col-6 my-2 con" placeholder="Message"></textarea>
-                            <button type="submit" class="form-control site-btn btn-warning my-2 mr-5">Send Message</button>
+                    </div>
+                </div>
+                <div class="col-6 text-center">
+                    <img src="assets/products/poufs/8.jpg" height="400px" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 text-center">
+                    <img src="assets/products/poufs/8.jpg" height="400px" alt="">
+                </div>
+                <div class="col-6">
+                    <div class="container py-5">
+                        <h2>GET IN TOUCH</h2>
+                        <form action="#">
+                            <input class="form-control col-12 my-2" type="text" placeholder="Name">
+                            <input class="form-control col-12 my-2" type="text" placeholder="Email">
+                            <input class="form-control col-12 my-2" type="text" placeholder="Website">
+                            <textarea class="form-control col-12 my-2 py-5" placeholder="Message"></textarea>
+                            <button type="submit" class="btn btn-warning my-2">Send Message</button>
                         </form>
                     </div>
                 </div>
-                <div class="col-6"></div>
+
             </div>
         </div>
     </section>

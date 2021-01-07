@@ -23,13 +23,17 @@ include('widgets/header.php');
                                     <button type="submit" class="btn btn-danger form-control">Proceed to Buy</button>
                                 </div>
                                 <div class="col">
-                                    <?php
-                                    if (in_array($_GET['product_id'], $item_id)) {
-                                        echo '<button type="submit" disabled class="btn btn-success font-size-16 form-control">In the Cart</button>';
-                                    } else {
-                                        echo '<button type="submit" name="add" class="btn btn-warning font-size-16 form-control">Add to Cart</button>';
-                                    }
-                                    ?>
+                                    <form action="details.php" method="post">
+                                        <button type="submit" name="add" class="btn btn-warning font-size-16 form-control">Add to Cart</button>
+                                        <input type='hidden' name='product_id' value='$item['id']'>
+                                        <!-- <?php
+                                                if (in_array($_GET['product_id'], $item_id)) {
+                                                    echo '<button type="submit" disabled class="btn btn-success font-size-16 form-control">In the Cart</button>';
+                                                } else {
+                                                    echo '<button type="submit" name="add" class="btn btn-warning font-size-16 form-control">Add to Cart</button>';
+                                                }
+                                                ?> -->
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +64,7 @@ include('widgets/header.php');
                                 </tr>
                                 <tr class="font-rale font-size-14">
                                     <td>You Save:</td>
-                                    <td><span class="font-size-16 text-danger">UGX 152000/=</span></td>
+                                    <td><span class="font-size-14 text-danger">UGX 152000/=</span></td>
                                 </tr>
                             </table>
 

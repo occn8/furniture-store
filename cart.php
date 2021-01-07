@@ -33,7 +33,7 @@ include('widgets/header.php');
                     if (isset($_SESSION['cart'])) {
                         $product_id = array_column($_SESSION['cart'], 'product_id');
 
-                        $result = $connect->query($querryinventory);
+                        $result = $connect->query($querrypdts);
                         while ($row = mysqli_fetch_assoc($result)) {
                             foreach ($product_id as $id) {
                                 if ($row['id'] == $id) {

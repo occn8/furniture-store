@@ -244,6 +244,35 @@ if (isset($_POST['add'])) {
 		print_r($_SESSION['cart']);
 	}
 }
+if (isset($_POST['detail-link'])) {
+	/// print_r($_POST['product_id']);
+	if (isset($_SESSION['cart'])) {
+
+		$item_array_id = array_column($_SESSION['cart'], "product_id");
+
+		if (in_array($_POST['product_id'], $item_array_id)) {
+			// echo "<script>alert('Product is already added in the cart..!')</script>";
+			// echo "<script>window.location = 'index.php'</script>";
+		} else {
+
+			// $count = count($_SESSION['cart']);
+			// $item_array = array(
+			// 	'product_id' => $_POST['product_id']
+			// );
+
+			// $_SESSION['cart'][$count] = $item_array;
+		}
+	} else {
+
+		$item_array = array(
+			'product_id' => $_POST['product_id']
+		);
+
+		// Create new session variable
+		$_SESSION['cart'][0] = $item_array;
+		print_r($_SESSION['cart']);
+	}
+}
 
 if (isset($_POST['add_product'])) {
 	$pdtname = mysqli_real_escape_string($connect, $_POST['pdtname']);
@@ -280,10 +309,10 @@ $querrySmallsofas = "SELECT * FROM products WHERE product_type='Smallsofas'";
 $querrySofa = "SELECT * FROM products WHERE product_type='Sofa'";
 
 
-// $result = $connect->query($querryinventory);
-// if ($result->num_rows > 0) {
-// } else {
-// }
+$result = $connect->query($querrypdts);
+if ($result->num_rows > 0) {
+} else {
+}
 
 
 if (isset($_POST['update_product'])) {

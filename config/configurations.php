@@ -216,7 +216,7 @@ if (isset($_POST['signin_user'])) {
 }
 
 if (isset($_POST['add'])) {
-	 print_r($_POST['product_id']);
+	//  print_r($_POST['product_id']);
 	if (isset($_SESSION['cart'])) {
 
 		$item_array_id = array_column($_SESSION['cart'], "product_id");
@@ -232,6 +232,7 @@ if (isset($_POST['add'])) {
 			);
 
 			$_SESSION['cart'][$count] = $item_array;
+			header('location: cart.php');
 		}
 	} else {
 

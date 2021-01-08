@@ -156,8 +156,8 @@ function detail($product_name, $product_brand, $product_price, $product_image, $
                             </div>
                         </div>
                         <div class=\"col-sm-6 py-5\">
-                            <h5 class=\"font-baloo font-size-20\"><?php echo $product_name ?? \"Unknown\"; ?></h5>
-                            <small>by <?php echo $product_brand ?? \"Brand\"; ?></small>
+                            <h5 class=\"font-baloo font-size-20\">$product_name</h5>
+                            <small>by $product_brand </small>
                             <div class=\"d-flex\">
                                 <div class=\"rating text-warning font-size-12\">
                                     <span><i class=\"bx bx-star\"></i></span>
@@ -178,7 +178,7 @@ function detail($product_name, $product_brand, $product_price, $product_image, $
                                 </tr>
                                 <tr class=\"font-rale font-size-14\">
                                     <td>Deal Price:</td>
-                                    <td class=\"font-size-20 text-danger\">UGX <span><?php echo $product_price ?? 0; ?></span>/=<small class=\"text-dark font-size-12\">&nbsp;&nbsp;Inclusive of all taxes</small></td>
+                                    <td class=\"font-size-20 text-danger\">UGX <span>$product_price</span>/=<small class=\"text-dark font-size-12\">&nbsp;&nbsp;Inclusive of all taxes</small></td>
                                 </tr>
                                 <tr class=\"font-rale font-size-14\">
                                     <td>You Save:</td>

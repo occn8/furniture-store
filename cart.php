@@ -1,6 +1,6 @@
 <?php
 require_once('config/configurations.php');
-require_once('widgets/component.php');
+require_once('widgets/cartelement.php');
 
 if (isset($_POST['remove'])) {
     if ($_GET['action'] == 'remove') {

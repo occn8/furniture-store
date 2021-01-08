@@ -1,4 +1,5 @@
 <?php
+
 function detail($product_name, $product_brand, $product_price, $product_image, $product_id)
 {
     $element = "

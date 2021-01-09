@@ -104,7 +104,7 @@
                 </ul>
 
                 <div class="collapse navbar-collapse">
-                    <div class="cont">
+                    <div class="cont my-2 my-lg-0 mx-auto">
                         <form class="form-inline my-2 my-lg-0 mx-auto" action="search.php" method="get">
                             <input class="form-control" type="text" onKeyUp="fx(this.value)" autocomplete="off" name="qu" id="qu" tabindex="1" placeholder="Search for furniture..." aria-label="Search">
                             <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="bx bx-search"></i></button>

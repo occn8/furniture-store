@@ -17,11 +17,11 @@ function cartElement($productimg, $productname, $productprice, $productid)
                                 <button type=\"submit\" class=\"btn btn-warning\">Save for Later</button>
                                 <button type=\"submit\" class=\"btn btn-danger mx-2\" name=\"remove\">Remove</button>
                             </div>
-                            <div class=\"col-md-3 py-5\">
+                            <div class=\"qty col-md-3 py-5\">
                                 <div class=\"btn-bx\">
-                                    <button type=\"button\" class=\"btn bg-light border rounded-circle\"><i class=\"bx bx-minus\"></i></button>
-                                    <input type=\"text\" value=\"1\" class=\"form-control w-25 d-inline\">
-                                    <button type=\"button\" class=\"btn bg-light border rounded-circle\"><i class=\"bx bx-plus\"></i></button>
+                                    <button type=\"button\" class=\"qty-down btn bg-light border rounded-circle\" data-id=\"pro1\"><i class=\"bx bx-minus\"></i></button>
+                                    <input type=\"text\" value=\"1\" class=\"qty_input w-25 d-inline\" data-id=\"pro1\">
+                                    <button type=\"button\" class=\"qty-up btn bg-light border rounded-circle\" data-id=\"pro1\"><i class=\"bx bx-plus\"></i></button>
                                 </div>
                             </div>
                         </div>

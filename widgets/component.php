@@ -56,7 +56,7 @@ function component2($productname, $producttype, $productprice, $productimg, $pro
                         <div class=\"price py-2\">
                             <span>UGX <b>$productprice</b> /=</span>
                         </div>
-                        <button type=\"submit\" class=\"btn btn-warning\" name=\"detail-link\"><a href=\"details.php\" class=\"color-black\">View Item</a></button>
+                        <button type=\"submit\" class=\"btn btn-warning\" name=\"detail-link\"><a href=\"details.php?product_id=$productid\" class=\"color-black\">View Item</a></button>
                         <input type='hidden' name='product_id' value='$productid'>
                     </div> 
                 </div>
@@ -90,7 +90,7 @@ function component3($productname, $productbrand, $productprice, $productimg, $pr
                         <div class=\"price py-2\">
                             <span>UGX <b>$productprice</b> /=</span>
                         </div>
-                        <button type=\"submit\" class=\"btn btn-warning\" name=\"detail-link\"><a href=\"details.php\" class=\"color-black\">View Item</a></button>
+                        <button type=\"submit\" class=\"btn btn-warning\" name=\"detail-link\"><a href=\"details.php?product_id=$productid\" class=\"color-black\">View Item</a></button>
                         <input type='hidden' name='product_id' value='$productid'>
                     </div> 
                 </div>

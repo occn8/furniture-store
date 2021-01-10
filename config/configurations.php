@@ -235,7 +235,7 @@ if (isset($_POST['signin_user'])) {
 		if (mysqli_num_rows($results) == 1) {
 			$_SESSION['username'] = $username;
 			setcookie('user', $username, time() + (86400 * 2), "/");
-			header('location: ../index.php');
+			header('location: index.php');
 		} else {
 			array_push($errors, "Incorrect combination");
 		}

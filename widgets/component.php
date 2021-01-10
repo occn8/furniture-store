@@ -8,7 +8,7 @@ function component($productname, $productprice, $productimg, $productid)
                 <form action=\"index.php\" method=\"post\">
                 <div class=\"item py-2\">
                 <div class=\"product \">
-                    <a href=\"#\"><img src=\"$productimg\" alt=\"product1\" class=\"img-fluid\"></a>
+                    <a href=\"details.php?product_id=$productid\"><img src=\"$productimg\" alt=\"product1\" class=\"img-fluid\"></a>
                     <br>
                     <div class=\"text-center\">
                         <h6>$productname</h6>
@@ -43,7 +43,7 @@ function component2($productname, $producttype, $productprice, $productimg, $pro
                 <div class=\"grid-item $producttype\">
                 <div class=\"item py-2\" style=\"width: 200px;\">
                 <div class=\"product \">
-                    <a href=\"#\"><img src=\"$productimg\" alt=\"product1\" class=\"img-fluid\"></a>
+                    <a href=\"details.php?product_id=$productid\"><img src=\"$productimg\" alt=\"product1\" class=\"img-fluid\"></a>
                     <div class=\"text-center\">
                         <h6>$productname</h6>
                         <div class=\"rating text-warning font-size-12\">
@@ -77,7 +77,7 @@ function component3($productname, $productbrand, $productprice, $productimg, $pr
                 <div class=\"grid-item $productbrand\">
                 <div class=\"item py-2\" style=\"width: 200px;\">
                 <div class=\"product \">
-                    <a href=\"#\"><img src=\"$productimg\" alt=\"product1\" class=\"img-fluid\"></a>
+                    <a href=\"details.php?product_id=$productid\"><img src=\"$productimg\" alt=\"product1\" class=\"img-fluid\"></a>
                     <div class=\"text-center\">
                         <h6>$productname</h6>
                         <div class=\"rating text-warning font-size-12\">

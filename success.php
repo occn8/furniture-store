@@ -16,7 +16,7 @@ include('widgets/header.php');
             </div>
 
             <div class="row">
-                <div class="col-md-4 order-md-2 mb-4">
+                <div class="col-md-6 order-md-2 mb-4">
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
                         <span class="text-black"><strong>Details of Cart</strong></span>
                         <span class="badge badge-pill"><img src="assets/cart.png" alt="">
@@ -57,13 +57,13 @@ include('widgets/header.php');
                         ?>
 
                         <li class="list-group-item d-flex justify-content-between">
-                            <span>Total (UGX)</span>
+                            <span><strong>Total (UGX)</strong></span>
                             <strong><?php echo $total; ?>/=</strong>
                         </li>
                     </ul>
 
                 </div>
-                <div class="col-md-8 order-md-1">
+                <div class="col-md-6 order-md-1">
                     <h4 class="mb-3"><strong>Details of Customer</strong></h4>
                     <form class="needs-validation" novalidate>
                         <div class="row">

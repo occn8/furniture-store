@@ -10,7 +10,7 @@ function detail($product_name, $product_brand, $product_price, $product_image, $
                             <img src=\" $product_image\" alt=\"product\" class=\"img-fluid\">
                             <div class=\"form-row pt-4 font-size-16 font-baloo\">
                                 <div class=\"col\">
-                                    <button type=\"submit\" class=\"btn btn-danger form-control\">Add to whishlist</button>
+                                    <button type=\"submit\" class=\"btn btn-secondary form-control\">Add to whishlist</button>
                                 </div>
                                 <div class=\"col\">
                                     <form action=\"details.php\" method=\"post\">

@@ -122,28 +122,31 @@
 
                     <ul class="navbar-nav">
                         <li class="nav-item ">
-                            <button class="btn cart" href="cart.php">
+                            <div class="btn cart">
+
                                 <div class="cart_container d-flex flex-row align-items-center justify-content-end">
-                                    <div class="cart_icon"> <img src="assets/cart.png" alt="">
-                                        <div class="cart_count ">
-                                            <?php
+                                    <a href="cart.php">
+                                        <div class="cart_icon"> <img src="assets/cart.png" alt="">
+                                            <div class="cart_count ">
+                                                <?php
 
-                                            if (isset($_SESSION['cart'])) {
-                                                $count = count($_SESSION['cart']);
-                                                echo "<span id=\"cart_count\" class=\"text-success \">$count</span>";
-                                            } else {
-                                                echo "<span id=\"cart_count\" class=\"text-success\">0</span>";
-                                            }
+                                                if (isset($_SESSION['cart'])) {
+                                                    $count = count($_SESSION['cart']);
+                                                    echo "<span id=\"cart_count\" class=\"text-success \">$count</span>";
+                                                } else {
+                                                    echo "<span id=\"cart_count\" class=\"text-success\">0</span>";
+                                                }
 
-                                            ?>
+                                                ?>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                     <div class="cart_content">
-                                        <div class="cart_text"><a href="cart.php">Cart</a></div>
-                                        <div class="cart_price">$185</div>
+                                        <div class="cart_text font-size-24"><a href="cart.php">Cart</a></div>
                                     </div>
                                 </div>
-                            </button>
+
+                            </div>
                         </li>
                         <li class="nav-item ml-md-3">
                             <a class="btn btn-primary login-up" href="signin.php"><i class="bx bxs-user-circle mr-1 bx-sm"></i> Log In /

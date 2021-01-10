@@ -43,7 +43,7 @@ include('widgets/header.php');
                             }
                         }
                     } else {
-                        echo "<center><h5>Cart is Empty</h5></center>";
+                        echo "<center><h5 class=\"text-warning\">Cart is Empty</h5></center>";
                     }
 
                     ?>

@@ -11,11 +11,11 @@ include('widgets/header.php');
     <?php
     $item_id = $_GET['product_id'] ?? 1;
     foreach ($result as $item) :
-        if ($item['id'] == $item_id) :
+        if ($item['product_id'] == $item_id) :
     ?>
             <section id="product" class="py-3">
                 <?php
-                detail($item['product_name'], $item['product_brand'], $item['product_price'], $item['product_image'], $item['id']);
+                detail($item['product_name'], $item['product_brand'], $item['product_price'], $item['product_image'], $item['product_id']);
                 ?>
             </section>
     <?php

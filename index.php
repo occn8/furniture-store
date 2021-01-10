@@ -18,7 +18,7 @@ include('widgets/header.php');
                 <?php
                 $result = $connect->query($querryarmchairs);
                 while ($row = mysqli_fetch_assoc($result)) {
-                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['id']);
+                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['product_id']);
                 }
                 ?>
             </div>
@@ -32,7 +32,7 @@ include('widgets/header.php');
                 <?php
                 $result = $connect->query($querrychaiselongues);
                 while ($row = mysqli_fetch_assoc($result)) {
-                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['id']);
+                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['product_id']);
                 }
                 ?>
             </div>
@@ -45,7 +45,7 @@ include('widgets/header.php');
                 <?php
                 $result = $connect->query($querrycushions);
                 while ($row = mysqli_fetch_assoc($result)) {
-                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['id']);
+                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['product_id']);
                 }
                 ?>
             </div>
@@ -58,7 +58,7 @@ include('widgets/header.php');
                 <?php
                 $result = $connect->query($querrydaybeds);
                 while ($row = mysqli_fetch_assoc($result)) {
-                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['id']);
+                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['product_id']);
                 }
                 ?>
             </div>
@@ -71,7 +71,7 @@ include('widgets/header.php');
                 <?php
                 $result = $connect->query($querryEasychairs);
                 while ($row = mysqli_fetch_assoc($result)) {
-                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['id']);
+                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['product_id']);
                 }
                 ?>
             </div>
@@ -84,7 +84,7 @@ include('widgets/header.php');
                 <?php
                 $result = $connect->query($querryFootstools);
                 while ($row = mysqli_fetch_assoc($result)) {
-                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['id']);
+                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['product_id']);
                 }
                 ?>
             </div>
@@ -97,7 +97,7 @@ include('widgets/header.php');
                 <?php
                 $result = $connect->query($querryKidssofas);
                 while ($row = mysqli_fetch_assoc($result)) {
-                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['id']);
+                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['product_id']);
                 }
                 ?>
             </div>
@@ -110,7 +110,7 @@ include('widgets/header.php');
                 <?php
                 $result = $connect->query($querryPoufs);
                 while ($row = mysqli_fetch_assoc($result)) {
-                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['id']);
+                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['product_id']);
                 }
                 ?>
             </div>
@@ -123,7 +123,7 @@ include('widgets/header.php');
                 <?php
                 $result = $connect->query($querrySmallsofas);
                 while ($row = mysqli_fetch_assoc($result)) {
-                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['id']);
+                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['product_id']);
                 }
                 ?>
             </div>
@@ -136,7 +136,7 @@ include('widgets/header.php');
                 <?php
                 $result = $connect->query($querrySofa);
                 while ($row = mysqli_fetch_assoc($result)) {
-                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['id']);
+                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['product_id']);
                 }
                 ?>
             </div>

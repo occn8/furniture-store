@@ -27,7 +27,7 @@ include('widgets/header.php');
                 <?php
                 $result = $connect->query($querrypdts);
                 while ($row = mysqli_fetch_assoc($result)) {
-                    component3($row['product_name'], $row['product_brand'], $row['product_price'], $row['product_image'], $row['id']);
+                    component3($row['product_name'], $row['product_brand'], $row['product_price'], $row['product_image'], $row['product_id']);
                 }
                 ?>
 

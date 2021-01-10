@@ -93,9 +93,9 @@ function detail($product_name, $product_brand, $product_price, $product_image, $
                                          <div class=\"qty d-flex\">
                                              <h6 class=\"font-baloo py-2\"><b>Quantity:</b></h6>
                                              <div class=\"px-4 d-flex font-rale btn-bx\">
-                                             <button data-id=\"pro1\" class=\"qty-down btn bg-light border rounded-circle\"><i class=\"bx bx-minus\"></i></button>
-                                                 <input type=\"text\" data-id=\"pro1\" class=\"qty_input w-25 d-inline mx-2\" disabled value=\"1\" placeholder=\"1\">
-                                                 <button class=\"qty-up btn bg-light border rounded-circle\" data-id=\"pro1\"><i class=\"bx bx-plus\"></i></button>
+                                                 <button data-id=\"pdt\" class=\"qty-down btn bg-light border rounded-circle\"><i class=\"bx bx-minus\"></i></button>
+                                                 <input type=\"text\" data-id=\"pdt\" class=\"qty_input w-25 text-center d-inline mx-2\" disabled value=\"1\" placeholder=\"1\">
+                                                 <button class=\"qty-up btn bg-light border rounded-circle\" data-id=\"pdt\"><i class=\"bx bx-plus\"></i></button>
                                              </div>
                                          </div>
                                      </div>

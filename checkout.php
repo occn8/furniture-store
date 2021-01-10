@@ -1,56 +1,83 @@
 <?php
 require_once('config/configurations.php');
-require_once('widgets/component.php');
 ?>
 
 <?php
 $currentpage = 'checkout';
 include('widgets/header.php');
+
+function checkout($productname, $productbrand, $productprice)
+{
+    $element = "
+    
+    <li class=\"list-group-item d-flex justify-content-between lh-condensed\">
+        <div>
+            <h6 class=\"my-0\"><strong>$productname</strong></h6>
+            <small class=\"text-muted\">sold by: $productbrand</small>
+        </div>
+        <span class=\"text-muted\">UGX <b>$productprice</b>/=</span>
+    </li>
+    ";
+    echo $element;
+}
 ?>
 <main>
     <div class="container">
         <div class="py-5 text-center">
-            <h2>Checkout form</h2>
+            <h2>Checkout</h2>
         </div>
 
         <div class="row">
             <div class="col-md-4 order-md-2 mb-4">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="text-muted">Your cart</span>
-                    <span class="badge badge-secondary badge-pill">3</span>
+                    <span class="text-black">Your cart</span>
+                    <span class="badge  badge-pill"><img src="assets/cart.png" alt="">
+                        <div class="cart_count ">
+                            <?php
+
+                            if (isset($_SESSION['cart'])) {
+                                $count = count($_SESSION['cart']);
+                                echo "<span id=\"cart_count\" class=\"text-success \">$count</span>";
+                            } else {
+                                echo "<span id=\"cart_count\" class=\"text-success\">0</span>";
+                            }
+
+                            ?>
+                        </div>
+                    </span>
                 </h4>
                 <ul class="list-group mb-3">
-                    <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                            <h6 class="my-0">Product name</h6>
-                            <small class="text-muted">Brief description</small>
-                        </div>
-                        <span class="text-muted">$12</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                            <h6 class="my-0">Second product</h6>
-                            <small class="text-muted">Brief description</small>
-                        </div>
-                        <span class="text-muted">$8</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                            <h6 class="my-0">Third item</h6>
-                            <small class="text-muted">Brief description</small>
-                        </div>
-                        <span class="text-muted">$5</span>
-                    </li>
+                    <?php
+
+                    $total = 0;
+                    if (isset($_SESSION['cart'])) {
+                        $product_id = array_column($_SESSION['cart'], 'product_id');
+
+                        $result = $connect->query($querrypdts);
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            foreach ($product_id as $id) {
+                                if ($row['product_id'] == $id) {
+                                    checkout($row['product_name'], $row['product_brand'], $row['product_price']);
+                                    $total = $total + (int)$row['product_price'];
+                                }
+                            }
+                        }
+                    } else {
+                        echo "<center><h5>Cart is Empty</h5></center>";
+                    }
+
+                    ?>
+
                     <li class="list-group-item d-flex justify-content-between bg-light">
                         <div class="text-success">
                             <h6 class="my-0">Promo code</h6>
-                            <small>EXAMPLECODE</small>
+                            <small>84889593</small>
                         </div>
-                        <span class="text-success">-$5</span>
+                        <span class="text-success">-UGX 500/=</span>
                     </li>
                     <li class="list-group-item d-flex justify-content-between">
-                        <span>Total (USD)</span>
-                        <strong>$20</strong>
+                        <span>Total (UGX)</span>
+                        <strong><?php echo $total; ?>/=</strong>
                     </li>
                 </ul>
 
@@ -58,13 +85,13 @@ include('widgets/header.php');
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Promo code">
                         <div class="input-group-append">
-                            <button type="submit" class="btn btn-secondary">Redeem</button>
+                            <button type="submit" class="btn btn-warning">Redeem</button>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="col-md-8 order-md-1">
-                <h4 class="mb-3">Billing address</h4>
+                <h4 class="mb-3"><strong>Billing address</strong></h4>
                 <form class="needs-validation" novalidate>
                     <div class="row">
                         <div class="col-md-6 mb-3">
@@ -142,17 +169,13 @@ include('widgets/header.php');
                         </div>
                     </div>
                     <hr class="mb-4">
-                    <div class="custom-control custom-checkbox">
+                    <div class="custom-control custom-checkbox py-2">
                         <input type="checkbox" class="custom-control-input" id="same-address">
                         <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
                     </div>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="save-info">
-                        <label class="custom-control-label" for="save-info">Save this information for next time</label>
-                    </div>
                     <hr class="mb-4">
 
-                    <h4 class="mb-3">Payment</h4>
+                    <h4 class="mb-3"><strong>Payment</strong></h4>
 
                     <div class="d-block my-3">
                         <div class="custom-control custom-radio">
@@ -165,7 +188,7 @@ include('widgets/header.php');
                         </div>
                         <div class="custom-control custom-radio">
                             <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-                            <label class="custom-control-label" for="paypal">PayPal</label>
+                            <label class="custom-control-label" for="paypal">Mobile money</label>
                         </div>
                     </div>
                     <div class="row">
@@ -202,7 +225,7 @@ include('widgets/header.php');
                         </div>
                     </div>
                     <hr class="mb-4">
-                    <button class="btn btn-primary btn-lg btn-block" type="submit">Continue with checkout</button>
+                    <button class="btn btn-warning rounded-pill btn-block font-size-20" type="submit"><b> Continue with checkout</b></button>
                 </form>
             </div>
         </div>

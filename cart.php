@@ -36,14 +36,14 @@ include('widgets/header.php');
                         $result = $connect->query($querrypdts);
                         while ($row = mysqli_fetch_assoc($result)) {
                             foreach ($product_id as $id) {
-                                if ($row['id'] == $id) {
-                                    cartElement($row['product_image'], $row['product_name'], $row['product_price'], $row['id']);
+                                if ($row['product_id'] == $id) {
+                                    cartElement($row['product_image'], $row['product_name'], $row['product_brand'], $row['product_price'], $row['product_id']);
                                     $total = $total + (int)$row['product_price'];
                                 }
                             }
                         }
                     } else {
-                        echo "<h5>Cart is Empty</h5>";
+                        echo "<center><h5>Cart is Empty</h5></center>";
                     }
 
                     ?>
@@ -53,7 +53,7 @@ include('widgets/header.php');
             <div class="col-md-4 offset-md-1 border rounded mt-5 bg-white h-25">
 
                 <div class="pt-4">
-                    <h6>PRICE DETAILS</h6>
+                    <h6><strong>PRICE DETAILS</strong></h6>
                     <hr>
                     <div class="row price-details">
                         <div class="col-md-6">
@@ -67,7 +67,7 @@ include('widgets/header.php');
                             ?>
                             <h6>Delivery Charges</h6>
                             <hr>
-                            <h6>Amount Payable</h6>
+                            <h6><strong>Amount Payable</strong></h6>
                         </div>
                         <div class="col-md-6">
                             <h6>UGX <b><?php echo $total; ?></b>/=</h6>
@@ -77,12 +77,12 @@ include('widgets/header.php');
                         </div>
                         <div class="col-md-12 text-center py-2">
                             <?php
-                             if (isset($_SESSION['cart'])) {
-                                echo "<button type=\"submit\" class=\"btn btn-warning mt-3\"><a href=\"checkout.php\" class=\"color-black\">Proceed to Checkout</a></button>";
+                             if ($total!=0) {
+                                echo "<button type=\"submit\" class=\"btn btn-warning mt-3\" ><a href=\"checkout.php\" class=\"color-black\">Proceed to Checkout</a></button>";
 
                             } else {//if empty
-                                // echo "<button type=\"submit\" class=\"btn btn-warning mt-3\" disabled><a href=\"checkout.php\" class=\"color-black\">Proceed to Checkout</a></button>";
-                                echo "<button type=\"submit\" class=\"btn btn-warning mt-3\"><a href=\"checkout.php\" class=\"color-black\">Proceed to Checkout</a></button>";
+                                echo "<button type=\"submit\" class=\"btn btn-warning mt-3\" disabled><a href=\"\" class=\"color-black\">Proceed to Checkout</a></button>";
+                                // echo "<button type=\"submit\" class=\"btn btn-warning mt-3\"><a href=\"checkout.php\" class=\"color-black\">Proceed to Checkout</a></button>";
                             }
                             ?>
                         </div>

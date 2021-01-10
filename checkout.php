@@ -1,25 +1,11 @@
 <?php
 require_once('config/configurations.php');
+require_once('widgets/checkout_cart.php');
 ?>
 
 <?php
 $currentpage = 'checkout';
 include('widgets/header.php');
-
-function checkout($productname, $productbrand, $productprice)
-{
-    $element = "
-    
-    <li class=\"list-group-item d-flex justify-content-between lh-condensed\">
-        <div>
-            <h6 class=\"my-0\"><strong>$productname</strong></h6>
-            <small class=\"text-muted\">sold by: $productbrand</small>
-        </div>
-        <span class=\"text-muted\">UGX <b>$productprice</b>/=</span>
-    </li>
-    ";
-    echo $element;
-}
 ?>
 <main>
     <div class="container">
@@ -225,12 +211,28 @@ function checkout($productname, $productbrand, $productprice)
                         </div>
                     </div>
                     <hr class="mb-4">
-                    <button class="btn btn-warning rounded-pill btn-block font-size-20" type="submit"><b> Continue with checkout</b></button>
+                    <button class="btn btn-warning rounded-pill btn-block font-size-20" type="submit" name="checkout"><b> Continue with checkout</b></button>
                 </form>
             </div>
         </div>
 </main>
-
+<script>
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
 <?php
 include('widgets/footer.php');
 ?>

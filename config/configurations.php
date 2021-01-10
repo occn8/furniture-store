@@ -296,6 +296,11 @@ if (isset($_POST['add'])) {
 	}
 }
 
+// if (isset($_POST['checkout'])) {
+	
+// 			header('location: success.php');
+// }
+
 if (isset($_POST['add_product'])) {
 	$pdtname = mysqli_real_escape_string($connect, $_POST['pdtname']);
 	$pdtdescription = mysqli_real_escape_string($connect, $_POST['pdtdescription']);

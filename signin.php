@@ -27,7 +27,7 @@ require_once('config/configurations.php');
         </center>
 
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required autofocus><br>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" value="<?php echo $email; ?>" name="email" required autofocus><br>
 
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>

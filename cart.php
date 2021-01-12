@@ -76,15 +76,16 @@ include('widgets/header.php');
                             <h6>UGX <b><?php echo $total; ?></b>/=</h6>
                         </div>
                         <div class="col-md-12 text-center py-2">
-                            <?php
-                             if ($total!=0) {
-                                echo "<button type=\"submit\" class=\"btn btn-warning mt-3\" ><a href=\"checkout.php\" class=\"color-black\">Proceed to Checkout</a></button>";
-
-                            } else {//if empty
-                                echo "<button type=\"submit\" class=\"btn btn-warning mt-3\" disabled><a href=\"\" class=\"color-black\">Proceed to Checkout</a></button>";
-                                // echo "<button type=\"submit\" class=\"btn btn-warning mt-3\"><a href=\"checkout.php\" class=\"color-black\">Proceed to Checkout</a></button>";
-                            }
-                            ?>
+                            <?php if ($total != 0) : ?>
+                                <?php if (isset($_SESSION['username'])) : ?>
+                                    <button type="submit" class="btn btn-warning mt-3"><a href="checkout.php" class="color-black">Proceed to Checkout</a></button>
+                                <?php else : ?>
+                                    <button type="submit" class="btn btn-warning mt-3"><a href="signin.php" class="color-black">Proceed to Checkout</a></button>
+                                <?php endif ?>
+                            <?php else : ?>
+                                <button type="submit" class="btn btn-warning mt-3\" disabled><a href="" class="color-black">Proceed to Checkout</a></button>
+                                <!-- <button type="submit" class=\"btn btn-warning mt-3\"><a href=\"checkout.php\" class=\"color-black\">Proceed to Checkout</a></button> -->
+                            <?php endif ?>
                         </div>
                         <br>
                     </div>

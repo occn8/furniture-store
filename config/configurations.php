@@ -261,8 +261,10 @@ if (isset($_POST['signin_user'])) {
 		if (mysqli_num_rows($results) == 1) {
 			$row=mysqli_fetch_assoc( $results );
 			$username = $row['username'];
+			$uid = $row['id'];
 
 			$_SESSION['username'] = $username;
+			$_SESSION['id'] = $uid;
 			setcookie('user', $username, time() + (86400 * 2), "/");
 			header('location: index.php');
 		} else {

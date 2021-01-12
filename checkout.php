@@ -6,6 +6,13 @@ require_once('widgets/checkout_cart.php');
 <?php
 $currentpage = 'checkout';
 include('widgets/header.php');
+
+$uid = $_SESSION['id'];
+$querryuser = "SELECT * FROM users WHERE id='$uid'";
+$results = mysqli_query($connect, $querryuser);
+$row = mysqli_fetch_assoc($results);
+$username = $row['username'];
+$email = $row['email'];
 ?>
 <main>
     <div class="container">
@@ -102,7 +109,7 @@ include('widgets/header.php');
                             <div class="input-group-prepend">
                                 <span class="input-group-text">@</span>
                             </div>
-                            <input type="text" class="form-control" id="username" placeholder="Username" required>
+                            <input type="text" class="form-control" id="username" value="<?php echo $username; ?>" placeholder="Username" required>
                             <div class="invalid-feedback" style="width: 100%;">
                                 Your username is required.
                             </div>
@@ -111,7 +118,7 @@ include('widgets/header.php');
 
                     <div class="mb-3">
                         <label for="email">Email <span class="text-muted">(Optional)</span></label>
-                        <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                        <input type="email" class="form-control" id="email" value="<?php echo $email; ?>" placeholder="you@example.com">
                         <div class="invalid-feedback">
                             Please enter a valid email address for shipping updates.
                         </div>
@@ -129,8 +136,8 @@ include('widgets/header.php');
                         <div class="col-md-5 mb-3">
                             <label for="country">Country</label>
                             <select class="custom-select d-block w-100" id="country" required>
-                                <option value="">Choose...</option>
-                                <option>Uganda</option>
+                                <option value="Uganda">Uganda</option>
+                                <option>Kenya</option>
                             </select>
                             <div class="invalid-feedback">
                                 Please select a valid country.
@@ -217,22 +224,22 @@ include('widgets/header.php');
         </div>
 </main>
 <script>
-        (function() {
-            'use strict';
-            window.addEventListener('load', function() {
-                var forms = document.getElementsByClassName('needs-validation');
-                var validation = Array.prototype.filter.call(forms, function(form) {
-                    form.addEventListener('submit', function(event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
-    </script>
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            var forms = document.getElementsByClassName('needs-validation');
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
 <?php
 include('widgets/footer.php');
 ?>

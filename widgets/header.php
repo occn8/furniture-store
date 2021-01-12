@@ -157,11 +157,8 @@
                                 </li>";
                         } else {
                             echo " <li class=\"nav-item ml-md-3\">
-                                <a class=\"btn btn-primary nav-link\" href=\"index.php?logout='1'\"><i class=\"bx bxs-user-circle mr-1 bx-sm\"></i>" . $_SESSION['username'] . " Logout</a>
+                                <a class=\"btn btn-primary nav-link\" href=\"index.php?logout='1'\"><i class=\"bx bxs-user-circle mr-1 bx-sm\"></i>(" . $_SESSION['username'] . ") <b>Logout</b></a>
                                 </li>";
-                            // echo "<li class=\"nav-item ml-md-3\">
-                            // <a class=\"btn btn-primary login-up\" href=\"signin.php\"><i class=\"bx bxs-user-circle mr-1 bx-sm\"></i>" . $_SESSION['username'] . "</a>
-                            //     </li>";
                         }
                         ?>
 
@@ -194,6 +191,11 @@
                         <li class="nav-item <?php echo $currentpage == 'contact' ? 'active' : '' ?>">
                             <a class="nav-link" href="<?php echo $currentpage == 'contact' ? '#' : 'contact.php' ?>">Contact</a>
                         </li>
+                        <?php if (isset($_SESSION['username'])) : ?>
+                            <li class="nav-item <?php echo $currentpage == 'account' ? 'active' : '' ?>">
+                                <a class="nav-link" href="<?php echo $currentpage == 'account' ? '#' : 'account.php' ?>">Account</a>
+                            </li>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </div>

@@ -6,6 +6,14 @@ require_once('widgets/checkout_cart.php');
 <?php
 $currentpage = 'success';
 include('widgets/header.php');
+
+$uid = $_SESSION['id'];
+$querryuser = "SELECT * FROM users WHERE id='$uid'";
+$results = mysqli_query($connect, $querryuser);
+$row = mysqli_fetch_assoc($results);
+$username = $row['username'];
+$email = $row['email'];
+
 ?>
 
 <main>
@@ -66,7 +74,7 @@ include('widgets/header.php');
                 <div class="col-md-6 order-md-1">
                     <h4 class="mb-3"><strong>Details of Customer</strong></h4>
                     <form class="needs-validation" novalidate>
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for=""><strong>First name: </strong></label>
                                 <label for="">my names</label>
@@ -75,16 +83,16 @@ include('widgets/header.php');
                                 <label for=""><strong>Last name: </strong></label>
                                 <label for="">my last name</label>
                             </div>
-                        </div>
+                        </div> -->
 
                         <div class="mb-3">
                             <label for=""><strong>Username: </strong></label>
-                            <label for="">Username: </label>
+                            <label for=""><?php echo $username; ?></label>
                         </div>
 
                         <div class="mb-3">
                             <label for=""><strong>Email: </strong></label>
-                            <label for="">Username@asf.ss </label>
+                            <label for=""><?php echo $email; ?></label>
                         </div>
 
                         <div class="mb-3">

@@ -259,7 +259,7 @@ if (isset($_POST['signin_user'])) {
 		$query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
 		$results = mysqli_query($connect, $query);
 		if (mysqli_num_rows($results) == 1) {
-			$row=mysqli_fetch_assoc( $results );
+			$row = mysqli_fetch_assoc($results);
 			$username = $row['username'];
 			$uid = $row['id'];
 
@@ -320,10 +320,13 @@ if (isset($_POST['add'])) {
 	}
 }
 
-// if (isset($_POST['checkout'])) {
-
-// 			header('location: success.php');
-// }
+if (isset($_POST['checkout'])) {
+	if (isset($_SESSION['username'])) {
+		header('location: success.php');
+	} else {
+		header('location: cart.php'); //php self
+	}
+}
 
 if (isset($_POST['add_product'])) {
 	$pdtname = mysqli_real_escape_string($connect, $_POST['pdtname']);

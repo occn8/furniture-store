@@ -13,6 +13,8 @@ $results = mysqli_query($connect, $querryuser);
 $row = mysqli_fetch_assoc($results);
 $username = $row['username'];
 $email = $row['email'];
+
+
 ?>
 <main>
     <div class="container">
@@ -85,8 +87,8 @@ $email = $row['email'];
             </div>
             <div class="col-md-8 order-md-1">
                 <h4 class="mb-3"><strong>Billing address</strong></h4>
-                <form class="needs-validation" novalidate>
-                    <div class="row">
+                <form class="needs-validation" method="post" action="checkout.php" novalidate>
+                    <!-- <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="firstName">First name</label>
                             <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
@@ -101,7 +103,7 @@ $email = $row['email'];
                                 Valid last name is required.
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="mb-3">
                         <label for="username">Username</label>
@@ -138,6 +140,7 @@ $email = $row['email'];
                             <select class="custom-select d-block w-100" id="country" required>
                                 <option value="Uganda">Uganda</option>
                                 <option>Kenya</option>
+                                <option>Rwanda</option>
                             </select>
                             <div class="invalid-feedback">
                                 Please select a valid country.
@@ -146,7 +149,7 @@ $email = $row['email'];
                         <div class="col-md-4 mb-3">
                             <label for="state">District</label>
                             <select class="custom-select d-block w-100" id="state" required>
-                                <option value="">Choose...</option>
+                                <option value="Kampala">Kampala</option>
                                 <option>Entebbe</option>
                             </select>
                             <div class="invalid-feedback">

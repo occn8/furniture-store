@@ -222,7 +222,15 @@
                     <div class="row align-items-center">
 
                         <div class="col-10 pl-0">
-                            <a class="btn btn-primary" href="signin.php"><i class="bx bxs-user-circle mr-1"></i> Log In</a>
+                            <?php
+                            if (!isset($_SESSION['username'])) {
+                                echo " <a class=\"btn btn-primary login-up\" href=\"signin.php\"><i class=\"bx bxs-user-circle mr-1 bx-sm\"></i> Log In /
+                                Register</a>";
+                            } else {
+                                echo "<a class=\"btn btn-primary nav-link\" href=\"index.php?logout='1'\"><i class=\"bx bxs-user-circle mr-1 bx-sm\"></i>(" . $_SESSION['username'] . ") <b>Logout</b></a>";
+                            }
+                            ?>
+                            <!-- <a class="btn btn-primary" href="signin.php"><i class="bx bxs-user-circle mr-1"></i> Log In</a> -->
                         </div>
 
                         <div class="col-2 text-left">

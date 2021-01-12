@@ -12,7 +12,7 @@ $(document).ready(function() {
         items: 1,
     });
 
-    $("#custom-sale .owl-carousel").owlCarousel({
+    $(".ctx .owl-carousel").owlCarousel({
         loop: true,
         nav: true,
         dots: false,

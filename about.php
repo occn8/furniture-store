@@ -11,36 +11,36 @@ include('widgets/header.php');
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-6">
+                <div class="col-md-6">
                     <div class="container py-5">
-                        <h2>Our Story</h2>
+                        <h2><i class='bx bx-history color-primary'></i> Our Story</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex numquam quas non dolor perspiciatis, vitae quam commodi quos officia sapiente iure similique minus cum molestiae odio earum atque corrupti cupiditate.</p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex numquam quas non dolor perspiciatis, vitae quam commodi quos officia sapiente iure similique minus cum molestiae odio earum atque corrupti cupiditate.</p>
                    </div>
                 </div>
-                <div class="col-6 text-center">
+                <div class="col-md-6 text-center">
                     <img src="assets/products/poufs/8.jpg" height="300px" alt="">
                 </div>
             </div>
             <div class="row">
-                <div class="col-6">
+                <div class="col-md-6">
                     <div class="container py-5">
-                        <h2>Our Services</h2>
+                        <h2><i class='bx bx-library color-primary'></i> Our Services</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quae necessitatibus commodi natus fugit. Nisi neque voluptatum aut vero sed, labore impedit repellat consequuntur qui, quibusdam perspiciatis error ipsa nobis!</p>
                     </div>
                 </div>
-                <div class="col-6 text-center">
+                <div class="col-md-6 text-center">
                     <img src="assets/products/poufs/8.jpg" height="300px" alt="">
                 </div>
             </div>
             <div class="row">
-                <div class="col-6">
+                <div class="col-md-6">
                     <div class="container py-5">
-                        <h2>Our Mission</h2>
+                        <h2><i class='bx bxs-bullseye color-primary'></i> Our Mission</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quae necessitatibus commodi natus fugit. Nisi neque voluptatum aut vero sed, labore impedit repellat consequuntur qui, quibusdam perspiciatis error ipsa nobis!</p>
                     </div>
                 </div>
-                <div class="col-6 text-center">
+                <div class="col-md-6 text-center">
                     <img src="assets/products/poufs/8.jpg" height="300px" alt="">
                 </div>
             </div>

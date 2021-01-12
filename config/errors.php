@@ -3,7 +3,7 @@
 		<?php foreach ($errors as $error) : ?>
 		<div class="alert alert-warning alert-dismissible fade show"style="height:60px;" role="alert">
 			<p class="pad-alert"><?php echo $error ?></p>
-			<button type="button" class="close close2" data-dismiss="alert" aria-label="Close">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
 		</div>

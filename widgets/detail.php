@@ -6,7 +6,7 @@ function detail($product_name, $product_brand, $product_price, $product_image, $
     
     <div class=\"container\">
                     <div class=\"row\">
-                        <div class=\"col-sm-6\">
+                        <div class=\"col-md-6\">
                             <img src=\" $product_image\" alt=\"product\" class=\"img-fluid\">
                             <div class=\"form-row pt-4 font-size-16 font-baloo\">
                                 <div class=\"col\">
@@ -21,7 +21,7 @@ function detail($product_name, $product_brand, $product_price, $product_image, $
                                 </div>
                             </div>
                         </div>
-                        <div class=\"col-sm-6 py-5\">
+                        <div class=\"col-md-6 py-5\">
                             <h5 class=\"font-baloo font-size-24\"><b>$product_name</b></h5>
                             <small>by $product_brand </small>
                             <div class=\"d-flex\">

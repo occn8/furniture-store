@@ -69,10 +69,10 @@
             <div class="container px-2">
 
                 <button type="button" id="sidebarCollapse" class="btn btn-link d-block d-md-none">
-                    <i class="bx bx-library icon-single color-primary"></i>
+                    <i class="bx bx-menu icon-single color-primary"></i>
                 </button>
 
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.php">
                     <h4 class="font-weight-bold">Fur-Store</h4>
                 </a>
 
@@ -80,23 +80,24 @@
                     <li class="nav-item">
                         <div class="cart">
                             <div class="cart_container d-flex flex-row align-items-center justify-content-end">
-                                <div class="cart_icon"> <img src="assets/cart.png" alt="">
-                                    <div class="cart_count ">
-                                        <?php
+                                <a href="cart.php">
+                                    <div class="cart_icon"> <img src="assets/cart.png" alt="">
+                                        <div class="cart_count ">
+                                            <?php
 
-                                        if (isset($_SESSION['cart'])) {
-                                            $count = count($_SESSION['cart']);
-                                            echo "<span id=\"cart_count\" class=\"text-warning bg-light\">$count</span>";
-                                        } else {
-                                            echo "<span id=\"cart_count\" class=\"text-warning bg-light\">0</span>";
-                                        }
+                                            if (isset($_SESSION['cart'])) {
+                                                $count = count($_SESSION['cart']);
+                                                echo "<span id=\"cart_count\" class=\"text-success \">$count</span>";
+                                            } else {
+                                                echo "<span id=\"cart_count\" class=\"text-success\">0</span>";
+                                            }
 
-                                        ?>
+                                            ?>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                                 <div class="cart_content">
-                                    <div class="cart_text"><a href="cart.php">Cart</a></div>
-                                    <div class="cart_price">$185</div>
+                                    <div class="cart_text font-size-24"><a href="cart.php">Cart</a></div>
                                 </div>
                             </div>
                         </div>
@@ -148,10 +149,22 @@
 
                             </div>
                         </li>
-                        <li class="nav-item ml-md-3">
-                            <a class="btn btn-primary login-up" href="signin.php"><i class="bx bxs-user-circle mr-1 bx-sm"></i> Log In /
+                        <?php
+                        if (!isset($_SESSION['username'])) {
+                            echo "<li class=\"nav-item ml-md-3\">
+                            <a class=\"btn btn-primary login-up\" href=\"signin.php\"><i class=\"bx bxs-user-circle mr-1 bx-sm\"></i> Log In /
                                 Register</a>
-                        </li>
+                                </li>";
+                        } else {
+                            echo " <li class=\"nav-item ml-md-3\">
+                                <a class=\"btn btn-primary nav-link\" href=\"index.php?logout='1'\"><i class=\"bx bxs-user-circle mr-1 bx-sm\"></i>" . $_SESSION['username'] . " Logout</a>
+                                </li>";
+                            // echo "<li class=\"nav-item ml-md-3\">
+                            // <a class=\"btn btn-primary login-up\" href=\"signin.php\"><i class=\"bx bxs-user-circle mr-1 bx-sm\"></i>" . $_SESSION['username'] . "</a>
+                            //     </li>";
+                        }
+                        ?>
+
                     </ul>
                 </div>
 
@@ -242,32 +255,35 @@
 
             <h6 class="text-uppercase mb-1"><b>Categories</b></h6>
             <ul class="list-unstyled components mb-3">
-                <li>
-                    <a href="#">Armchairs</a>
+                <li class="lnk">
+                    <a href="index.php#armchairs">Armchairs</a>
                 </li>
                 <li>
-                    <a href="#">Chaise longues</a>
+                    <a href="index.php#chaiselongues">Chaise longues</a>
                 </li>
                 <li>
-                    <a href="#">Cushions</a>
+                    <a href="index.php#cushions">Cushions</a>
                 </li>
                 <li>
-                    <a href="#">Daybeds</a>
+                    <a href="index.php#daybeds">Daybeds</a>
                 </li>
                 <li>
-                    <a href="#">Easychairs</a>
+                    <a href="index.php#easychairs">Easychairs</a>
                 </li>
                 <li>
-                    <a href="#">Footstools</a>
+                    <a href="index.php#footstools">Footstools</a>
                 </li>
                 <li>
-                    <a href="#">Poufs</a>
+                    <a href="index.php#kidssofas">Kidssofas</a>
                 </li>
                 <li>
-                    <a href="#">Smallsofas</a>
+                    <a href="index.php#poufs">Poufs</a>
                 </li>
                 <li>
-                    <a href="#">Sofa</a>
+                    <a href="index.php#smallsofas">Smallsofas</a>
+                </li>
+                <li>
+                    <a href="index.php#sofa">Sofa</a>
                 </li>
             </ul>
 

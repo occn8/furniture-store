@@ -9,6 +9,8 @@ session_start();
 // $_SESSION['success'] = "";
 $username = "";
 $email    = "";
+$pass1    = "";
+$pass2    = "";
 $errors = array();
 
 $connect = mysqli_connect('localhost', 'root', '');
@@ -208,8 +210,18 @@ if (isset($_POST['register_user'])) {
 	$email = mysqli_real_escape_string($connect, $_POST['email']);
 	$pass1 = mysqli_real_escape_string($connect, $_POST['password_1']);
 	$pass2 = mysqli_real_escape_string($connect, $_POST['password_2']);
+	$check_user = "SELECT * FROM users WHERE username='$username'";
+	$check_result = mysqli_query($connect, $check_user);
+
 	if (empty($username)) {
 		array_push($errors, "Username is Required");
+	} else {
+		if (!preg_match("/[a-zA-Z]{5,30}$/", $username)) {
+			array_push($errors, "Invalid Username!");
+		}
+	}
+	if (mysqli_num_rows($check_result) > 0) {
+		array_push($errors, "Sorry.. Username already taken!");
 	}
 	if (empty($email)) {
 		array_push($errors, "Email is Required");
@@ -226,7 +238,7 @@ if (isset($_POST['register_user'])) {
 					  VALUES('$username', '$email', '$password')";
 		mysqli_query($connect, $query);
 		$_SESSION['username'] = $username;
-		// $_SESSION['success'] = "Welcome";
+		$_SESSION['id'] = mysqli_insert_id($connect);
 		setcookie('user', $username, time() + (86400 * 2), "/");
 		header('location: index.php');
 	}
@@ -247,6 +259,9 @@ if (isset($_POST['signin_user'])) {
 		$query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
 		$results = mysqli_query($connect, $query);
 		if (mysqli_num_rows($results) == 1) {
+			$row=mysqli_fetch_assoc( $results );
+			$username = $row['username'];
+
 			$_SESSION['username'] = $username;
 			setcookie('user', $username, time() + (86400 * 2), "/");
 			header('location: index.php');
@@ -254,6 +269,13 @@ if (isset($_POST['signin_user'])) {
 			array_push($errors, "Incorrect combination");
 		}
 	}
+}
+
+if (isset($_GET['logout'])) {
+	session_destroy();
+	unset($_SESSION['username']);
+	unset($_SESSION['id']);
+	header("location: index.php");
 }
 
 if (isset($_POST['add'])) {
@@ -297,7 +319,7 @@ if (isset($_POST['add'])) {
 }
 
 // if (isset($_POST['checkout'])) {
-	
+
 // 			header('location: success.php');
 // }
 

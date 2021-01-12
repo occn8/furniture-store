@@ -1,7 +1,7 @@
 <footer class="pt-4 text-center my-md-5 pt-md-5">
     <div class="container">
         <div class="row">
-            <div class="col-6 col-md-4">
+            <div class="col-md-4 py-2">
                 <h5>Quick Links</h5>
                 <ul class="list-unstyled text-small">
 
@@ -13,7 +13,7 @@
                     <li><a class="" href="#">Development</a></li>
                 </ul>
             </div>
-            <div class="col-6 col-md-4">
+            <div class="col-md-4 py-2">
                 <h5>Contact Info</h5>
                 <ul class="list-unstyled text-small">
                     <li><a class="" href="#">Ntinda valley, 21st st, Kampala, UGANDA</a></li>
@@ -22,7 +22,7 @@
                     <li><a class="" href="#">SUBSCRIBE</a></li>
                 </ul>
             </div>
-            <div class="col-6 col-md-4">
+            <div class="col-md-4 py-2">
                 <h5>About</h5>
                 <ul class="list-unstyled text-small">
                     <li><a class="" href="#">Team</a></li>

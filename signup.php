@@ -34,17 +34,17 @@ require_once('config/configurations.php');
 
             <div class="form-group ">
                 <label for="email" class="text-black">Email </label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="" required>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="<?php echo $email; ?>" required>
             </div>
 
             <div class="form-group">
                 <label for="pass" class="text-black">Password </label>
-                <input type="password" class="form-control" id="pass" name="password_1" placeholder="Password" value="" required>
+                <input type="password" class="form-control" id="pass" name="password_1" placeholder="Password" value="<?php echo $pass1; ?>" required>
             </div>
 
             <div class="form-group">
                 <label for="repass" class="text-black">Re-type Password </label>
-                <input type="password" class="form-control" id="repass" name="password_2" placeholder="Password" value="" required>
+                <input type="password" class="form-control" id="repass" name="password_2" placeholder="Password" value="<?php echo $pass2; ?>" required>
             </div>
 
             <center>

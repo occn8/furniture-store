@@ -6,13 +6,7 @@ require_once('widgets/checkout_cart.php');
 <?php
 $currentpage = 'success';
 include('widgets/header.php');
-
-$uid = $_SESSION['id'];
-$querryuser = "SELECT * FROM users WHERE id='$uid'";
-$results = mysqli_query($connect, $querryuser);
-$row = mysqli_fetch_assoc($results);
-$username = $row['username'];
-$email = $row['email'];
+require_once('config/user_detail.php');
 
 ?>
 
@@ -97,20 +91,20 @@ $email = $row['email'];
 
                         <div class="mb-3">
                             <label for=""><strong>Address: </strong></label>
-                            <label for="">Address</label>
+                            <label for=""><?php echo $address; ?></label>
                         </div>
 
                         <div class="mb-3">
                             <label for=""><strong>Country: </strong></label>
-                            <label for="">Uganda</label>
+                            <label for=""><?php echo $country; ?></label>
                         </div>
                         <div class="mb-3">
                             <label for=""><strong>District: </strong></label>
-                            <label for="">Entebbe</label>
+                            <label for=""><?php echo $district; ?></label>
                         </div>
                         <div class="mb-3">
                             <label for=""><strong>Zip code: </strong></label>
-                            <label for="">0000</label>
+                            <label for=""><?php echo $zip; ?></label>
                         </div>
                         <hr class="mb-4">
 

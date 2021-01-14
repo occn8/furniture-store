@@ -19,27 +19,35 @@ require_once('config/configurations.php');
 </head>
 
 <body>
-    <form class="form-signin" method="post" action="signin.php">
+    <form class="needs-validation form-signin" method="post" action="signin.php" novalidate>
         <?php include('config/errors.php'); ?>
         <center>
             <img class="mb-4" src="favicon.ico" alt="" height="100">
             <h1 class="h3 mb-3 font-weight-normal">Log In</h1>
         </center>
-
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" value="<?php echo $email; ?>" name="email" required autofocus><br>
-
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
-
+        <div class="form-group">
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" value="<?php echo $email; ?>" name="email" required autofocus>
+            <div class="invalid-feedback">
+                Valid Email is required.
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+            <div class="invalid-feedback">
+                Valid Password is required.
+            </div>
+        </div>
         <div class="checkbox mb-3">
             <label>
                 <input type="checkbox" value="remember-me"> Remember me
             </label>
-        </div>
-        <button class="btn btn-lg btn-warning btn-block" name="signin_user" type="submit">Sign in</button><br>
+        </div><br>
 
         <center>
+            <button class="btn btn-lg btn-warning btn-block rounded-pill" name="signin_user" type="submit">Sign in</button><br>
             <small>Don't have an a/c </small> <a href="signup.php" class="color-link btn clr-bg rounded-pill font-size-20">Sign up Now</a>
             <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
         </center>

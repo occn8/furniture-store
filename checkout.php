@@ -6,14 +6,7 @@ require_once('widgets/checkout_cart.php');
 <?php
 $currentpage = 'checkout';
 include('widgets/header.php');
-
-$uid = $_SESSION['id'];
-$querryuser = "SELECT * FROM users WHERE id='$uid'";
-$results = mysqli_query($connect, $querryuser);
-$row = mysqli_fetch_assoc($results);
-$username = $row['username'];
-$email = $row['email'];
-
+require_once('config/user_detail.php');
 
 ?>
 <main>
@@ -128,7 +121,7 @@ $email = $row['email'];
 
                     <div class="mb-3">
                         <label for="address">Address</label>
-                        <input type="text" class="form-control" id="address" placeholder="luwum Main St" required>
+                        <input type="text" class="form-control" id="address" value="<?php echo $address; ?>" placeholder="luwum Main St" required>
                         <div class="invalid-feedback">
                             Please enter your shipping address.
                         </div>
@@ -138,7 +131,7 @@ $email = $row['email'];
                         <div class="col-md-5 mb-3">
                             <label for="country">Country</label>
                             <select class="custom-select d-block w-100" id="country" required>
-                                <option value="Uganda">Uganda</option>
+                                <option value="<?php echo $country; ?>"><?php echo $country; ?></option>
                                 <option>Kenya</option>
                                 <option>Rwanda</option>
                             </select>
@@ -149,7 +142,7 @@ $email = $row['email'];
                         <div class="col-md-4 mb-3">
                             <label for="state">District</label>
                             <select class="custom-select d-block w-100" id="state" required>
-                                <option value="Kampala">Kampala</option>
+                                <option value="<?php echo $district; ?>"><?php echo $district; ?></option>
                                 <option>Entebbe</option>
                             </select>
                             <div class="invalid-feedback">
@@ -158,7 +151,7 @@ $email = $row['email'];
                         </div>
                         <div class="col-md-3 mb-3">
                             <label for="zip">Zip</label>
-                            <input type="text" class="form-control" id="zip" placeholder="" required>
+                            <input type="text" class="form-control" id="zip" placeholder="" value="<?php echo $zip; ?>" required>
                             <div class="invalid-feedback">
                                 Zip code required.
                             </div>

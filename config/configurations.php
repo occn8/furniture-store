@@ -23,10 +23,17 @@ mysqli_query($connect, $useDB);
 
 
 $users = "CREATE TABLE IF NOT EXISTS users (
-		id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-		username VARCHAR(30) NOT NULL,
-		email VARCHAR(50),
-		password VARCHAR(50)
+	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    fname VARCHAR(30) NOT NULL,
+    lname VARCHAR(30) NOT NULL,
+    username VARCHAR(30) NOT NULL,
+    email VARCHAR(50),
+    regdate DATE,
+    address VARCHAR(20) NOT NULL,
+    country VARCHAR(20),
+    district VARCHAR(20),
+    zip VARCHAR(10),
+    password VARCHAR(50)
 		)";
 mysqli_query($connect, $users);
 
@@ -206,36 +213,52 @@ mysqli_query($connect, $products10);
 
 
 if (isset($_POST['register_user'])) {
+	$fname = mysqli_real_escape_string($connect, $_POST['fname']);
+	$lname = mysqli_real_escape_string($connect, $_POST['lname']);
 	$username = mysqli_real_escape_string($connect, $_POST['username']);
 	$email = mysqli_real_escape_string($connect, $_POST['email']);
-	$pass1 = mysqli_real_escape_string($connect, $_POST['password_1']);
-	$pass2 = mysqli_real_escape_string($connect, $_POST['password_2']);
-	$check_user = "SELECT * FROM users WHERE username='$username'";
-	$check_result = mysqli_query($connect, $check_user);
+	$address = mysqli_real_escape_string($connect, $_POST['address']);
+	$country = mysqli_real_escape_string($connect, $_POST['country']);
+	$district = mysqli_real_escape_string($connect, $_POST['district']);
+	$zip = mysqli_real_escape_string($connect, $_POST['zip']);
+	$password_1 = mysqli_real_escape_string($connect, $_POST['password_1']);
+	$password_2 = mysqli_real_escape_string($connect, $_POST['password_2']);
+	$sql_u = "SELECT * FROM users WHERE username='$username'";
+	$res_u = mysqli_query($connect, $sql_u);
 
-	if (empty($username)) {
-		array_push($errors, "Username is Required");
+	if (empty($fname)) {
+		array_push($errors, "First name is required!");
 	} else {
-		if (!preg_match("/[a-zA-Z]{5,30}$/", $username)) {
-			array_push($errors, "Invalid Username!");
+		if (!preg_match("/[a-zA-Z]{3,30}$/", $fname)) {
+			array_push($errors, "Invalid First name!");
 		}
 	}
-	if (mysqli_num_rows($check_result) > 0) {
+	if (empty($lname)) {
+		array_push($errors, "Last name is required!");
+	}
+	if (empty($username)) {
+		array_push($errors, "Username is required!");
+	}
+	if (mysqli_num_rows($res_u) > 0) {
 		array_push($errors, "Sorry.. Username already taken!");
 	}
 	if (empty($email)) {
-		array_push($errors, "Email is Required");
+		array_push($errors, "Email is required!");
 	}
-	if (empty($pass1)) {
-		array_push($errors, "Password is Required");
+	if (empty($password_1)) {
+		array_push($errors, "Password is required!");
 	}
-	if ($pass1 != $pass2) {
-		array_push($errors, "Passwords Don't match");
+	if (!preg_match("/[0-9]{4,5}$/", $zip)) {
+		array_push($errors, "Invalid Zip code!");
 	}
+	if ($password_1 != $password_2) {
+		array_push($errors, "Passwords do not match!");
+	}
+
 	if (count($errors) == 0) {
 		$password = md5($pass1);
-		$query = "INSERT INTO users (username, email, password) 
-					  VALUES('$username', '$email', '$password')";
+		$query = "INSERT INTO users (fname, lname, username, email, regdate, address, country, district, zip, password) 
+					  VALUES('$fname','$lname', '$username', '$email', NOW(), '$address', '$country', '$district', '$zip', '$password')";
 		mysqli_query($connect, $query);
 		$_SESSION['username'] = $username;
 		$_SESSION['id'] = mysqli_insert_id($connect);

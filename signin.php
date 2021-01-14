@@ -40,7 +40,7 @@ require_once('config/configurations.php');
         <button class="btn btn-lg btn-warning btn-block" name="signin_user" type="submit">Sign in</button><br>
 
         <center>
-            <small>Don't have an a/c </small> <a href="signup.php" class="color-link">Sign up Now</a>
+            <small>Don't have an a/c </small> <a href="signup.php" class="color-link btn clr-bg rounded-pill font-size-20">Sign up Now</a>
             <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
         </center>
     </form>

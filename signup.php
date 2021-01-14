@@ -50,7 +50,7 @@ require_once('config/configurations.php');
             <center>
                 <button class="btn btn-lg btn-warning btn-block" name="register_user" type="submit">Register</button><br>
 
-                <small>Already have a/c?</small> <a href="signin.php" class="color-link">Log In Now</a>
+                <small>Already have a/c?</small> <a href="signin.php" class="color-link btn clr-bg rounded-pill font-size-20">Log In Now</a>
             </center>
 
         </div>

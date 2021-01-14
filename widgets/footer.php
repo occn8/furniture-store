@@ -54,22 +54,6 @@
 <script src="assets/scripts/isotope.pkgd.min.js"></script>
 <script src="assets/scripts/index.js"></script>
 <script src="assets/scripts/gotop.js"></script>
-<!-- <script type="text/javascript">
-    $(document).ready(function() {
-        $("#search").keypress(function() {
-            $.ajax({
-                type: 'POST',
-                url: 'search.php',
-                data: {
-                    name: $("#search").val(),
-                },
-                success: function(data) {
-                    $("#output").html(data);
-                }
-            });
-        });
-    });
-</script> -->
 
 </body>
 

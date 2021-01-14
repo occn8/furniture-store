@@ -11,7 +11,7 @@ include('widgets/header.php');
 <main>
 <div class="py-2"></div>
 
-    <section id="armchairs" class="ctx">
+    <section id="armchairs" class="custom-sale">
         <div class="container py-3">
             <h4 class="text-center"><b>Armchairs</b></h4>
             <div class="owl-carousel owl-theme">
@@ -25,7 +25,7 @@ include('widgets/header.php');
         </div>
     </section>
 
-    <section id="chaiselongues" class="ctx">
+    <section id="chaiselongues" class="custom-sale">
         <div class="container py-3">
             <h4 class="text-center"><b>Chaise longues</b></h4>
             <div class="owl-carousel owl-theme">
@@ -38,7 +38,7 @@ include('widgets/header.php');
             </div>
         </div>
     </section>
-    <section id="cushions" class="ctx">
+    <section id="cushions" class="custom-sale">
         <div class="container py-3">
             <h4 class="text-center"><b>Cushions</b></h4>
             <div class="owl-carousel owl-theme">
@@ -51,7 +51,7 @@ include('widgets/header.php');
             </div>
         </div>
     </section>
-    <section id="daybeds" class="ctx">
+    <section id="daybeds" class="custom-sale">
         <div class="container py-3">
             <h4 class="text-center"><b>Daybeds</b></h4>
             <div class="owl-carousel owl-theme">
@@ -64,7 +64,7 @@ include('widgets/header.php');
             </div>
         </div>
     </section>
-    <section id="easychairs" class="ctx">
+    <section id="easychairs" class="custom-sale">
         <div class="container py-3">
             <h4 class="text-center"><b>Easy chairs</b></h4>
             <div class="owl-carousel owl-theme">
@@ -77,7 +77,7 @@ include('widgets/header.php');
             </div>
         </div>
     </section>
-    <section id="footstools" class="ctx">
+    <section id="footstools" class="custom-sale">
         <div class="container py-3">
             <h4 class="text-center"><b>Footstools</b></h4>
             <div class="owl-carousel owl-theme">
@@ -90,7 +90,7 @@ include('widgets/header.php');
             </div>
         </div>
     </section>
-    <section id="kidssofas" class="ctx">
+    <section id="kidssofas" class="custom-sale">
         <div class="container py-3">
             <h4 class="text-center"><b>Kidssofas</b></h4>
             <div class="owl-carousel owl-theme">
@@ -103,7 +103,7 @@ include('widgets/header.php');
             </div>
         </div>
     </section>
-    <section id="poufs" class="ctx">
+    <section id="poufs" class="custom-sale">
         <div class="container py-3">
             <h4 class="text-center"><b>Poufs</b></h4>
             <div class="owl-carousel owl-theme">
@@ -116,7 +116,7 @@ include('widgets/header.php');
             </div>
         </div>
     </section>
-    <section id="smallsofas" class="ctx">
+    <section id="smallsofas" class="custom-sale">
         <div class="container py-3">
             <h4 class="text-center"><b>Small sofas</b></h4>
             <div class="owl-carousel owl-theme">
@@ -129,7 +129,7 @@ include('widgets/header.php');
             </div>
         </div>
     </section>
-    <section id="sofa" class="ctx">
+    <section id="sofa" class="custom-sale">
         <div class="container py-3">
             <h4 class="text-center"><b>Sofa</b></h4>
             <div class="owl-carousel owl-theme">

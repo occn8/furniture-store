@@ -108,25 +108,17 @@
                     <div class="cont my-2 my-lg-0 mx-auto">
                         <form class="form-inline my-2 my-lg-0 mx-auto" action="search.php" method="get">
                             <input class="form-control" type="text" onKeyUp="fx(this.value)" autocomplete="off" name="qu" id="qu" tabindex="1" placeholder="Search for furniture..." aria-label="Search">
-                            <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="bx bx-search"></i></button>
-                            <!-- <div id="livesearch"></div> -->
+                            <!-- <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="bx bx-search"></i></button> -->
+                            <div id="livesearch"></div>
                         </form>
                     </div>
-                    <!-- <form action="search.php" method="get">
-                        <div class="bk">
-                            <input type="text" onKeyUp="fx(this.value)" autocomplete="off" name="qu" id="qu" class="textbox" placeholder="What are you looking for ?" tabindex="1">
-                            <button type="button" class="textbox-clr" id="textbox-clr" onClick="lightbg_clr()"></button>
-                            <button type="submit" class="query-submit" tabindex="2"><i class="fa fa-search" style="color:#727272; font-size:20px"></i></button>
-                            <div id="livesearch"></div>
-                        </div>
-                    </form> -->
-
+                    
                     <ul class="navbar-nav">
                         <li class="nav-item ">
-                            <div class="btn cart">
+                            <div class="cart">
 
-                                <div class="cart_container d-flex flex-row align-items-center justify-content-end">
-                                    <a href="cart.php">
+                                <div class="cart_container clr-bg d-flex flex-row align-items-center justify-content-end">
+                                    <a href="cart.php" class="btn rounded-pill">
                                         <div class="cart_icon"> <img src="assets/cart.png" alt="">
                                             <div class="cart_count ">
                                                 <?php
@@ -201,7 +193,7 @@
             </div>
         </nav>
 
-        <div class="search-bar d-block d-md-none">
+        <!-- <div class="search-bar d-block d-md-none">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -212,7 +204,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Sidebar -->
         <nav id="sidebar">
@@ -306,3 +298,5 @@
 
         </nav>
     </header>
+
+    <div id="search-layer" onclick="lightbg_clr()"></div>

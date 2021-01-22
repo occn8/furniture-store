@@ -38,6 +38,12 @@ include('widgets/header.php');
             </div>
         </div>
     </section>
+    <section id="banner_adds">
+        <div class="container py-5 text-center">
+            <img src="assets/images/4.jpg" alt="banner1" class="img-fluid">
+            <img src="assets/images/5.jpg" alt="banner1" class="img-fluid">
+        </div>
+    </section>
     <section id="cushions" class="custom-sale">
         <div class="container py-3">
             <h4 class="text-center"><b>Cushions</b></h4>
@@ -75,6 +81,12 @@ include('widgets/header.php');
                 }
                 ?>
             </div>
+        </div>
+    </section>
+    <section id="banner_adds">
+        <div class="container py-2 text-center">
+            <img src="assets/images/2.jpg" alt="banner1" class="img-fluid">
+            <img src="assets/images/3.jpg" alt="banner1" class="img-fluid">
         </div>
     </section>
     <section id="footstools" class="custom-sale">
@@ -131,8 +143,8 @@ include('widgets/header.php');
     </section>
     <section id="banner_adds">
         <div class="container py-5 text-center">
-            <img src="assets/images/banner1-cr-500x150.jpg" alt="banner1" class="img-fluid">
-            <img src="assets/images/banner2-cr-500x150.jpg" alt="banner1" class="img-fluid">
+            <img src="assets/images/banner1.jpg" alt="banner1" class="img-fluid">
+            <img src="assets/images/banner2.jpg" alt="banner1" class="img-fluid">
         </div>
     </section>
     <section id="sofa" class="custom-sale">

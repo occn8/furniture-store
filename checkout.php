@@ -81,22 +81,23 @@ require_once('config/user_detail.php');
             <div class="col-md-8 order-md-1">
                 <h4 class="mb-3"><strong>Billing address</strong></h4>
                 <form class="needs-validation" method="post" action="checkout.php" novalidate>
-                    <!-- <div class="row">
+                <?php include('config/errors.php'); ?>
+                    <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="firstName">First name</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                            <input type="text" class="form-control" id="firstName" placeholder="" value="<?php echo $firstname; ?>" required>
                             <div class="invalid-feedback">
                                 Valid first name is required.
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="lastName">Last name</label>
-                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                            <input type="text" class="form-control" id="lastName" placeholder="" value="<?php echo $lastname; ?>" required>
                             <div class="invalid-feedback">
                                 Valid last name is required.
                             </div>
                         </div>
-                    </div> -->
+                    </div>
 
                     <div class="mb-3">
                         <label for="username">Username</label>
@@ -168,22 +169,23 @@ require_once('config/user_detail.php');
 
                     <div class="d-block my-3">
                         <div class="custom-control custom-radio">
-                            <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                            <input id="credit" name="paymentMethod" value="Credit" type="radio" class="custom-control-input" checked required>
                             <label class="custom-control-label" for="credit">Credit card</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                            <input id="debit" name="paymentMethod" value="Debit" type="radio" class="custom-control-input" required>
                             <label class="custom-control-label" for="debit">Debit card</label>
                         </div>
                         <div class="custom-control custom-radio">
-                            <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-                            <label class="custom-control-label" for="paypal">Mobile money</label>
+                            <input id="master" name="paymentMethod" value="Master" type="radio" class="custom-control-input" required>
+                            <label class="custom-control-label" for="master">Master card</label>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="cc-name">Name on card</label>
-                            <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                            <input type="text" class="form-control" id="cc-name" name="cname" placeholder="" required>
                             <small class="text-muted">Full name as displayed on card</small>
                             <div class="invalid-feedback">
                                 Name on card is required
@@ -191,7 +193,7 @@ require_once('config/user_detail.php');
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="cc-number">Credit card number</label>
-                            <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                            <input type="text" class="form-control" id="cc-number" name="num" placeholder="" required>
                             <div class="invalid-feedback">
                                 Credit card number is required
                             </div>
@@ -200,14 +202,14 @@ require_once('config/user_detail.php');
                     <div class="row">
                         <div class="col-md-3 mb-3">
                             <label for="cc-expiration">Expiration</label>
-                            <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                            <input type="text" class="form-control" id="cc-expiration" name="exp" placeholder="" required>
                             <div class="invalid-feedback">
                                 Expiration date required
                             </div>
                         </div>
                         <div class="col-md-3 mb-3">
                             <label for="cc-cvv">CVV</label>
-                            <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                            <input type="text" class="form-control" id="cc-cvv" name="cvv" placeholder="" required>
                             <div class="invalid-feedback">
                                 Security code required
                             </div>

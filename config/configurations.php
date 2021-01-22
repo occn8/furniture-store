@@ -9,8 +9,12 @@ session_start();
 // $_SESSION['success'] = "";
 $username = "";
 $email    = "";
+$fname    = "";
+$lname    = "";
 $pass1    = "";
 $pass2    = "";
+$address    = "";
+$zip    = "";
 $errors = array();
 
 $connect = mysqli_connect('localhost', 'root', '');
@@ -62,6 +66,17 @@ $wishlist = "CREATE TABLE IF NOT EXISTS wishlist (
 	product_id int(11) NOT NULL
 	)";
 mysqli_query($connect, $wishlist);
+
+$payments = "CREATE TABLE IF NOT EXISTS payments (
+	pay_id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	userid int(11) NOT NULL,
+	method int(11) NOT NULL,
+	cname int(11) NOT NULL,
+	cnum int(11) NOT NULL,
+	expiration int(11) NOT NULL,
+	cvv int(11) NOT NULL
+	)";
+mysqli_query($connect, $payments);
 
 $products1 = "INSERT INTO `products` (product_id, product_name,product_type, product_brand, product_price, modified, product_image)
 	VALUES (1,'repa-Armchair', 'armchairs','ARFLEX',1799000,NOW(),'/furniture-store/assets/products/armchairs/1.jpg'),
@@ -221,10 +236,10 @@ if (isset($_POST['register_user'])) {
 	$country = mysqli_real_escape_string($connect, $_POST['country']);
 	$district = mysqli_real_escape_string($connect, $_POST['district']);
 	$zip = mysqli_real_escape_string($connect, $_POST['zip']);
-	$password_1 = mysqli_real_escape_string($connect, $_POST['password_1']);
-	$password_2 = mysqli_real_escape_string($connect, $_POST['password_2']);
-	$sql_u = "SELECT * FROM users WHERE username='$username'";
-	$res_u = mysqli_query($connect, $sql_u);
+	$pass1 = mysqli_real_escape_string($connect, $_POST['pass1']);
+	$pass2 = mysqli_real_escape_string($connect, $_POST['pass2']);
+	$if_user_exist = "SELECT * FROM users WHERE username='$username'";
+	$if_exist_result = mysqli_query($connect, $if_user_exist);
 
 	if (empty($fname)) {
 		array_push($errors, "First name is required!");
@@ -239,19 +254,19 @@ if (isset($_POST['register_user'])) {
 	if (empty($username)) {
 		array_push($errors, "Username is required!");
 	}
-	if (mysqli_num_rows($res_u) > 0) {
+	if (mysqli_num_rows($if_exist_result) > 0) {
 		array_push($errors, "Sorry.. Username already taken!");
 	}
 	if (empty($email)) {
 		array_push($errors, "Email is required!");
 	}
-	if (empty($password_1)) {
+	if (empty($pass1)) {
 		array_push($errors, "Password is required!");
 	}
 	if (!preg_match("/[0-9]{4,5}$/", $zip)) {
 		array_push($errors, "Invalid Zip code!");
 	}
-	if ($password_1 != $password_2) {
+	if ($pass1 != $pass2) {
 		array_push($errors, "Passwords do not match!");
 	}
 
@@ -316,17 +331,16 @@ if (isset($_POST['add'])) {
 
 			$count = count($_SESSION['cart']);
 			$item_array = array(
-				'userid' => $_POST['product_id'],
+				'product_qty' => $_POST['product_id'],
 				'product_id' => $_POST['product_id']
 			);
 
-			if ($item_array != null) {
-
-				$columns = implode(',', array_keys($item_array));
-				$values = implode(',', array_values($item_array));
-				$insert_cart = sprintf("INSERT INTO %s(%s) VALUES(%s)", 'cart', $columns, $values);
-				$result = $connect->query($insert_cart);
-			}
+			// if ($item_array != null) {
+			// 	$columns = implode(',', array_keys($item_array));
+			// 	$values = implode(',', array_values($item_array));
+			// 	$insert_cart = sprintf("INSERT INTO %s(%s) VALUES(%s)", 'cart', $columns, $values);
+			// 	$result = $connect->query($insert_cart);
+			// }
 
 			$_SESSION['cart'][$count] = $item_array;
 			header('location: cart.php');
@@ -334,42 +348,36 @@ if (isset($_POST['add'])) {
 	} else {
 
 		$item_array = array(
+			'product_qty' => $_POST['product_id'],
 			'product_id' => $_POST['product_id']
 		);
-
 		// Create new session variable
 		$_SESSION['cart'][0] = $item_array;
+		header('location: cart.php');
 		// print_r($_SESSION['cart']);
 	}
 }
 
 if (isset($_POST['checkout'])) {
-	if (isset($_SESSION['username'])) {
-		header('location: success.php');
-	} else {
-		header('location: cart.php'); //php self
+	$method = mysqli_real_escape_string($connect, $_POST['paymentMethod']);
+	$cname = mysqli_real_escape_string($connect, $_POST['cname']);
+	$cnum = mysqli_real_escape_string($connect, $_POST['num']);
+	$exp = mysqli_real_escape_string($connect, $_POST['exp']);
+	$cvv = mysqli_real_escape_string($connect, $_POST['cvv']);
+	if (empty($method)) {
+		array_push($errors, "Method Required");
 	}
-}
+	if (empty($cname)) {
+		array_push($errors, "Card name Required");
+	}
 
-if (isset($_POST['add_product'])) {
-	$pdtname = mysqli_real_escape_string($connect, $_POST['pdtname']);
-	$pdtdescription = mysqli_real_escape_string($connect, $_POST['pdtdescription']);
-	$batchNo = mysqli_real_escape_string($connect, $_POST['batchNo']);
-	$store = mysqli_real_escape_string($connect, $_POST['store']);
-	if (empty($pdtname)) {
-		array_push($errors, "Name required");
-	}
-	if (empty($pdtdescription)) {
-		array_push($errors, "Description Required");
-	}
-	if (empty($store)) {
-		array_push($errors, "Store Required");
-	}
 	if (count($errors) == 0) {
-		$query = "INSERT INTO products (pdtname, pdtdescription, batchNo, store, insertdate ) 
-					  VALUES('$pdtname','$pdtdescription', '$batchNo', '$store', NOW())";
+		$uid = $_SESSION['id'];
+		$query = "INSERT INTO payments (userid, method, cname, cnum, expiration, cvv) 
+					  VALUES('$uid', '$method', '$cname', '$cnum', '$exp', '$cvv')";
 		mysqli_query($connect, $query);
-		header('location: ../index.php');
+
+		header('location: success.php');
 	}
 }
 
@@ -384,45 +392,74 @@ $querryKidssofas = "SELECT * FROM products WHERE product_type='kidssofas'";
 $querryPoufs = "SELECT * FROM products WHERE product_type='Poufs'";
 $querrySmallsofas = "SELECT * FROM products WHERE product_type='Smallsofas'";
 $querrySofa = "SELECT * FROM products WHERE product_type='Sofa'";
-
+$querrylatest = "SELECT * FROM products WHERE modified='2021-01-01 15:01:05'";
 
 $result = $connect->query($querrypdts);
 if ($result->num_rows > 0) {
 } else {
 }
 
+// if (isset($_POST['checkout'])) {
+// 	if (isset($_SESSION['username'])) {
+// 		header('location: success.php');
+// 	} else {
+// 		header('location: cart.php'); //php self
+// 	}
+// }
 
-if (isset($_POST['update_product'])) {
-	$oldstore = mysqli_real_escape_string($connect, $_POST['currentstore']);
-	$newstore = mysqli_real_escape_string($connect, $_POST['newstore']);
-	$id = mysqli_real_escape_string($connect, $_POST['id']);
-	if (empty($id)) {
-		array_push($errors, "ID required");
-	}
-	if (empty($oldstore)) {
-		array_push($errors, "Current store Required!");
-	}
-	if (empty($newstore)) {
-		array_push($errors, "New store Required!");
-	}
-	if (count($errors) == 0) {
-		$query = "UPDATE products SET store='$newstore' WHERE id='$id'";
-		mysqli_query($connect, $query);
-		header('location: ../index.php');
-	}
-}
+// if (isset($_POST['add_product'])) {
+// 	$pdtname = mysqli_real_escape_string($connect, $_POST['pdtname']);
+// 	$pdtdescription = mysqli_real_escape_string($connect, $_POST['pdtdescription']);
+// 	$batchNo = mysqli_real_escape_string($connect, $_POST['batchNo']);
+// 	$store = mysqli_real_escape_string($connect, $_POST['store']);
+// 	if (empty($pdtname)) {
+// 		array_push($errors, "Name required");
+// 	}
+// 	if (empty($pdtdescription)) {
+// 		array_push($errors, "Description Required");
+// 	}
+// 	if (empty($store)) {
+// 		array_push($errors, "Store Required");
+// 	}
+// 	if (count($errors) == 0) {
+// 		$query = "INSERT INTO products (pdtname, pdtdescription, batchNo, store, insertdate ) 
+// 					  VALUES('$pdtname','$pdtdescription', '$batchNo', '$store', NOW())";
+// 		mysqli_query($connect, $query);
+// 		header('location: index.php');
+// 	}
+// }
 
-if (isset($_POST['delete_product'])) {
-	$id = mysqli_real_escape_string($connect, $_POST['id']);
-	if (empty($id)) {
-		array_push($errors, "Product ID required");
-	}
-	if (count($errors) == 0) {
-		$query = "DELETE FROM products WHERE id='$id'";
-		mysqli_query($connect, $query);
-		header('location: ../index.php');
-	}
-}
+// if (isset($_POST['update_product'])) {
+// 	$oldstore = mysqli_real_escape_string($connect, $_POST['currentstore']);
+// 	$newstore = mysqli_real_escape_string($connect, $_POST['newstore']);
+// 	$id = mysqli_real_escape_string($connect, $_POST['id']);
+// 	if (empty($id)) {
+// 		array_push($errors, "ID required");
+// 	}
+// 	if (empty($oldstore)) {
+// 		array_push($errors, "Current store Required!");
+// 	}
+// 	if (empty($newstore)) {
+// 		array_push($errors, "New store Required!");
+// 	}
+// 	if (count($errors) == 0) {
+// 		$query = "UPDATE products SET store='$newstore' WHERE id='$id'";
+// 		mysqli_query($connect, $query);
+// 		header('location: index.php');
+// 	}
+// }
+
+// if (isset($_POST['delete_product'])) {
+// 	$id = mysqli_real_escape_string($connect, $_POST['id']);
+// 	if (empty($id)) {
+// 		array_push($errors, "Product ID required");
+// 	}
+// 	if (count($errors) == 0) {
+// 		$query = "DELETE FROM products WHERE id='$id'";
+// 		mysqli_query($connect, $query);
+// 		header('location: index.php');
+// 	}
+// }
 
 // $searchq = "SELECT * FROM products WHERE product_name LIKE '%" . $_POST['name'] . "%'";
 // $searchq = "SELECT * FROM users WHERE name LIKE '{$_POST['query']}%' LIMIT 100";

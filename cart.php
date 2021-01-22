@@ -32,6 +32,7 @@ include('widgets/header.php');
                     $total = 0;
                     if (isset($_SESSION['cart'])) {
                         $product_id = array_column($_SESSION['cart'], 'product_id');
+                        $product_qty = array_column($_SESSION['cart'], 'product_qty');
 
                         $result = $connect->query($querrypdts);
                         while ($row = mysqli_fetch_assoc($result)) {

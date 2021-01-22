@@ -209,7 +209,7 @@ ul li a:hover {
 
 #search-layer {
     position: fixed;
-    background: rgba(109, 109, 109, 0.418);
+    background: rgba(109, 109, 109, 0);
     z-index: 2;
     left: 0px;
     top: 0px;

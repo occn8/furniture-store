@@ -68,16 +68,16 @@ require_once('config/user_detail.php');
                 <div class="col-md-6 order-md-1">
                     <h4 class="mb-3"><strong>Details of Customer</strong></h4>
                     <form class="needs-validation" novalidate>
-                        <!-- <div class="row">
+                        <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for=""><strong>First name: </strong></label>
-                                <label for="">my names</label>
+                                <label for=""><?php echo $firstname; ?></label>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for=""><strong>Last name: </strong></label>
-                                <label for="">my last name</label>
+                                <label for=""><?php echo $lastname; ?></label>
                             </div>
-                        </div> -->
+                        </div>
 
                         <div class="mb-3">
                             <label for=""><strong>Username: </strong></label>
@@ -111,24 +111,24 @@ require_once('config/user_detail.php');
                         <h4 class="mb-3"><strong>Details of Payment</strong></h4>
                         <div class="mb-3">
                             <label for=""><strong>paymentMethod: </strong></label>
-                            <label for="">Credit card</label>
+                            <label for=""><?php echo $method; ?></label>
                         </div>
 
                         <div class="mb-3">
                             <label for=""><strong>Name on card: </strong></label>
-                            <label for="">hug blaughhs</label>
+                            <label for=""><?php echo $cname; ?></label>
                         </div>
                         <div class="mb-3">
                             <label for=""><strong>Credit card number: </strong></label>
-                            <label for="">88994399399439</label>
+                            <label for=""><?php echo $cnum; ?></label>
                         </div>
                         <div class="mb-3">
                             <label for=""><strong>Expiration: </strong></label>
-                            <label for="">12/04/12</label>
+                            <label for=""><?php echo $exp; ?></label>
                         </div>
                         <div class="mb-3">
                             <label for=""><strong>CVV: </strong></label>
-                            <label for="">777</label>
+                            <label for=""><?php echo $cvv; ?></label>
                         </div>
                         <hr class="mb-4">
                     </form>

@@ -1,6 +1,6 @@
 <?php
 require_once('config/configurations.php');
-require_once('widgets/detail.php');
+// require_once('widgets/detail.php');
 ?>
 
 <?php
@@ -9,13 +9,130 @@ include('widgets/header.php');
 ?>
 <main>
     <?php
-    $item_id = $_GET['product_id'] ?? 1;
+    $item_id = $_GET['product_id'];
+    if (isset($_SESSION['cart'])) {
+        $item_array_id = array_column($_SESSION['cart'], "product_id");
+    } else {
+    }
+
     foreach ($result as $item) :
         if ($item['product_id'] == $item_id) :
     ?>
             <section id="product" class="py-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src=" <?php echo $item['product_image'] ?>" alt="product" class="img-fluid">
+                            <div class="form-row pt-4 font-size-16 font-baloo">
+                                <div class="col">
+                                    <button type="submit" class="btn btn-secondary form-control">Add to whishlist</button>
+                                </div>
+                                <div class="col">
+                                    <form action="details.php" method="post">
+                                        <?php if (in_array($item_id, $item_array_id ?? [])) : ?>
+                                            <button type="submit" name="add" class="btn btn-warning font-size-16 form-control" disabled>In the Cart</button>
+                                        <?php else : ?>
+                                            <button type="submit" name="add" class="btn btn-warning font-size-16 form-control">Add to Cart</button>
+                                        <?php endif; ?>
+                                        <input type='hidden' name='product_id' value='<?php echo $item_id ?>'>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 py-5">
+                            <h5 class="font-baloo font-size-24"><b><?php echo $item['product_name'] ?></b></h5>
+                            <small>by <?php echo $item['product_brand'] ?> </small>
+                            <div class="d-flex">
+                                <div class="rating text-warning font-size-12">
+                                    <span><i class="bx bx-star"></i></span>
+                                    <span><i class="bx bx-star"></i></span>
+                                    <span><i class="bx bx-star"></i></span>
+                                    <span><i class="bx bx-star"></i></span>
+                                    <span><i class="bx bx-star"></i></span>
+                                </div>
+                                <a href="#" class="px-2 font-rale font-size-14">20,534 ratings | Rate</a>
+                            </div>
+                            <hr class="m-0">
+
+                            <table class="my-3">
+                                <br>
+                                <tr class="font-rale font-size-14">
+                                    <td>Deal Price:</td>
+                                    <td class="font-size-20 text-danger"> UGX <span><b><?php echo $item['product_price'] ?></b></span>/=<small class="text-muted font-size-12">&nbsp;&nbsp;Inclusive of all taxes</small></td>
+                                </tr>
+                                <tr class="font-rale font-size-14">
+                                    <td>You Save:</td>
+                                    <td><span class="font-size-14 text-danger">UGX 15000/=</span></td>
+                                </tr>
+                            </table>
+
+                            <div id="policy">
+                                <div class="d-flex">
+                                    <div class="return text-center mr-5">
+                                        <div class=" my-2 color-second">
+                                            <span class="bx bx-repost border p-3 rounded-pill"></span>
+                                        </div>
+                                        <a href="#" class="">10 Days <br> Replacement</a>
+                                    </div>
+                                    <div class="return text-center mr-5">
+                                        <div class="font-size-20 my-2 color-second">
+                                            <span class="bx bxs-truck border p-3 rounded-pill"></span>
+                                        </div>
+                                        <a href="#" class="">Daily Tuition <br>Delivered</a>
+                                    </div>
+                                    <div class="return text-center mr-5">
+                                        <div class="font-size-20 my-2 color-second">
+                                            <span class="bx bx-check-double border p-3 rounded-pill"></span>
+                                        </div>
+                                        <a href="#" class="">1 Year <br>Warranty</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div id="order-details" class="font-rale d-flex flex-column text-dark">
+                                <small><b>Delivery by : Mar 29 - Apr 1</b></small>
+                                <small>Sold by <a href="#"><?php echo $item['product_brand'] ?> </a>(4.5 out of 5 | 18,198 ratings)</small>
+                                <small><i class="fas fa-map-marker-alt color-primary"></i>&nbsp;&nbsp;Deliver to Customer - 424201</small>
+                            </div>
+
+                            <div class="col-8">
+                                <div class="color my-3">
+                                    <div class="d-flex justify-content-between">
+                                        <h6 class="font-baloo py-2"><b>Color:</b></h6>
+                                        <div class="p-2 rounded-circle" style="background-color:#ffd985;"><button class="btn font-size-14"></button></div>
+                                        <div class="p-2 rounded-circle" style="background-color:#00315a;"><button class="btn font-size-14"></button></div>
+                                        <div class="p-2 rounded-circle" style="background-color:#00a6c6;"><button class="btn font-size-14"></button></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-8">
+                                <div class="qty d-flex">
+                                    <h6 class="font-baloo py-2"><b>Quantity:</b></h6>
+                                    <div class="px-4 d-flex font-rale btn-bx">
+                                        <button data-id="pdt" class="qty-down btn bg-light border rounded-circle"><i class="bx bx-minus"></i></button>
+                                        <input type="text" data-id="pdt" name='product_qty' class="qty_input w-25 text-center d-inline mx-2" disabled value="1" placeholder="1">
+                                        <!-- <input type='hidden' name='product_qty' value=''> -->
+                                        <button class="qty-up btn bg-light border rounded-circle" data-id="pdt"><i class="bx bx-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="col-12">
+                            <h6 class="font-rubik font-size-20"><b>Product Description</b></h6>
+                            <hr>
+                            <p class="font-rale font-size-14">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat inventore vero numquam error est ipsa, consequuntur temporibus debitis nobis sit, delectus officia ducimus dolorum sed corrupti. Sapiente optio sunt provident, accusantium eligendi eius reiciendis animi? Laboriosam, optio qui? Numquam, quo fuga. Maiores minus, accusantium velit numquam a aliquam vitae vel?</p>
+                            <p class="font-rale font-size-14">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat inventore vero numquam error est ipsa, consequuntur temporibus debitis nobis sit, delectus officia ducimus dolorum sed corrupti. Sapiente optio sunt provident, accusantium eligendi eius reiciendis animi? Laboriosam, optio qui? Numquam, quo fuga. Maiores minus, accusantium velit numquam a aliquam vitae vel?</p>
+                        </div>
+                    </div>
+                </div>
                 <?php
-                detail($item['product_name'], $item['product_brand'], $item['product_price'], $item['product_image'], $item['product_id']);
+                // detail($item['product_name'], $item['product_brand'], $item['product_price'], $item['product_image'], $item['product_id']);
                 ?>
             </section>
     <?php

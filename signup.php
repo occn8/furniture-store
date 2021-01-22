@@ -29,7 +29,7 @@ require_once('config/configurations.php');
                 <div class="col-md-6">
                     <div class="form-group">
                         <label class="white" for="firstName">First name</label>
-                        <input type="text" name="fname" class="form-control" id="firstName" value="" required>
+                        <input type="text" name="fname" class="form-control" id="firstName" value="<?php echo $fname; ?>" required>
                         <div class="invalid-feedback">
                             Valid first name is required.
                         </div>
@@ -38,7 +38,7 @@ require_once('config/configurations.php');
                 <div class="col-md-6">
                     <div class="form-group">
                         <label class="white" for="lastName">Last name</label>
-                        <input type="text" name="lname" class="form-control" id="lastName" value="" required>
+                        <input type="text" name="lname" class="form-control" id="lastName" value="<?php echo $lname; ?>" required>
                         <div class="invalid-feedback">
                             Valid last name is required.
                         </div>
@@ -66,7 +66,7 @@ require_once('config/configurations.php');
                 <div class="col-md-6">
                     <div class="form-group">
                         <label class="white">Password</label>
-                        <input type="password" name="password_1" class="form-control" required>
+                        <input type="password" name="pass1" class="form-control" value="<?php echo $pass1; ?>" required>
                         <div class="invalid-feedback">
                             Please enter valid Password.
                         </div>
@@ -76,7 +76,7 @@ require_once('config/configurations.php');
                 <div class="col-md-6">
                     <div class="form-group">
                         <label class="white">Confirm password</label>
-                        <input type="password" name="password_2" class="form-control" required>
+                        <input type="password" name="pass2" class="form-control" value="<?php echo $pass2; ?>" required>
                         <div class="invalid-feedback">
                             Please enter valid Password.
                         </div>
@@ -85,7 +85,7 @@ require_once('config/configurations.php');
                 <div class="col-md-12">
                     <div class="form-group">
                         <label for="address" class="white f-left">Address</label>
-                        <input type="text" name="address" class="form-control" id="address" placeholder="12 Main St" required>
+                        <input type="text" name="address" class="form-control" id="address" placeholder="12 Main St" value="<?php echo $address; ?>" required>
                         <div class="invalid-feedback">
                             Please enter your Home address.
                         </div>
@@ -107,7 +107,7 @@ require_once('config/configurations.php');
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <label for="state" class="white">District | State</label>
+                        <label for="state" class="white">District </label>
                         <select class="custom-select d-block w-100" name="district" id="state" required>
                             <option>Entebbe</option>
                             <option>Kampala</option>
@@ -120,8 +120,8 @@ require_once('config/configurations.php');
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <label for="zip" class="white">Zip</label>
-                    <input type="text" class="form-control" id="zip" name="zip" placeholder="" required>
+                    <label for="zip" class="white">Zip code</label>
+                    <input type="text" class="form-control" id="zip" name="zip" placeholder="" value="<?php echo $zip; ?>" required>
                     <div class="invalid-feedback">
                         Zip code required.
                     </div>

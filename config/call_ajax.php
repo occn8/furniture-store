@@ -16,7 +16,7 @@ while ($row = mysqli_fetch_assoc($result))
             </div>
             <div class='live-product-det'>
             	<div class='live-product-name'>
-                	<p><strong>".$row['product_name']."</strong></p>
+                	<p><strong>".$row['product_name']."</strong> </p>
                 </div>
                 <div class='live-product-price'>
 					<div class='live-product-price-text'><p>by: ".$row['product_brand']."</p></div>

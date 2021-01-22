@@ -9,7 +9,7 @@ include('widgets/header.php');
 ?>
 
 <main>
-<div class="py-2"></div>
+    <div class="py-2"></div>
 
     <section id="armchairs" class="custom-sale">
         <div class="container py-3">
@@ -127,6 +127,12 @@ include('widgets/header.php');
                 }
                 ?>
             </div>
+        </div>
+    </section>
+    <section id="banner_adds">
+        <div class="container py-5 text-center">
+            <img src="assets/images/banner1-cr-500x150.jpg" alt="banner1" class="img-fluid">
+            <img src="assets/images/banner2-cr-500x150.jpg" alt="banner1" class="img-fluid">
         </div>
     </section>
     <section id="sofa" class="custom-sale">

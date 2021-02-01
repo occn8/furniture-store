@@ -130,31 +130,15 @@ require_once('config/configurations.php');
             </div><br>
 
             <center>
-                <button class="btn btn-lg btn-warning btn-block col-md-6 rounded-pill" name="register_user" type="submit">Register</button><br>
+                <button class="btn btn-lg btn-warning btn-block col-md-6 rounded-pill" name="register_user" type="submit"><b>Register</b></button><br>
 
                 <small>Already have a/c?</small> <a href="signin.php" class="color-link btn clr-bg rounded-pill font-size-20">Log In Now</a>
             </center>
 
         </div>
     </form>
-    <script>
-        (function() {
-            'use strict';
-            window.addEventListener('load', function() {
-                var forms = document.getElementsByClassName('needs-validation');
-                var validation = Array.prototype.filter.call(forms, function(form) {
-                    form.addEventListener('submit', function(event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
-    </script>
 
+    <script src="assets/scripts/validate.js"></script>
     <script src="assets/scripts/jquery.min.js"></script>
     <script src="assets/scripts/popper.min.js"></script>
 </body>

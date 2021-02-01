@@ -32,7 +32,8 @@ $users = "CREATE TABLE IF NOT EXISTS users (
     lname VARCHAR(30) NOT NULL,
     username VARCHAR(30) NOT NULL,
     email VARCHAR(50),
-    regdate DATE,
+    regdate datetime NOT NULL,
+	modified datetime NOT NULL,	
     address VARCHAR(20) NOT NULL,
     country VARCHAR(20),
     district VARCHAR(20),
@@ -53,19 +54,30 @@ $pdts = "CREATE TABLE IF NOT EXISTS products (
 		)";
 mysqli_query($connect, $pdts);
 
+$msgs = "CREATE TABLE IF NOT EXISTS messages (
+	msg_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	usr_name VARCHAR (25) NOT NULL,
+	usr_email VARCHAR (25) NOT NULL,
+	usr_country VARCHAR (25) NOT NULL,
+	usr_msg VARCHAR (255) NOT NULL,
+	modified datetime NOT NULL
+	)";
+mysqli_query($connect, $msgs);
+
 $cart = "CREATE TABLE IF NOT EXISTS cart (
 	cart_id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	userid int(11) NOT NULL,
-	product_id int(11) NOT NULL
+	product_id int(11) NOT NULL,
+	product_qty int(11) NOT NULL
 	)";
 mysqli_query($connect, $cart);
 
-$wishlist = "CREATE TABLE IF NOT EXISTS wishlist (
-	cart_id int(11) NOT NULL,
-	userid int(11) NOT NULL,
-	product_id int(11) NOT NULL
-	)";
-mysqli_query($connect, $wishlist);
+// $wishlist = "CREATE TABLE IF NOT EXISTS wishlist (
+// 	cart_id int(11) NOT NULL,
+// 	userid int(11) NOT NULL,
+// 	product_id int(11) NOT NULL
+// 	)";
+// mysqli_query($connect, $wishlist);
 
 $payments = "CREATE TABLE IF NOT EXISTS payments (
 	pay_id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -272,8 +284,8 @@ if (isset($_POST['register_user'])) {
 
 	if (count($errors) == 0) {
 		$password = md5($pass1);
-		$query = "INSERT INTO users (fname, lname, username, email, regdate, address, country, district, zip, password) 
-					  VALUES('$fname','$lname', '$username', '$email', NOW(), '$address', '$country', '$district', '$zip', '$password')";
+		$query = "INSERT INTO users (fname, lname, username, email, regdate,modified, address, country, district, zip, password) 
+					  VALUES('$fname','$lname', '$username', '$email', NOW(),NOW(), '$address', '$country', '$district', '$zip', '$password')";
 		mysqli_query($connect, $query);
 		$_SESSION['username'] = $username;
 		$_SESSION['id'] = mysqli_insert_id($connect);
@@ -311,6 +323,41 @@ if (isset($_POST['signin_user'])) {
 	}
 }
 
+if (isset($_POST['save_details'])) {
+	$fname = mysqli_real_escape_string($connect, $_POST['fname']);
+	$lname = mysqli_real_escape_string($connect, $_POST['lname']);
+	$email = mysqli_real_escape_string($connect, $_POST['email']);
+	$address = mysqli_real_escape_string($connect, $_POST['address']);
+	$country = mysqli_real_escape_string($connect, $_POST['country']);
+	$district = mysqli_real_escape_string($connect, $_POST['district']);
+	$zip = mysqli_real_escape_string($connect, $_POST['zip']);
+
+	if (empty($fname)) {
+		array_push($errors, "First name is required!");
+	} else {
+		if (!preg_match("/[a-zA-Z]{3,30}$/", $fname)) {
+			array_push($errors, "Invalid First name!");
+		}
+	}
+	if (empty($lname)) {
+		array_push($errors, "Last name is required!");
+	}
+	if (empty($email)) {
+		array_push($errors, "Email is required!");
+	}
+	if (!preg_match("/[0-9]{4,5}$/", $zip)) {
+		array_push($errors, "Invalid Zip code!");
+	}
+	$uid = $_SESSION['id'];
+	if (count($errors) == 0) {
+		$query = "UPDATE users SET fname='$fname',lname='$lname',email='$email',modified=NOW(),address='$address',country='$country',district='$district',zip='$zip' WHERE id='$uid'";
+
+		mysqli_query($connect, $query);
+
+		header('location: account.php');
+	}
+}
+
 if (isset($_GET['logout'])) {
 	session_destroy();
 	unset($_SESSION['username']);
@@ -323,6 +370,7 @@ if (isset($_POST['add'])) {
 	if (isset($_SESSION['cart'])) {
 
 		$item_array_id = array_column($_SESSION['cart'], "product_id");
+		$uid = $_SESSION['id'];
 
 		if (in_array($_POST['product_id'], $item_array_id)) {
 			echo "<script>alert('Product is already added in the cart..!')</script>";
@@ -330,17 +378,19 @@ if (isset($_POST['add'])) {
 		} else {
 
 			$count = count($_SESSION['cart']);
+
 			$item_array = array(
-				'product_qty' => $_POST['product_id'],
-				'product_id' => $_POST['product_id']
+				'userid' => $uid,
+				'product_id' => $_POST['product_id'],
+				'product_qty' => 1
 			);
 
-			// if ($item_array != null) {
-			// 	$columns = implode(',', array_keys($item_array));
-			// 	$values = implode(',', array_values($item_array));
-			// 	$insert_cart = sprintf("INSERT INTO %s(%s) VALUES(%s)", 'cart', $columns, $values);
-			// 	$result = $connect->query($insert_cart);
-			// }
+			if ($item_array != null) {
+				$columns = implode(',', array_keys($item_array));
+				$values = implode(',', array_values($item_array));
+				$insert_cart = sprintf("INSERT INTO %s(%s) VALUES(%s)", 'cart', $columns, $values);
+				$result = $connect->query($insert_cart);
+			}
 
 			$_SESSION['cart'][$count] = $item_array;
 			header('location: cart.php');
@@ -348,8 +398,9 @@ if (isset($_POST['add'])) {
 	} else {
 
 		$item_array = array(
-			'product_qty' => $_POST['product_id'],
-			'product_id' => $_POST['product_id']
+			'userid' => $uid,
+			'product_id' => $_POST['product_id'],
+			'product_qty' => 1
 		);
 		// Create new session variable
 		$_SESSION['cart'][0] = $item_array;
@@ -378,6 +429,28 @@ if (isset($_POST['checkout'])) {
 		mysqli_query($connect, $query);
 
 		header('location: success.php');
+	}
+}
+
+if (isset($_POST['send_msg'])) {
+	$usr_name = mysqli_real_escape_string($connect, $_POST['usr_name']);
+	$usr_email = mysqli_real_escape_string($connect, $_POST['usr_email']);
+	$usr_country = mysqli_real_escape_string($connect, $_POST['usr_country']);
+	$usr_msg = mysqli_real_escape_string($connect, $_POST['usr_msg']);
+	if (empty($usr_name)) {
+		array_push($errors, "Username Required");
+	}
+	if (empty($usr_email)) {
+		array_push($errors, "Email Required");
+	}
+
+	if (count($errors) == 0) {
+		$uid = $_SESSION['id'];
+		$query = "INSERT INTO messages (usr_name, usr_email, usr_country, usr_msg, modified) 
+					  VALUES('$usr_name', '$usr_email', '$usr_country', '$usr_msg', NOW())";
+		mysqli_query($connect, $query);
+
+		header('location: contact.php');
 	}
 }
 

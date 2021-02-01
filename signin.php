@@ -47,28 +47,15 @@ require_once('config/configurations.php');
         </div><br>
 
         <center>
-            <button class="btn btn-lg btn-warning btn-block rounded-pill" name="signin_user" type="submit">Sign in</button><br>
+            <button class="btn btn-lg btn-warning btn-block rounded-pill" name="signin_user" type="submit"><b>Sign in</b></button><br>
             <small>Don't have an a/c </small> <a href="signup.php" class="color-link btn clr-bg rounded-pill font-size-20">Sign up Now</a>
-            <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
+            <p class="mt-5 mb-3 text-muted">&copy; <script>
+                    document.write(new Date().getFullYear());
+                </script>
+            </p>
         </center>
     </form>
-    <script>
-        (function() {
-            'use strict';
-            window.addEventListener('load', function() {
-                var forms = document.getElementsByClassName('needs-validation');
-                var validation = Array.prototype.filter.call(forms, function(form) {
-                    form.addEventListener('submit', function(event) {
-                        if (form.checkValidity() === false) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            }, false);
-        })();
-    </script>
+    <script src="assets/scripts/validate.js"></script>
     <script src="assets/scripts/jquery.min.js"></script>
     <script src="assets/scripts/popper.min.js"></script>
 </body>

@@ -149,7 +149,7 @@
                                 </li>";
                         } else {
                             echo " <li class=\"nav-item ml-md-3\">
-                                <a class=\"btn btn-primary nav-link\" href=\"index.php?logout='1'\"><i class=\"bx bxs-user-circle mr-1 bx-sm\"></i>(" . $_SESSION['username'] . ") <b>Logout</b></a>
+                                <a class=\"btn clr-bg nav-link\" href=\"index.php?logout='1'\"><i class=\"bx bxs-user-circle color-primary mr-1 bx-sm\"></i>(" . $_SESSION['username'] . ") <b><span class='color-primary'>Logout</span></b></a>
                                 </li>";
                         }
                         ?>

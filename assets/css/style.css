@@ -150,6 +150,7 @@ ul li a:hover {
     color: #1f1f1f;
     text-decoration: none !important;
     opacity: 0;
+    z-index: 100;
     pointer-events: none;
     transition: all .4s;
 }
@@ -240,7 +241,7 @@ ul li a:hover {
 }
 
 .live-outer:hover {
-    background: #ffeace;
+    background: #f5f4f7;
 }
 
 .live-im {

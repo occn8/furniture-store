@@ -108,17 +108,16 @@ include('widgets/header.php');
                                 </div>
                             </div>
                             <br>
-                            <div class="col-8">
+                            <!-- <div class="col-8">
                                 <div class="qty d-flex">
                                     <h6 class="font-baloo py-2"><b>Quantity:</b></h6>
                                     <div class="px-4 d-flex font-rale btn-bx">
                                         <button data-id="pdt" class="qty-down btn bg-light border rounded-circle"><i class="bx bx-minus"></i></button>
                                         <input type="text" data-id="pdt" name='product_qty' class="qty_input w-25 text-center d-inline mx-2" disabled value="1" placeholder="1">
-                                        <!-- <input type='hidden' name='product_qty' value=''> -->
                                         <button class="qty-up btn bg-light border rounded-circle" data-id="pdt"><i class="bx bx-plus"></i></button>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
 
 
                         </div>

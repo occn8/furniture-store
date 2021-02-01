@@ -81,7 +81,7 @@ require_once('config/user_detail.php');
             <div class="col-md-8 order-md-1">
                 <h4 class="mb-3"><strong>Billing address</strong></h4>
                 <form class="needs-validation" method="post" action="checkout.php" novalidate>
-                <?php include('config/errors.php'); ?>
+                    <?php include('config/errors.php'); ?>
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="firstName">First name</label>
@@ -221,23 +221,7 @@ require_once('config/user_detail.php');
             </div>
         </div>
 </main>
-<script>
-    (function() {
-        'use strict';
-        window.addEventListener('load', function() {
-            var forms = document.getElementsByClassName('needs-validation');
-            var validation = Array.prototype.filter.call(forms, function(form) {
-                form.addEventListener('submit', function(event) {
-                    if (form.checkValidity() === false) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-                    form.classList.add('was-validated');
-                }, false);
-            });
-        }, false);
-    })();
-</script>
+<script src="assets/scripts/validate.js"></script>
 <?php
 include('widgets/footer.php');
 ?>

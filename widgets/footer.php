@@ -5,30 +5,30 @@
                 <h5>Quick Links</h5>
                 <ul class="list-unstyled text-small">
 
-                    <li><a class="" href="#">Sell online</a></li>
-                    <li><a class="" href="#">Features</a></li>
-                    <li><a class="" href="#">Shopping cart</a></li>
-                    <li><a class="" href="#">Mobile commerce</a></li>
-                    <li><a class="" href="#">Dropshipping</a></li>
+                    <li><a class="" href="<?php echo $currentpage == 'about' ? '#' : 'about.php' ?>">Features</a></li>
+                    <li><a class="" href="<?php echo $currentpage == 'cart' ? '#' : 'cart.php' ?>">Shopping cart</a></li>
+                    <li><a class="" href="<?php echo $currentpage == 'latest' ? '#' : 'latest.php' ?>">New Arrivals</a></li>
+                    <li><a class="" href="<?php echo $currentpage == 'account' ? '#' : 'account.php' ?>">Account</a></li>
                     <li><a class="" href="#">Development</a></li>
                 </ul>
             </div>
             <div class="col-md-4 py-2">
                 <h5>Contact Info</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a class="" href="#">Ntinda valley, 21st st, Kampala, UGANDA</a></li>
-                    <li><a class="" href="#">+256 7887 06532</a></li>
-                    <li><a class="" href="#">elitefurniture@furstore.com</a></li>
-                    <li><a class="" href="#">SUBSCRIBE</a></li>
+                    <li><a class="" href="<?php echo $currentpage == 'contact' ? '#' : 'contact.php' ?>">Get in touch</a></li>
+                    <li><a class="" href="<?php echo $currentpage == 'contact' ? '#' : 'contact.php' ?>">Ntinda valley, 21st st, Kampala, UGANDA</a></li>
+                    <li><a class="" href="<?php echo $currentpage == 'contact' ? '#' : 'contact.php' ?>">+256 7887 06532</a></li>
+                    <li><a class="" href="<?php echo $currentpage == 'contact' ? '#' : 'contact.php' ?>">elitefurniture@furstore.com</a></li>
+                    <li><a class="" href="<?php echo $currentpage == 'contact' ? '#' : 'contact.php' ?>">SUBSCRIBE</a></li>
                 </ul>
             </div>
             <div class="col-md-4 py-2">
                 <h5>About</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a class="" href="#">Team</a></li>
-                    <li><a class="" href="#">Locations</a></li>
-                    <li><a class="" href="#">Privacy</a></li>
-                    <li><a class="" href="#">Terms</a></li>
+                    <li><a class="" href="<?php echo $currentpage == 'about' ? '#' : 'about.php' ?>">Team</a></li>
+                    <li><a class="" href="<?php echo $currentpage == 'contact' ? '#' : 'contact.php' ?>">Locations</a></li>
+                    <li><a class="" href="<?php echo $currentpage == 'about' ? '#' : 'about.php' ?>">Privacy</a></li>
+                    <li><a class="" href="<?php echo $currentpage == 'about' ? '#' : 'about.php' ?>">Terms</a></li>
                 </ul>
             </div>
         </div>

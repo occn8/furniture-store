@@ -93,7 +93,7 @@ mysqli_query($connect, $payments);
 $products1 = "INSERT INTO `products` (product_id, product_name,product_type, product_brand, product_price, modified, product_image)
 	VALUES (1,'repa-Armchair', 'armchairs','ARFLEX',1799000,NOW(),'/furniture-store/assets/products/armchairs/1.jpg'),
 	(2,'arlexa-Armchair', 'armchairs','ASTON',1799000,NOW(),'/furniture-store/assets/products/armchairs/2.jpg'),
-	(3,'cavana-Armchair', 'armchairs','ARFLEX',1799000,NOW(),'/furniture-store/assets/products/armchairs/3.jpg'),
+	(3,'cavana-Armchair', 'armchairs','ARFLEX',1799000,'2021-02-05 13:23:05','/furniture-store/assets/products/armchairs/3.jpg'),
 	(4,'palsa-Armchair', 'armchairs','FELTRI',1799000,NOW(),'/furniture-store/assets/products/armchairs/4.jpg'),
 	(5,'silica-Armchair', 'armchairs','JANET',1799000,NOW(),'/furniture-store/assets/products/armchairs/5.jpg'),
 	(6,'scooper-Armchair', 'armchairs','LUDWIG',1799000,NOW(),'/furniture-store/assets/products/armchairs/6.jpg'),
@@ -158,8 +158,8 @@ $products5 = "INSERT INTO `products` (product_id, product_name,product_type, pro
 	(53,'citizen-low','easychairs','ASTON',459000,NOW(),'/furniture-store/assets/products/easychairs/7.jpg'),
 	(54,'yeast-yut','easychairs','ASTON',459000,NOW(),'/furniture-store/assets/products/easychairs/8.jpg'),
 	(55,'gyna','easychairs','JANET',459000,NOW(),'/furniture-store/assets/products/easychairs/9.jpg'),
-	(56,'mewew','easychairs','FELTRI',459000,NOW(),'/furniture-store/assets/products/easychairs/10.jpg'),
-	(57,'rito','easychairs','JANET',459000,NOW(),'/furniture-store/assets/products/easychairs/11.jpg')";
+	(56,'mewew','easychairs','FELTRI',459000,'2021-02-05 13:23:05','/furniture-store/assets/products/easychairs/10.jpg'),
+	(57,'rito','easychairs','JANET',459000,'2021-02-05 13:23:05','/furniture-store/assets/products/easychairs/11.jpg')";
 mysqli_query($connect, $products5);
 
 $products6 = "INSERT INTO `products` (product_id, product_name,product_type, product_brand, product_price, modified, product_image)
@@ -175,7 +175,7 @@ $products6 = "INSERT INTO `products` (product_id, product_name,product_type, pro
 	(67,'calligaris','footstools','LUDWIG',459000,NOW(),'/furniture-store/assets/products/footstools/10.jpg'),
 	(68,'gitti','footstools','JANET',459000,NOW(),'/furniture-store/assets/products/footstools/11.jpg'),
 	(69,'caigaris','footstools','JANET',459000,NOW(),'/furniture-store/assets/products/footstools/12.jpg'),
-	(70,'ruit','footstools','LUDWIG',459000,NOW(),'/furniture-store/assets/products/footstools/13.jpg')";
+	(70,'ruit','footstools','LUDWIG',459000,'2021-02-05 13:23:05','/furniture-store/assets/products/footstools/13.jpg')";
 mysqli_query($connect, $products6);
 
 $products7 = "INSERT INTO `products` (product_id, product_name,product_type, product_brand, product_price, modified, product_image)
@@ -185,9 +185,9 @@ $products7 = "INSERT INTO `products` (product_id, product_name,product_type, pro
 	(74,'gloriues','kidssofas','FELTRI',459000,NOW(),'/furniture-store/assets/products/kidssofas/4.jpg'),
 	(75,'haddle','kidssofas','ASTON',459000,NOW(),'/furniture-store/assets/products/kidssofas/5.jpg'),
 	(76,'mickto','kidssofas','PHOENIX',459000,NOW(),'/furniture-store/assets/products/kidssofas/6.jpg'),
-	(77,'hague','kidssofas','PHOENIX',459000,NOW(),'/furniture-store/assets/products/kidssofas/7.jpg'),
-	(78,'striil','kidssofas','LUDWIG',459000,NOW(),'/furniture-store/assets/products/kidssofas/8.jpg'),
-	(79,'launger','kidssofas','ASTON',459000,NOW(),'/furniture-store/assets/products/kidssofas/9.jpg'),
+	(77,'hague','kidssofas','PHOENIX',459000,'2021-02-05 13:23:05','/furniture-store/assets/products/kidssofas/7.jpg'),
+	(78,'striil','kidssofas','LUDWIG',459000,'2021-02-05 13:23:05','/furniture-store/assets/products/kidssofas/8.jpg'),
+	(79,'launger','kidssofas','ASTON',459000,'2021-02-05 13:23:05','/furniture-store/assets/products/kidssofas/9.jpg'),
 	(80,'tudewo','kidssofas','LOFT',459000,NOW(),'/furniture-store/assets/products/kidssofas/10.jpg'),
 	(81,'kingo','kidssofas','ASTON',459000,NOW(),'/furniture-store/assets/products/kidssofas/11.jpg'),
 	(82,'yesyo','kidssofas','LUDWIG',459000,NOW(),'/furniture-store/assets/products/kidssofas/12.jpg')";
@@ -196,8 +196,8 @@ mysqli_query($connect, $products7);
 $products8 = "INSERT INTO `products` (product_id, product_name,product_type, product_brand, product_price, modified, product_image)
 	VALUES (83,'beat-andreu','poufs','ARFLEX',459000,NOW(),'/furniture-store/assets/products/poufs/1.jpg'),
 	(84,'andreu','poufs','JANET',459000,NOW(),'/furniture-store/assets/products/poufs/2.jpg'),
-	(85,'hureu','poufs','LUDWIG',459000,NOW(),'/furniture-store/assets/products/poufs/3.jpg'),
-	(86,'beat-meme','poufs','CLIPPER',459000,NOW(),'/furniture-store/assets/products/poufs/4.jpg'),
+	(85,'hureu','poufs','LUDWIG',459000,'2021-02-05 13:23:05','/furniture-store/assets/products/poufs/3.jpg'),
+	(86,'beat-meme','poufs','CLIPPER',459000,'2021-02-05 13:23:05','/furniture-store/assets/products/poufs/4.jpg'),
 	(87,'beest','poufs','ASTON',459000,NOW(),'/furniture-store/assets/products/poufs/5.jpg'),
 	(88,'juana','poufs','FELTRI',459000,NOW(),'/furniture-store/assets/products/poufs/6.jpg'),
 	(89,'beat-andreu','poufs','PHOENIX',459000,NOW(),'/furniture-store/assets/products/poufs/7.jpg'),
@@ -218,7 +218,7 @@ $products9 = "INSERT INTO `products` (product_id, product_name,product_type, pro
 	(101,'gnomwe','smallsofas','CLIPPER',459000,NOW(),'/furniture-store/assets/products/smallsofas/8.jpg'),
 	(102,'naomi','smallsofas','ARFLEX',459000,NOW(),'/furniture-store/assets/products/smallsofas/9.jpg'),
 	(103,'cliapa','smallsofas','ARFLEX',459000,NOW(),'/furniture-store/assets/products/smallsofas/10.jpg'),
-	(104,'stealo','smallsofas','CLIPPER',459000,NOW(),'/furniture-store/assets/products/smallsofas/11.jpg')";
+	(104,'stealo','smallsofas','CLIPPER',459000,'2021-02-05 13:23:05','/furniture-store/assets/products/smallsofas/11.jpg')";
 mysqli_query($connect, $products9);
 
 $products10 = "INSERT INTO `products` (product_id, product_name,product_type, product_brand, product_price, modified, product_image)
@@ -230,8 +230,8 @@ $products10 = "INSERT INTO `products` (product_id, product_name,product_type, pr
 	(110,'beam-cassina','sofa','FELTRI',278000,NOW(),'/furniture-store/assets/products/sofa/6.jpg'),
 	(111,'palas','sofa','LOFT',278000,NOW(),'/furniture-store/assets/products/sofa/7.jpg'),
 	(112,'beam-cassina','sofa','JANET',278000,NOW(),'/furniture-store/assets/products/sofa/8.jpg'),
-	(113,'hui-ina','sofa','PHOENIX',278000,NOW(),'/furniture-store/assets/products/sofa/9.jpg'),
-	(114,'tanna','sofa','PHOENIX',278000,NOW(),'/furniture-store/assets/products/sofa/10.jpg'),
+	(113,'hui-ina','sofa','PHOENIX',278000,'2021-02-05 13:23:05','/furniture-store/assets/products/sofa/9.jpg'),
+	(114,'tanna','sofa','PHOENIX',278000,'2021-02-05 13:23:05','/furniture-store/assets/products/sofa/10.jpg'),
 	(115,'culliot','sofa','CLIPPER',278000,NOW(),'/furniture-store/assets/products/sofa/11.jpg'),
 	(116,'be-maa','sofa','ARFLEX',278000,NOW(),'/furniture-store/assets/products/sofa/12.jpg'),
 	(117,'bestos','sofa','CLIPPER',278000,NOW(),'/furniture-store/assets/products/sofa/13.jpg'),
@@ -465,7 +465,7 @@ $querryKidssofas = "SELECT * FROM products WHERE product_type='kidssofas'";
 $querryPoufs = "SELECT * FROM products WHERE product_type='Poufs'";
 $querrySmallsofas = "SELECT * FROM products WHERE product_type='Smallsofas'";
 $querrySofa = "SELECT * FROM products WHERE product_type='Sofa'";
-$querrylatest = "SELECT * FROM products WHERE modified='2021-01-01 15:01:05'";
+$querrylatest = "SELECT * FROM products WHERE modified='2021-02-05 13:23:05'";
 
 $result = $connect->query($querrypdts);
 if ($result->num_rows > 0) {

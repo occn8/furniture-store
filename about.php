@@ -62,14 +62,14 @@ include('widgets/header.php');
                         <p>Klive Karuhunga</p>
                     </div>
                 </div>
-                <div class="col-md-3"><img src="assets/images/ochen.jpg" width="95%" alt="team-img">
+                <div class="col-md-3"><img src="assets/images/tisha.jpg" width="95%" alt="team-img">
                     <div class="col-md-12 text-center py-2">
-                        <p>Ochen Hillary</p>
+                        <p>Kirabo Tisha</p>
                     </div>
                 </div>
-                <div class="col-md-3"><img src="assets/images/klive.jpg" width="95%" alt="team-img">
+                <div class="col-md-3"><img src="assets/images/precious.jpg" width="95%" alt="team-img">
                     <div class="col-md-12 text-center py-2">
-                        <p>Klive Karuhunga</p>
+                        <p>Ayebare Precious</p>
                     </div>
                 </div>
             </div>

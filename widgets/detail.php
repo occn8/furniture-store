@@ -9,16 +9,16 @@ function detail($product_name, $product_brand, $product_price, $product_image, $
                         <div class=\"col-md-6\">
                             <img src=\" $product_image\" alt=\"product\" class=\"img-fluid\">
                             <div class=\"form-row pt-4 font-size-16 font-baloo\">
-                                <div class=\"col\">
-                                    <button type=\"submit\" class=\"btn btn-secondary form-control\">Add to whishlist</button>
-                                </div>
-                                <div class=\"col\">
-                                    <form action=\"details.php\" method=\"post\">
-                                        <button type=\"submit\" name=\"add\" class=\"btn btn-warning font-size-16 form-control\">Add to Cart</button>
+                                <form action=\"details.php\" method=\"post\">
+                                    <div class=\"col\">
+                                        <button type=\"submit\" name=\"add_wishlist\" class=\"btn btn-secondary form-control\">Add to whishlist</button>
                                         <input type='hidden' name='product_id' value='$product_id'>
-                                         
-                                    </form>
-                                </div>
+                                    </div>
+                                    <div class=\"col\">
+                                            <button type=\"submit\" name=\"add\" class=\"btn btn-warning font-size-16 form-control\">Add to Cart</button>
+                                            <input type='hidden' name='product_id' value='$product_id'>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                         <div class=\"col-md-6 py-5\">

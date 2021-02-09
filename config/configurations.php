@@ -409,6 +409,36 @@ if (isset($_POST['add'])) {
 	}
 }
 
+if (isset($_POST['add_wishlist'])) {
+	if (isset($_SESSION['wishlist'])) {
+
+		$item_array_id = array_column($_SESSION['wishlist'], "product_id");
+
+		if (in_array($_POST['product_id'], $item_array_id)) {
+			echo "<script>window.location = 'index.php'</script>";
+		} else {
+
+			$count = count($_SESSION['wishlist']);
+
+			$item_array = array(
+				'product_id' => $_POST['product_id'],
+				'product_qty' => 1
+			);
+
+			$_SESSION['wishlist'][$count] = $item_array;
+			header('location: cart.php');
+		}
+	} else {
+
+		$item_array = array(
+			'product_id' => $_POST['product_id'],
+			'product_qty' => 1
+		);
+		$_SESSION['wishlist'][0] = $item_array;
+		header('location: cart.php');
+	}
+}
+
 if (isset($_POST['checkout'])) {
 	$method = mysqli_real_escape_string($connect, $_POST['paymentMethod']);
 	$cname = mysqli_real_escape_string($connect, $_POST['cname']);

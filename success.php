@@ -1,12 +1,12 @@
 <?php
 require_once('config/configurations.php');
 require_once('widgets/checkout_cart.php');
+require_once('config/user_detail.php');
 ?>
 
 <?php
 $currentpage = 'success';
 include('widgets/header.php');
-require_once('config/user_detail.php');
 
 ?>
 

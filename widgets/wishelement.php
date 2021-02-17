@@ -1,10 +1,9 @@
 <?php
-
-function cartElement($productimg, $productname, $productbrand, $productprice, $productid)
+function wishElement($productimg, $productname, $productbrand, $productprice, $productid)
 {
     $element = "
     
-    <form action=\"cart.php?action=remove&id=$productid\" method=\"post\" class=\"cart-items\">
+    <form action=\"wishlist.php?action2=remove_wish&id=$productid\" method=\"post\" class=\"cart-items\">
                     <div class=\"border-top rounded py-2 my-4\">
                         <div class=\"row bg-white\">
                             <div class=\"col-md-3 pl-0\">
@@ -14,8 +13,8 @@ function cartElement($productimg, $productname, $productbrand, $productprice, $p
                                 <h5 class=\"pt-2\"><strong>$productname</strong></h5>
                                 <small class=\"text-secondary\">Seller: $productbrand</small>
                                 <h5 class=\"pt-2\">UGX <b>$productprice</b>/=</h5>
-                                <button type=\"submit\" class=\"btn btn-warning\">Save for Later</button>
-                                <button type=\"submit\" class=\"btn btn-danger mx-2\" name=\"remove\">Remove</button>
+                                <button type=\"submit\" class=\"btn btn-warning\">Add to Cart</button>
+                                <button type=\"submit\" class=\"btn btn-danger mx-2\" name=\"remove_wish\">Remove</button>
                             </div>
                             <div class=\"qty d-flex col-md-3 py-5\">
                                 <div class=\"btn-bx\">

@@ -82,10 +82,10 @@ mysqli_query($connect, $cart);
 $payments = "CREATE TABLE IF NOT EXISTS payments (
 	pay_id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	userid int(11) NOT NULL,
-	method int(11) NOT NULL,
+	method VARCHAR(11) NOT NULL,
 	cname int(11) NOT NULL,
 	cnum int(11) NOT NULL,
-	expiration int(11) NOT NULL,
+	expiration datetime NOT NULL,
 	cvv int(11) NOT NULL
 	)";
 mysqli_query($connect, $payments);
@@ -252,6 +252,8 @@ if (isset($_POST['register_user'])) {
 	$pass2 = mysqli_real_escape_string($connect, $_POST['pass2']);
 	$if_user_exist = "SELECT * FROM users WHERE username='$username'";
 	$if_exist_result = mysqli_query($connect, $if_user_exist);
+	$if_email_exist = "SELECT * FROM users WHERE email='$email'";
+	$if_email_result = mysqli_query($connect, $if_email_exist);
 
 	if (empty($fname)) {
 		array_push($errors, "First name is required!");
@@ -268,6 +270,9 @@ if (isset($_POST['register_user'])) {
 	}
 	if (mysqli_num_rows($if_exist_result) > 0) {
 		array_push($errors, "Sorry.. Username already taken!");
+	}
+	if (mysqli_num_rows($if_email_result) > 0) {
+		array_push($errors, "Sorry.. Email is already in Use!");
 	}
 	if (empty($email)) {
 		array_push($errors, "Email is required!");
@@ -304,6 +309,7 @@ if (isset($_POST['signin_user'])) {
 	if (empty($password)) {
 		array_push($errors, "Password Required");
 	}
+
 	if (count($errors) == 0) {
 		$password = md5($password);
 		$query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
@@ -426,7 +432,7 @@ if (isset($_POST['add_wishlist'])) {
 			);
 
 			$_SESSION['wishlist'][$count] = $item_array;
-			header('location: cart.php');
+			header('location: wishlist.php');
 		}
 	} else {
 
@@ -435,7 +441,7 @@ if (isset($_POST['add_wishlist'])) {
 			'product_qty' => 1
 		);
 		$_SESSION['wishlist'][0] = $item_array;
-		header('location: cart.php');
+		header('location: wishlist.php');
 	}
 }
 

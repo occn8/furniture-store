@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ochen Hillary, Kirabo Tisha">
+    <meta name="description" content="E-commerce project">
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/boxicons/css/boxicons.min.css">
@@ -79,9 +81,9 @@
                 <ul class="navbar-nav ml-auto d-block d-md-none">
                     <li class="nav-item">
                         <div class="cart">
-                            <div class="cart_container d-flex flex-row align-items-center justify-content-end">
-                                <a href="cart.php">
-                                    <div class="cart_icon"> <img src="assets/cart.png" alt="">
+                            <div class="cart_container clr-bg d-flex flex-row align-items-center justify-content-end">
+                                <a href="cart.php" class="btn rounded-pill">
+                                    <div class="cart_icon"> <img src="assets/images/shopping-cart.png" height="30px" width="50px" alt="">
                                         <div class="cart_count ">
                                             <?php
 
@@ -96,10 +98,11 @@
                                         </div>
                                     </div>
                                 </a>
-                                <div class="cart_content">
-                                    <div class="cart_text font-size-24"><a href="cart.php">Cart</a></div>
-                                </div>
+                                <!-- <div class="cart_content">
+                                        <div class="cart_text font-size-24"><a href="cart.php">Cart</a></div>
+                                    </div> -->
                             </div>
+
                         </div>
                     </li>
                 </ul>
@@ -112,14 +115,13 @@
                             <div id="livesearch"></div>
                         </form>
                     </div>
-                    
+
                     <ul class="navbar-nav">
                         <li class="nav-item ">
                             <div class="cart">
-
                                 <div class="cart_container clr-bg d-flex flex-row align-items-center justify-content-end">
                                     <a href="cart.php" class="btn rounded-pill">
-                                        <div class="cart_icon"> <img src="assets/cart.png" alt="">
+                                        <div class="cart_icon"> <img src="assets/images/shopping-cart.png" height="30px" width="50px" alt="">
                                             <div class="cart_count ">
                                                 <?php
 
@@ -134,9 +136,35 @@
                                             </div>
                                         </div>
                                     </a>
-                                    <div class="cart_content">
+                                    <!-- <div class="cart_content">
                                         <div class="cart_text font-size-24"><a href="cart.php">Cart</a></div>
-                                    </div>
+                                    </div> -->
+                                </div>
+
+                            </div>
+                        </li>
+                        <li class="nav-item pl-3">
+                            <div class="cart">
+                                <div class="cart_container clr-bg d-flex flex-row align-items-center justify-content-end">
+                                    <a href="wishlist.php" class="btn rounded-pill">
+                                        <div class="cart_icon"> <img src="assets/images/favorite-heart.png" height="25px" width="60px" alt="">
+                                            <div class="cart_count ">
+                                                <?php
+
+                                                if (isset($_SESSION['wishlist'])) {
+                                                    $count = count($_SESSION['wishlist']);
+                                                    echo "<span id=\"cart_count\" class=\"text-success \">$count</span>";
+                                                } else {
+                                                    echo "<span id=\"cart_count\" class=\"text-success\">0</span>";
+                                                }
+
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <!-- <div class="cart_content">
+                                        <div class="cart_text font-size-24"><a href="wishlist.php">Cart</a></div>
+                                    </div> -->
                                 </div>
 
                             </div>

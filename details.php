@@ -9,14 +9,15 @@ include('widgets/header.php');
 ?>
 <main>
     <?php
-    $item_id = $_GET['product_id'];
+    $_SESSION['item_id'] = $_GET['product_id'];
+    // $item_id = $_SESSION['item_id'];
     if (isset($_SESSION['cart'])) {
         $item_array_id = array_column($_SESSION['cart'], "product_id");
     } else {
     }
 
     foreach ($result as $item) :
-        if ($item['product_id'] == $item_id) :
+        if ($item['product_id'] == $_SESSION['item_id']) :
     ?>
             <section id="product" class="py-3">
                 <div class="container">
@@ -25,17 +26,19 @@ include('widgets/header.php');
                             <img src=" <?php echo $item['product_image'] ?>" alt="product" class="img-fluid">
                             <div class="form-row pt-4 font-size-16 font-baloo">
                                 <div class="col">
-                                    <button type="submit" class="btn btn-secondary form-control">Add to whishlist</button>
+                                    <form action="details.php" method="post">
+                                        <button type="submit" name="add_wishlist" class="btn btn-secondary form-control">Add to whishlist</button>
+                                        <input type='hidden' name='product_id' value='<?php echo $_SESSION['item_id'] ?>'>
+                                    </form>
                                 </div>
                                 <div class="col">
                                     <form action="details.php" method="post">
-                                        <?php if (in_array($item_id, $item_array_id ?? [])) : ?>
+                                        <?php if (in_array($_SESSION['item_id'], $item_array_id ?? [])) : ?>
                                             <button type="submit" name="add" class="btn btn-warning font-size-16 form-control" disabled>In the Cart</button>
                                         <?php else : ?>
                                             <button type="submit" name="add" class="btn btn-warning font-size-16 form-control">Add to Cart</button>
                                         <?php endif; ?>
-                                        <input type='hidden' name='product_id' value='<?php echo $item_id ?>'>
-
+                                        <input type='hidden' name='product_id' value='<?php echo $_SESSION['item_id'] ?>'>
                                     </form>
                                 </div>
                             </div>

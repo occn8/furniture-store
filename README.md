@@ -19,8 +19,6 @@
 ### Screenshots
 __`Home screen`__
 <img src="assets/images/home.png" />
-__`Search`__
-<img src="assets/images/search.png" />
-__`Contact screen`__
-<img src="assets/images/contact.png" />
+<!-- __`Search`__
+<img src="assets/images/search.png" /> -->
 

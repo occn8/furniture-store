@@ -1,10 +1,10 @@
 <?php
 require_once('config/configurations.php');
-require_once('widgets/cartelement.php');
+require_once('widgets/wishelement.php');
 require_once('widgets/checkout_cart.php');
 
-if (isset($_POST['remove'])) {
-    if ($_GET['action'] == 'remove') {
+if (isset($_POST['remove_wish'])) {
+    if ($_GET['action2'] == 'remove_wish') {
         foreach ($_SESSION['wishlist'] as $key => $value) {
             if ($value["product_id"] == $_GET['id']) {
                 unset($_SESSION['wishlist'][$key]);
@@ -35,7 +35,7 @@ include('widgets/header.php');
                         while ($row = mysqli_fetch_assoc($result)) {
                             foreach ($product_id as $id) {
                                 if ($row['product_id'] == $id) {
-                                    cartElement($row['product_image'], $row['product_name'], $row['product_brand'], $row['product_price'], $row['product_id']);
+                                    wishElement($row['product_image'], $row['product_name'], $row['product_brand'], $row['product_price'], $row['product_id']);
                                 }
                             }
                         }

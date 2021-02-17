@@ -14,12 +14,12 @@ $country = $row['country'];
 $district = $row['district'];
 $zip = $row['zip'];
 
-// $querrypay = "SELECT * FROM payments WHERE userid='$uid'";
-// $results2 = mysqli_query($connect, $querrypay);
-// $row2 = mysqli_fetch_assoc($results2);
+$querrypay = "SELECT * FROM payments WHERE userid='$uid'";
+$results2 = mysqli_query($connect, $querrypay);
+$row2 = mysqli_fetch_assoc($results2);
 
-// $method = $row2['method'];
-// $cname = $row2['cname'];
-// $cnum = $row2['cnum'];
-// $exp = $row2['expiration'];
-// $cvv = $row2['cvv'];
+$method = $row2['method'];
+$cname = $row2['cname'];
+$cnum = $row2['cnum'];
+$exp = $row2['expiration'];
+$cvv = $row2['cvv'];

@@ -17,8 +17,8 @@
 * [x] __Done__
 
 ### Screenshots
-__`Home screen`__
-<img src="assets/images/home.png" />
-<!-- __`Search`__
-<img src="assets/images/search.png" /> -->
+<!-- __`Home screen`__
+<img src="assets/images/home.png" /> -->
+__`Search`__
+<img src="assets/images/search.png" />
 

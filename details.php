@@ -12,7 +12,11 @@ include('widgets/header.php');
     $_SESSION['item_id'] = $_GET['product_id'];
     // $item_id = $_SESSION['item_id'];
     if (isset($_SESSION['cart'])) {
-        $item_array_id = array_column($_SESSION['cart'], "product_id");
+        $cart_item_id = array_column($_SESSION['cart'], "product_id");
+    } else {
+    }
+    if (isset($_SESSION['wishlist'])) {
+        $wishlist_item_id = array_column($_SESSION['wishlist'], "product_id");
     } else {
     }
 
@@ -27,14 +31,20 @@ include('widgets/header.php');
                             <div class="form-row pt-4 font-size-16 font-baloo">
                                 <div class="col">
                                     <form action="details.php" method="post">
-                                        <button type="submit" name="add_wishlist" class="btn btn-secondary form-control">Add to whishlist</button>
+                                        <?php if (in_array($_SESSION['item_id'], $wishlist_item_id ?? [])) : ?>
+                                            <button type="submit" name="add_wishlist" class="btn btn-secondary form-control" disabled>In your whishlist</button>
+                                        <?php elseif (in_array($_SESSION['item_id'], $cart_item_id ?? [])) : ?>
+                                            <button type="submit" name="add_wishlist" class="btn btn-secondary form-control" disabled>Add to whishlist</button>
+                                        <?php else : ?>
+                                            <button type="submit" name="add_wishlist" class="btn btn-secondary form-control">Add to whishlist</button>
+                                        <?php endif; ?>
                                         <input type='hidden' name='product_id' value='<?php echo $_SESSION['item_id'] ?>'>
                                     </form>
                                 </div>
                                 <div class="col">
                                     <form action="details.php" method="post">
-                                        <?php if (in_array($_SESSION['item_id'], $item_array_id ?? [])) : ?>
-                                            <button type="submit" name="add" class="btn btn-warning font-size-16 form-control" disabled>In the Cart</button>
+                                        <?php if (in_array($_SESSION['item_id'], $cart_item_id ?? [])) : ?>
+                                            <button type="submit" name="add" class="btn btn-warning font-size-16 form-control" disabled>In your Cart</button>
                                         <?php else : ?>
                                             <button type="submit" name="add" class="btn btn-warning font-size-16 form-control">Add to Cart</button>
                                         <?php endif; ?>

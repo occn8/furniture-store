@@ -85,7 +85,7 @@ $payments = "CREATE TABLE IF NOT EXISTS payments (
 	method VARCHAR(11) NOT NULL,
 	cname int(11) NOT NULL,
 	cnum int(11) NOT NULL,
-	expiration datetime NOT NULL,
+	expiration date NOT NULL,
 	cvv int(11) NOT NULL
 	)";
 mysqli_query($connect, $payments);
@@ -295,7 +295,11 @@ if (isset($_POST['register_user'])) {
 		$_SESSION['username'] = $username;
 		$_SESSION['id'] = mysqli_insert_id($connect);
 		setcookie('user', $username, time() + (86400 * 2), "/");
-		header('location: index.php');
+		if ($_SESSION['pagefrom'] == "cart") {
+			header('location: cart.php');
+		} else {
+			header('location: index.php');
+		}
 	}
 }
 
@@ -322,7 +326,11 @@ if (isset($_POST['signin_user'])) {
 			$_SESSION['username'] = $username;
 			$_SESSION['id'] = $uid;
 			setcookie('user', $username, time() + (86400 * 2), "/");
-			header('location: index.php');
+			if ($_SESSION['pagefrom'] == "cart") {
+				header('location: cart.php');
+			} else {
+				header('location: index.php');
+			}
 		} else {
 			array_push($errors, "Incorrect combination");
 		}

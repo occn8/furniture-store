@@ -19,6 +19,7 @@ require_once('config/configurations.php');
 </head>
 
 <body>
+   
     <form class="needs-validation form-signin" method="post" action="signin.php" novalidate>
         <?php include('config/errors.php'); ?>
         <center>
@@ -57,6 +58,7 @@ require_once('config/configurations.php');
     </form>
     <script src="assets/scripts/validate.js"></script>
     <script src="assets/scripts/jquery.min.js"></script>
+    <script src="assets/scripts/bootstrap.min.js"></script>
     <script src="assets/scripts/popper.min.js"></script>
 </body>
 

@@ -21,7 +21,7 @@ include('widgets/header.php');
                 <div class="col-md-6 order-md-2 mb-4">
                     <h4 class="d-flex justify-content-between align-items-center mb-3">
                         <span class="text-black"><strong>Details of Cart</strong></span>
-                        <span class="badge badge-pill"><img src="assets/cart.png" alt="">
+                        <span class="badge badge-pill"><img src="assets/images/shopping-cart.png" height="30px" alt="">
                             <div class="cart_count ">
                                 <?php
 

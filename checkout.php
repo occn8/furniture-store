@@ -19,7 +19,7 @@ require_once('config/user_detail.php');
             <div class="col-md-4 order-md-2 mb-4">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
                     <span class="text-black">Your cart</span>
-                    <span class="badge  badge-pill"><img src="assets/cart.png" alt="">
+                    <span class="badge  badge-pill"><img src="assets/images/shopping-cart.png" height="30px"  alt="">
                         <div class="cart_count ">
                             <?php
 

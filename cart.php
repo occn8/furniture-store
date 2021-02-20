@@ -80,7 +80,7 @@ include('widgets/header.php');
                             <?php if ($total != 0) : ?>
                                 <?php if (isset($_SESSION['username'])) : ?>
                                     <button type="submit" class="btn btn-warning mt-3"><a href="checkout.php" class="color-black">Proceed to Checkout</a></button>
-                                <?php else : ?>
+                                <?php else : 	$_SESSION['pagefrom'] = "cart";?>
                                     <button type="submit" class="btn btn-warning mt-3"><a href="signin.php" class="color-black">Proceed to Checkout</a></button>
                                 <?php endif ?>
                             <?php else : ?>

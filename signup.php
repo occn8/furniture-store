@@ -23,6 +23,7 @@ require_once('config/configurations.php');
         <center>
             <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
         </center>
+
         <?php include('config/errors.php'); ?>
         <div class="">
             <div class="row">
@@ -140,6 +141,7 @@ require_once('config/configurations.php');
 
     <script src="assets/scripts/validate.js"></script>
     <script src="assets/scripts/jquery.min.js"></script>
+    <script src="assets/scripts/bootstrap.min.js"></script>
     <script src="assets/scripts/popper.min.js"></script>
 </body>
 

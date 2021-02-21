@@ -216,6 +216,11 @@
                                 <a class="nav-link" href="<?php echo $currentpage == 'account' ? '#' : 'account.php' ?>">Account</a>
                             </li>
                         <?php endif; ?>
+                        <?php if (isset($_SESSION['username']) && $_SESSION['username']=="admin") : ?>
+                            <li class="nav-item <?php echo $currentpage == 'admin' ? 'active' : '' ?>">
+                                <a class="nav-link" href="<?php echo $currentpage == 'admin' ? '#' : 'admin.php' ?>">Admin panel</a>
+                            </li>
+                        <?php endif; ?>
                     </ul>
                 </div>
             </div>

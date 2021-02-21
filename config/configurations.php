@@ -6,7 +6,7 @@ session_start();
 // $passwd = "ovnkMOBKduC";
 // $dbname = "epiz_27536347_furstore";
 // $connect = mysqli_connect($server, $usrname, $passwd, $dbname);
-// $_SESSION['success'] = "";
+// $_SESSION['username'] = "";
 $username = "";
 $email    = "";
 $fname    = "";
@@ -89,6 +89,10 @@ $payments = "CREATE TABLE IF NOT EXISTS payments (
 	cvv int(11) NOT NULL
 	)";
 mysqli_query($connect, $payments);
+
+$admincreate = "INSERT INTO users (id,fname, lname, username, email, regdate,modified, address, country, district, zip, password) 
+VALUES(1,'the','guy', 'admin', 'admin@a.a', NOW(),NOW(), '11th st', 'Uganda', 'Kitgum', '00000', '21232f297a57a5a743894a0e4a801fc3')";
+mysqli_query($connect, $admincreate);
 
 $products1 = "INSERT INTO `products` (product_id, product_name,product_type, product_brand, product_price, modified, product_image)
 	VALUES (1,'repa-Armchair', 'armchairs','ARFLEX',1799000,NOW(),'/furniture-store/assets/products/armchairs/1.jpg'),
@@ -510,41 +514,80 @@ $querryPoufs = "SELECT * FROM products WHERE product_type='Poufs'";
 $querrySmallsofas = "SELECT * FROM products WHERE product_type='Smallsofas'";
 $querrySofa = "SELECT * FROM products WHERE product_type='Sofa'";
 $querrylatest = "SELECT * FROM products WHERE modified='2021-02-05 13:23:05'";
+$querryusers = "SELECT * FROM users";
+$querrymessages = "SELECT * FROM messages";
+$querrycart = "SELECT * FROM cart";
+$querrypayments = "SELECT * FROM payments";
 
 $result = $connect->query($querrypdts);
 if ($result->num_rows > 0) {
 } else {
 }
+$userresult = $connect->query($querryusers);
+if ($result->num_rows > 0) {
+} else {
+}
+$messagesresult = $connect->query($querrymessages);
+if ($result->num_rows > 0) {
+} else {
+}
+$cartresult = $connect->query($querrycart);
+if ($result->num_rows > 0) {
+} else {
+}
+$paymentsresult = $connect->query($querrypayments);
+if ($result->num_rows > 0) {
+} else {
+}
 
-// if (isset($_POST['checkout'])) {
-// 	if (isset($_SESSION['username'])) {
-// 		header('location: success.php');
-// 	} else {
-// 		header('location: cart.php'); //php self
-// 	}
-// }
+if (isset($_POST['delete_product'])) {
+	$id = mysqli_real_escape_string($connect, $_POST['pid']);
+	if (empty($id)) {
+		array_push($errors, "Product ID required");
+	}
+	if (count($errors) == 0) {
+		$query = "DELETE FROM products WHERE product_id='$id'";
+		mysqli_query($connect, $query);
+		header('location: admin.php');
+	}
+}
 
-// if (isset($_POST['add_product'])) {
-// 	$pdtname = mysqli_real_escape_string($connect, $_POST['pdtname']);
-// 	$pdtdescription = mysqli_real_escape_string($connect, $_POST['pdtdescription']);
-// 	$batchNo = mysqli_real_escape_string($connect, $_POST['batchNo']);
-// 	$store = mysqli_real_escape_string($connect, $_POST['store']);
-// 	if (empty($pdtname)) {
-// 		array_push($errors, "Name required");
-// 	}
-// 	if (empty($pdtdescription)) {
-// 		array_push($errors, "Description Required");
-// 	}
-// 	if (empty($store)) {
-// 		array_push($errors, "Store Required");
-// 	}
-// 	if (count($errors) == 0) {
-// 		$query = "INSERT INTO products (pdtname, pdtdescription, batchNo, store, insertdate ) 
-// 					  VALUES('$pdtname','$pdtdescription', '$batchNo', '$store', NOW())";
-// 		mysqli_query($connect, $query);
-// 		header('location: index.php');
-// 	}
-// }
+if (isset($_POST['delete_user'])) {
+	$id = mysqli_real_escape_string($connect, $_POST['uid']);
+	if (empty($id)) {
+		array_push($errors, "User ID required");
+	}
+	if (count($errors) == 0) {
+		$query = "DELETE FROM users WHERE id='$id'";
+		mysqli_query($connect, $query);
+		header('location: admin.php');
+	}
+}
+
+if (isset($_POST['add_product'])) {
+	$pdtname = mysqli_real_escape_string($connect, $_POST['pdtname']);
+	$pdttype = mysqli_real_escape_string($connect, $_POST['pdttype']);
+	$pdtbrand = mysqli_real_escape_string($connect, $_POST['pdtbrand']);
+	$pdtprice = mysqli_real_escape_string($connect, $_POST['pdtprice']);
+	if (empty($pdtname)) {
+		array_push($errors, "Name required");
+	}
+	if (empty($pdttype)) {
+		array_push($errors, "Type Required");
+	}
+	if (empty($pdtbrand)) {
+		array_push($errors, "Brand Required");
+	}
+	if (empty($pdtprice)) {
+		array_push($errors, "Price Required");
+	}
+	if (count($errors) == 0) {
+		$query = "INSERT INTO products (product_name,product_type, product_brand, product_price, modified, product_image) 
+					  VALUES('$pdtname', '$pdttype','$pdtbrand','$pdtprice',NOW(),'/furniture-store/assets/products/armchairs/1.jpg')";
+		mysqli_query($connect, $query);
+		header('location: admin.php');
+	}
+}
 
 // if (isset($_POST['update_product'])) {
 // 	$oldstore = mysqli_real_escape_string($connect, $_POST['currentstore']);
@@ -561,18 +604,6 @@ if ($result->num_rows > 0) {
 // 	}
 // 	if (count($errors) == 0) {
 // 		$query = "UPDATE products SET store='$newstore' WHERE id='$id'";
-// 		mysqli_query($connect, $query);
-// 		header('location: index.php');
-// 	}
-// }
-
-// if (isset($_POST['delete_product'])) {
-// 	$id = mysqli_real_escape_string($connect, $_POST['id']);
-// 	if (empty($id)) {
-// 		array_push($errors, "Product ID required");
-// 	}
-// 	if (count($errors) == 0) {
-// 		$query = "DELETE FROM products WHERE id='$id'";
 // 		mysqli_query($connect, $query);
 // 		header('location: index.php');
 // 	}

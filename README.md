@@ -3,12 +3,7 @@
 
 ### Designed By
   > [ochen.hillary](https://github.com/occn8)
-  
-  > [klive.karuhanga](https://github.com/klivekaru08)
-  
-  > [kirabo.tisha](https://github.com/Tishakirabo)
-  
-  > [ayebare.precious](https://github.com/fortunate200-lang)
+ 
 
 ### Running Project
 * [x] __Make sure__ xampp or `any-other` is started or running
